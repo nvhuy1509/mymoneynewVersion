@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MyMoney</title>
+    <link rel="icon" type="image/x-icon" href="../images/logo.svg">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+      integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+      integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="assets/css/docs.theme.min.css" />
+
+    <!-- Owl Stylesheets -->
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <link rel="stylesheet" href="../css/app.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Open+Sans:ital,wght@0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <!-- <script
+        type="text/javascript"
+        src="https://code.jquery.com/jquery-1.11.0.min.js"
+      ></script> -->
+    <!-- <link
+        rel="stylesheet"
+        href="https://unpkg.com/swiper/swiper-bundle.min.css"
+      /> -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <div class="header-top">
+          <a href="index.html" class="logo">
+            <img src="../images/PC_index/logo.svg" alt="" />
+          </a>
+          <div class="header-bar visible-s">
+            <a href="index.html" class="link-home menu-link menu-active actived"
+              >Home</a
+            >
+            <img src="../images/PC_index/icon-bar.svg" alt="" />
+          </div>
+          <div class="header-fixed">
+            <ul class="menu">
+              <li class="menu-item menu-home">
+                <a href="index.html" class="menu-link menu-active actived"
+                  >Home</a
+                >
+                <i class="fas fa-times close-header-fixed visible-s"></i>
+              </li>
+              <li class="menu-item">
+                <a href="about.html" class="menu-link menu-active">Solutions</a>
+              </li>
+              <li class="menu-item">
+                <a
+                  target="_blank" href="https://docs.mymoney.credit/"
+                  class="menu-link menu-active menu-borrowers"
+                  >Docs
+                </a>
+              </li>
+              <!-- <li class="menu-item">
+                <div class="menu-item-wrapper">
+                  <span>
+                    <a href="investors.html" class="menu-link menu-active"
+                      >Investors</a
+                    >
+                  </span>
+                  <span class="menu-icon-header"
+                    ><img
+                      src="../images/PC_index/icon-menu.svg"
+                      class="visible-lg"
+                      alt=""
+                  /></span>
+                  <img
+                    src="../images/PC_index/icon-dropdown-mb.svg"
+                    class="visible-s"
+                    alt=""
+                  />
+                </div>
+                <ul class="menu-dropdown bg-menu">
+                  <li class="dropdown-item">
+                    <a href="investors.html" class="menu-link">White Paper</a>
+                  </li>
+                  <li class="dropdown-item">
+                    <a href="investors.html" class="menu-link">Products</a>
+                  </li>
+                  <li class="dropdown-item">
+                    <a href="detail.html" class="menu-link">FAQs</a>
+                  </li>
+                </ul>
+              </li> -->
+              <li class="menu-item">
+                <a href="blog.html" class="menu-link menu-active">Blog</a>
+              </li>
+              <li class="menu-item">
+                <a href="contact.html" class="menu-link menu-active">Contact</a>
+              </li>
+            </ul>
+            <ul class="header-cta">
+              <li class="header-cta-item">
+                <form action="">
+                  <input type="text" placeholder="" class="visible-s" />
+                  <button><i class="fas fa-search"></i></button>
+                </form>
+              </li>
+              <li class="header-cta-item">
+                <button onclick="changeLanguage()">
+                  <span id="language">EN</span>
+                </button>
+              </li>
+              <li class="header-cta-item">
+                <button>Register</button>
+              </li>
+              <li class="header-cta-item">
+                <button class="active">Login</button>
+              </li>
+            </ul>
+            <ul class="header-social footer-social visible-s">
+              <li>
+                <a href="#!">
+                  <img src="../images/PC_index/header-icon-fb.svg" alt="" />
+                </a>
+              </li>
+              <!-- <li>
+                <a href="#!">
+                  <img src="../images/PC_index/header-icon-insta.svg" alt="" />
+                </a>
+              </li> -->
+              <li>
+                <a href="#!">
+                  <img src="../images/PC_index/header-icon-tt.svg" alt="" />
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+        </div>
+        <div class="header-content-top">
+          <p class="header-content-desc">
+            		
+          </p>
+          <h1 class="header-content-heading">Bridge the Gap Between Traditional Finance and Decentralized Finance for a Smarter, More Inclusive Financial Future	</h1>
+          <p class="header-content-app-index">
+            Maximize your assets with borrowing, investing, and exchanging both fiat and cryptocurrency. Grow your account anytime, anywhere with My Money Credit.			
+          </p>
+          <ul class="download">
+            <li class="download-item">
+              <a href="#!">
+                <img src="../images/PC_index/img-GooglePlay.svg" alt="" />
+              </a>
+            </li>
+            <li class="download-item visible-s">
+              <a href="#!">
+                <img src="../images/PC_index/img-AppStore-Mobile.svg" alt="" />
+              </a>
+            </li>
+            <li class="download-item">
+              <a target="_blank" href="https://testflight.apple.com/join/ipqxh4LQ">
+                <img src="../images/PC_index/img-AppStore.svg" alt="" />
+              </a>
+            </li>
+            <li class="download-item">
+              <a target="_blank" href="https://drive.google.com/file/d/1UT9ZL1gUsmAmK3gvFDAbDHwSXo8byTrP/view?usp=sharing">
+                <img src="../images/PC_index/img-Android.svg" alt="" />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </header>
+      <main>
+        <section class="slide register">
+          <div class="register-list-wrapper">
+            <div class="register-list owl-carousel owl-theme">
+              <div class="register-item ">
+                <div class="up-slide-top">
+                  <img src="../images/PC_index/S1.png" alt="" />
+                </div>
+              </div>
+              <div class="register-item ">
+                <div class="up-slide-top">
+                  <img src="../images/PC_index/S2.png" alt="" />
+                </div>
+              </div>
+              <div class="register-item ">
+                <div class="up-slide-top">
+                  <img src="../images/PC_index/S3.png" alt="" />
+                </div>
+              </div>
+              <div class="register-item item">
+                <div class="up-slide-top">
+                  <img src="../images/PC_index/S4.png" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="mission">
+          <div class="container mission-main reveal">
+            <ul class="mission-list">
+              <li class="mission-item">
+                <div class="mission-title">
+                  <img src="../images/PC_index/icon-vision.png" alt="" />
+                  <h3>Visions</h3>
+                </div>
+                <p class="mission-desc">
+                  Create a decentralized financial ecosystem that bridges traditional and decentralized 
+                  finances with seamless borrowing, investing, and exchange services for users worldwide.
+                </p>
+              </li>
+              <li class="mission-item">
+                <div class="mission-title">
+                  <img src="../images/PC_index/icon-mission.png" alt="" />
+                  <h3>Missions</h3>
+                </div>
+                <p class="mission-desc">
+                  My Money Credit is committed to providing a user-friendly, innovative, and integrated
+                  platform that leverages big data and blockchain technology to deliver efficient and
+                  secure borrowing, lending, investing, and exchange services. Our mission is to enable our
+                  clients to maximize their financial potential while maintaining the highest standards of
+                  compliance, risk management, and customer service.
+                </p>
+              </li>
+            </ul>
+            <div class="mission-img visible-lg">
+              <img src="../images/PC_index/img-vision-mission.png" alt="" />
+            </div>
+          </div>
+        </section>
+        <section class="why">
+          <div class="container why-main reveal">
+            <p class="why-title">
+              <span>Why choose</span><strong> MY MONEY CREDIT</strong>
+            </p>
+            <ul class="why-list">
+              <li class="why-item">
+                <div class="why-img">
+                  <img src="../images/PC_index/why-item-1.svg" alt="" />
+                </div>
+                <strong>Global cash flow</strong>
+                <span class="why-desc"
+                  >Investors can easily invest in financial products in other countries without the 
+                  hassles of liquidating assets and transferring money across borders.
+                </span
+                >
+              </li>
+              <li class="why-item">
+                <div class="why-img">
+                  <img src="../images/PC_index/why-item-2.svg" alt="" />
+                </div>
+                <strong>Tax exemption</strong>
+                <span class="why-desc">Users can borrow cash or stablecoin for utilities without capital gains taxes on their collateral.
+                </span>
+              </li>
+              <li class="why-item">
+                <div class="why-img">
+                  <img src="../images/PC_index/why-item-3.svg" alt="" />
+                </div>
+                <strong>Uncollateralized microloans
+                </strong>
+                <span class="why-desc"
+                  >My Money Credit offers unsecured small loans with quick loan approvals due to the use of automatic credit ratings and rating algorithms.
+                  </span
+                >
+              </li>
+              <li class="why-item">
+                <div class="why-img">
+                  <img src="../images/PC_index/why-item-4.svg" alt="" />
+                </div>
+                <strong>Flexible financial leverage
+                </strong>
+                <span class="why-desc"
+                  >Users can use assets such as BTC, ETH, stocks, or bonds as collateral to borrow cash from My Money Credit without selling their assets.
+                  </span
+                >
+              </li>
+              <li class="why-item">
+                <div class="why-img">
+                  <img src="../images/PC_index/why-item-5.svg" alt="" />
+                </div>
+                <strong>MMC TOKEN</strong>
+                <span class="why-desc"
+                  >The backbone of My Money Credit, creating solid trust value for users while granting them many exclusive benefits within the platform
+                </span>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <section class="roadmap visible-lg">
+          <div class="container roadmap-main">
+            <div class="roadmap-heading ">
+              <p class="roadmap-heading-title">ROADMAP</p>
+            </div>
+            <ul class="roadmap-list">
+              <li class="roadmap-item reveal">
+                <div class="dot"></div>
+                <div class="roadmap-top">
+                  <div class="dot-top roadmap-dot"></div>
+                  <div class="roadmap-content top">
+                    <div class="roadmap-overlay"></div>
+                    <p>Q3 - 2022</p>
+                    <span></span>
+                    <div class="roadmap-desc top ">
+                      <p>
+                        <i
+                          class="fa-regular fa-circle-check"
+                          style="color: #28a908"
+                        ></i>
+                        Product development begins
+                      </p>
+                      <p>
+                        <i
+                          class="fa-regular fa-circle-check"
+                          style="color: #28a908"
+                        ></i>
+                        Expansion of development and compliance teams
+                      </p>
+                      <p>
+                        <i
+                          class="fa-regular fa-circle-check"
+                          style="color: #28a908"
+                        ></i>
+                        Finalization of financial and legal structure for the project
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="roadmap-bottom">
+                  <div class="dot-bottom roadmap-dot"></div>
+                  <div class="roadmap-content bottom">
+                    <div class="roadmap-overlay"></div>
+                    <p>Q2 - 2022</p>
+                    <span></span>
+                    <div class="roadmap-desc bottom active">
+                      <p>
+                        <i
+                          class="fa-regular fa-circle-check"
+                          style="color: #28a908"
+                        ></i>
+                        Core team assembled
+                      </p>
+                      <p><i
+                        class="fa-regular fa-circle-check"
+                        style="color: #28a908"
+                      ></i> White Paper v1.0 released; website and social media activated</p>
+                      <p><i
+                        class="fa-regular fa-circle-check"
+                        style="color: #28a908"
+                      ></i> Crowdfunding starts</p>
+                      
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="roadmap-item reveal">
+                <div class="roadmap-top">
+                  <div class="dot-top roadmap-dot"></div>
+                  <div class="roadmap-content top">
+                    <div class="roadmap-overlay"></div>
+                    <p>Q1 - 2023</p>
+                    <span></span>
+                    <div class="roadmap-desc top active">
+                      <p>
+                        <i
+                        class="fa-regular fa-circle-check"
+                        style="color: #28a908"
+                        ></i> White Paper v2.0 released
+                      </p>
+                      <p>
+                        <i
+                        class="fa-regular fa-circle-check"
+                        style="color: #28a908"
+                        ></i> First pilot test of My Money Credit app
+                      </p>
+                      <p>
+                        <i
+                        class="fa-regular fa-circle-check"
+                        style="color: #28a908"
+                        ></i> Private and seed sales begin
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="roadmap-bottom">
+                  <div class="dot-bottom roadmap-dot"></div>
+                  <div class="roadmap-content bottom">
+                    <div class="roadmap-overlay"></div>
+                    <p>Q4 - 2022</p>
+                    <span></span>
+                    <div class="roadmap-desc bottom">
+                      <p>
+                        <i
+                          class="fa-regular fa-circle-check"
+                          style="color: #28a908"
+                        ></i>
+                        Completion of testing for initial version of app
+                      </p>
+                      
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="roadmap-item reveal">
+                <div class="roadmap-top">
+                  <div class="dot-top roadmap-dot"></div>
+                  <div class="roadmap-content top">
+                    <div class="roadmap-overlay"></div>
+                    <p>
+                      Q3 - 2023</p>
+                    <span></span>
+                    <div class="roadmap-desc top ">
+                      <p>
+                        <i
+                          class="fa-regular fa-circle-check"
+                          style="color: #28a908"
+                        ></i>
+                        Exchange listings
+                      </p>
+                      <p>
+                        <i
+                          class="fa-regular fa-circle-check"
+                          style="color: #28a908"
+                        ></i>
+                        Launch tokenized stocks and assets trading
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="roadmap-bottom">
+                  <div class="dot-bottom roadmap-dot"></div>
+                  <div class="roadmap-content bottom">
+                    <div class="roadmap-overlay"></div>
+                    <p>Q2 - 2023</p>
+                    <span></span>
+                    <div class="roadmap-desc bottom active">
+                      <p>
+                        <i
+                          class="fa-regular fa-circle-check"
+                          style="color: #28a908"
+                        ></i>
+                        ITO on domestic and foreign launchpads platforms
+                      </p>
+                      <p>
+                        <i
+                          class="fa-regular fa-circle-check"
+                          style="color: #28a908"
+                        ></i>
+                        Token Generation Event
+                      </p>
+                      <p>
+                        <i
+                          class="fa-regular fa-circle-check"
+                          style="color: #28a908"
+                        ></i>
+                        MMC Wallet app released
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="roadmap-item reveal">
+                <div class="arrow"></div>
+                <div class="roadmap-top">
+                  <div class="dot-top roadmap-dot"></div>
+                  <div class="roadmap-content top">
+                    <div class="roadmap-overlay"></div>
+                    <p>Q1 - 2024</p>
+                    <span></span>
+                    <div class="roadmap-desc top active">
+                      <p>
+                        <i
+                          class="fa-regular fa-circle-check"
+                          style="color: #28a908"
+                        ></i>
+                        Specialized management tools for blockchain and crypto businesses released
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="roadmap-bottom">
+                  <div class="dot-bottom roadmap-dot"></div>
+                  <div class="roadmap-content bottom">
+                    <div class="roadmap-overlay"></div>
+                    <p>Q4 - 2023</p>
+                    <span></span>
+                    <div class="roadmap-desc bottom ">
+                      <p>
+                        <i
+                          class="fa-regular fa-circle-check"
+                          style="color: #28a908"
+                        ></i>
+                        Launch VND stablecoin
+                      </p>
+                      <p>
+                        <i
+                          class="fa-regular fa-circle-check"
+                          style="color: #28a908"
+                        ></i>
+                        Launch remittance and USDC/VND transaction services
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+               <!-- <li class="roadmap-item reveal">
+                <div class="arrow"></div>
+                <div class="roadmap-bottom">
+                  <div class="dot-bottom roadmap-dot"></div>
+                  <div class="roadmap-content bottom">
+                    <div class="roadmap-overlay"></div>
+                    <p>09.2023</p>
+                    <span>IDO and launchpads</span>
+                    <div class="roadmap-desc bottom active">
+                      <p>
+                        <i
+                          class="fa-regular fa-circle-check"
+                          style="color: #28a908"
+                        ></i>
+                        IDO on domestic and foreign launchpads platforms.
+                      </p>
+                    </div>
+                  </div>
+                </div> 
+              </li> -->
+            </ul>
+          </div>
+        </section>
+        <section class="roadmap-vertical visible-s">
+          <div class="container">
+            <div class="roadmap-heading reveal">
+              <p class="roadmap-heading-title">ROADMAP</p>
+            </div>
+            <div class="roadmap-vertical-list reveal">
+              <div class="roadmap-vertical-dot"></div>
+              <div class="roadmap-vertical-item">
+                <div class="roadmap-vertical-content">
+                  <div class="roadmap-vertical-overlay"></div>
+                  <span class="roadmap-vertial-date">Q2 - 2022</span>
+                  <span class="roadmap-vertical-text"></span>
+                </div>
+                <div class="roadmap-vertical-desc">
+                  <div class="roadmap-vertical-desc-wrapper">
+                    <div class="roadmap-vertical-desc-text">
+                      <p>
+                        <i
+                          class="fa-regular fa-circle-check"
+                          style="color: #28a908"
+                        ></i>
+                        Core team assembled
+                      </p>
+                    </div>
+                    <div class="roadmap-vertical-desc-text">
+                      <p>
+                        <i
+                          class="fa-regular fa-circle-check"
+                          style="color: #28a908"
+                        ></i>
+                        White Paper v1.0 released; website and social media activated
+                      </p>
+                    </div>
+                    <div class="roadmap-vertical-desc-text">
+                      <p>
+                        <i
+                          class="fa-regular fa-circle-check"
+                          style="color: #28a908"
+                        ></i>
+                        Crowdfunding starts
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="roadmap-vertical-item reveal">
+                <div class="roadmap-vertical-content">
+                  <div class="roadmap-vertical-overlay"></div>
+                  <span class="roadmap-vertial-date">Q3 - 2022</span>
+                  <span class="roadmap-vertical-text"></span>
+                </div>
+                <div class="roadmap-vertical-desc">
+                  <div class="roadmap-vertical-desc-wrapper">
+                    <div class="roadmap-vertical-desc-text">
+                      <p>
+                        <i
+                          class="fa-regular fa-circle-check"
+                          style="color: #28a908"
+                        ></i>
+                        Product development begins
+                      </p>
+                    </div>
+                    <div class="roadmap-vertical-desc-text">
+                      <p><i
+                        class="fa-regular fa-circle-check"
+                        style="color: #28a908"
+                      ></i> Expansion of development and compliance teams</p>
+                    </div>
+                    <div class="roadmap-vertical-desc-text">
+                      <p><i
+                        class="fa-regular fa-circle-check"
+                        style="color: #28a908"
+                      ></i> Finalization of financial and legal structure for the project</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="roadmap-vertical-item reveal">
+                <div
+                  class="roadmap-vertical-content"
+                  style="background-color: #33aadd"
+                >
+                  <div class="roadmap-vertical-overlay"></div>
+                  <span class="roadmap-vertial-date">Q4 - 2022</span>
+                  <span class="roadmap-vertical-text"></span>
+                </div>
+                <div class="roadmap-vertical-desc">
+                  <div class="roadmap-vertical-desc-wrapper">
+                    <div class="roadmap-vertical-desc-text">
+                      <p>
+                        <i
+                          class="fa-regular fa-circle-check"
+                          style="color: #28a908"
+                        ></i>
+                        Completion of testing for initial version of app
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="roadmap-vertical-item reveal">
+                <div class="roadmap-vertical-content">
+                  <div class="roadmap-vertical-overlay"></div>
+                  <span class="roadmap-vertial-date">Q1 - 2023</span>
+                  <span class="roadmap-vertical-text"></span>
+                </div>
+                <div class="roadmap-vertical-desc">
+                  <div class="roadmap-vertical-desc-wrapper">
+                    <div class="roadmap-vertical-desc-text">
+                      <p>
+                        <i
+                        class="fa-regular fa-circle-check"
+                        style="color: #28a908"
+                        ></i> White Paper v2.0 released
+                      </p>
+                    </div>
+                    <div class="roadmap-vertical-desc-text">
+                      <p>
+                        <i
+                        class="fa-regular fa-circle-check"
+                        style="color: #28a908"
+                        ></i> First pilot test of My Money Credit app
+                      </p>
+                    </div>
+                    <div class="roadmap-vertical-desc-text">
+                      <p>
+                        <i
+                        class="fa-regular fa-circle-check"
+                        style="color: #28a908"
+                        ></i> Private and seed sales begin
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="roadmap-vertical-item reveal">
+                <div class="roadmap-vertical-content">
+                  <div class="roadmap-vertical-overlay"></div>
+                  <span class="roadmap-vertial-date">Q2 - 2023</span>
+                  <span class="roadmap-vertical-text"></span>
+                </div>
+                <div class="roadmap-vertical-desc">
+                  <div class="roadmap-vertical-desc-wrapper">
+                    <div class="roadmap-vertical-desc-text">
+                      <p>
+                        <i
+                          class="fa-regular fa-circle-check"
+                          style="color: #28a908"
+                        ></i>
+                        ITO on domestic and foreign launchpads platforms
+                      </p>
+                    </div>
+                    <div class="roadmap-vertical-desc-text">
+                      <p>
+                        <i
+                          class="fa-regular fa-circle-check"
+                          style="color: #28a908"
+                        ></i>
+                        Token Generation Event
+                      </p>
+                    </div>
+                    <div class="roadmap-vertical-desc-text">
+                      <p>
+                        <i
+                          class="fa-regular fa-circle-check"
+                          style="color: #28a908"
+                        ></i>
+                        MMC Wallet app released
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="roadmap-vertical-item reveal">
+                <div class="roadmap-vertical-content">
+                  <div class="roadmap-vertical-overlay"></div>
+                  <span class="roadmap-vertial-date">Q3 - 2023</span>
+                  <span class="roadmap-vertical-text" ></span  >
+                </div>
+                <div class="roadmap-vertical-desc">
+                  <div class="roadmap-vertical-desc-wrapper">
+                    <div class="roadmap-vertical-desc-text">
+                      <p>
+                        <i
+                          class="fa-regular fa-circle-check"
+                          style="color: #28a908"
+                        ></i>
+                        Exchange listings
+                      </p>
+                    </div>
+                    <div class="roadmap-vertical-desc-text">
+                      <p>
+                        <i
+                          class="fa-regular fa-circle-check"
+                          style="color: #28a908"
+                        ></i>
+                        Launch tokenized stocks and assets trading
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="roadmap-vertical-item reveal">
+                <div class="roadmap-vertical-content">
+                  <div class="roadmap-vertical-overlay"></div>
+                  <span class="roadmap-vertial-date">Q4 - 2023</span>
+                  <span class="roadmap-vertical-text"></span>
+                </div>
+                <div class="roadmap-vertical-desc">
+                  <div class="roadmap-vertical-desc-wrapper">
+                    <div class="roadmap-vertical-desc-text">
+                      <p>
+                        <i
+                          class="fa-regular fa-circle-check"
+                          style="color: #28a908"
+                        ></i>
+                        Launch VND stablecoin
+                      </p>
+                    </div>
+                    <div class="roadmap-vertical-desc-text">
+                      <p>
+                        <i
+                          class="fa-regular fa-circle-check"
+                          style="color: #28a908"
+                        ></i>
+                        Launch remittance and USDC/VND transaction services
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="roadmap-vertical-item reveal">
+                <div
+                  class="roadmap-vertical-content"
+                  style="background-color: #33aadd"
+                >
+                  <div class="roadmap-vertical-overlay"></div>
+                  <span class="roadmap-vertial-date">Q1 - 2024</span>
+                  <span class="roadmap-vertical-text"></span>
+                </div>
+                <div class="roadmap-vertical-desc">
+                  <div class="roadmap-vertical-desc-wrapper">
+                    <div class="roadmap-vertical-desc-text">
+                      <p>
+                        <i
+                          class="fa-regular fa-circle-check"
+                          style="color: #28a908"
+                        ></i>
+                        Specialized management tools for blockchain and crypto businesses released
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="roadmap-vertical-arrow"></div>
+            </div>
+          </div>
+        </section>
+        <section class="rating">
+          <div class="container rating-main reveal">
+            <p class="rating-title">
+              <strong>TEAM</strong>
+            </p>
+            <ul class="rating-list slide-list">
+              <li class="rating-item">
+                <div class="rating-content-wrapper">
+                  <img src="" alt="" />
+                  <!-- <div class="rating-star">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div> -->
+                  <p class="rating-item-title">
+                    <strong>CEO - Phuc-Anh "Finn" Nguyen</strong>
+                  </p>
+                  <p class="rating-content">
+                    Harvard Alumni.
+                    <br/>
+                    Ph.D.
+                    <br/>
+                    Founding Member and Former Head Of Business Development of LaunchZone Investment Co. LTD.
+                    <br/>
+                    8 years of experience in blockchain and crypto.
+                    <br/>
+                  </p>
+                  <span class="rating-author">---Phuc-Anh "Finn" Nguyen---</span>
+                </div>
+              </li>
+              <li class="rating-item">
+                <div class="rating-content-wrapper" id="CTO" >
+                  <img src="" alt="" />
+                  
+                  <p class="rating-item-title">
+                    <strong>CTO - Ngoc Son Vu</strong>
+                  </p>
+                  <p class="rating-content">
+                    Former CEO of Bkav Pro Antivirus Software Company.
+                    <br>
+                    Former Vice President of Anti-malware, Bkav Corporation.
+                    <br>
+                    22 years of experience and in-depth research on network security, especially in malware and anti-malware solutions.
+
+                    <a id ="btnViewCTO" onclick="viewMore('CTO')">Xem thêm</a>
+                    <span id="moreCTO" style="display: none;">
+                      15 years of experience in developing network security solutions with AI technology.
+                      <br> 
+                      Identified vulnerabilities in various devices, such as Toshiba, Lenovo, and Asus laptops.
+                      <br>
+                      Identified the source of cyberattacks against websites of the US and South Korean government agencies.
+                      <br>
+                      <a onclick="hideTxt('CTO')">Ẩn bớt</a>
+                    </span>
+                  </p>
+                  <span class="rating-author">---Ngoc Son Vu---</span>
+                </div>
+              </li>
+              <li class="rating-item">
+                <div class="rating-content-wrapper" id="COO">
+                  <img src="" alt="" />
+                  
+                  <p class="rating-item-title">
+                    <strong>COO - Tien Nguyen</strong>
+                  </p>
+                  <p class="rating-content">
+                    Co-founder and Deputy Director at MARCOM MATE JSC.
+                    <br>
+                    Former Marketing Executive at various corporations such as LG Electronics, Vingroup JSC., Vat Gia, BIM Group, etc.
+                    <br>
+                    10 years of experience in marcom for real estate, fintech, banking, F&B, FMCG, etc.
+
+                    <a id ="btnViewCOO" onclick="viewMore('COO')">Xem thêm</a>
+                    <span id="moreCOO" style="display: none;">
+                      5 years of experience in programming system and data management software.
+                      <br> 
+                      <a onclick="hideTxt('COO')">Ẩn bớt</a>
+                    </span>
+                  </p>
+                  <span class="rating-author"> ---Tien Nguyen---</span>
+                </div>
+              </li>
+              <li class="rating-item">
+                <div class="rating-content-wrapper" id="CMO">
+                  <img src="" alt="" />
+                  
+                  <p class="rating-item-title">
+                    <strong>CMO - Dominic Nguyen</strong>
+                  </p>
+                  <p class="rating-content">
+                    Bachelor of International Business - Interamericana University of Panama.
+                    <br>
+                    3 years of experience in Research and Development in VTC Online.
+                    <br>
+                    3 years of experience in Business Development, Marketing and Communications in Zitga Studios.
+                    <br>
+                    <a id ="btnViewCMO" onclick="viewMore('CMO')">Xem thêm</a>
+                    <span id="moreCMO" style="display: none;">
+                      2 years of experience in crypto industry. Former Business Development and Marketing Specialist in Mind Ventures Capital.
+                      <br>
+                      <a onclick="hideTxt('CMO')">Ẩn bớt</a>
+                    </span>
+                    
+                    
+                  </p>
+                  <span class="rating-author">---Dominic Nguyen---</span>
+                </div>
+              </li>
+              <li class="rating-item">
+                <div class="rating-content-wrapper">
+                  <img src="" alt="" />
+                  
+                  <p class="rating-item-title">
+                    <strong>Head of Design - Duong Trinh</strong>
+                  </p>
+                  <p class="rating-content">
+                    
+                  </p>
+                  <span class="rating-author">---Duong Trinh---</span>
+                </div>
+              </li>
+              <li class="rating-item">
+                <div class="rating-content-wrapper">
+                  <img src="" alt="" />
+                  
+                  <p class="rating-item-title">
+                    <strong>Head of Content - Yoo Le</strong>
+                  </p>
+                  <p class="rating-content">
+                    
+                  </p>
+                  <span class="rating-author">---Yoo Le---</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </main>
+      <footer>
+        <div class="footer-top">
+          <div class="container">
+            <div class="footer-contact">
+              <a href="index.html"
+                ><img
+                  src="../images/PC_index/logo-footer.svg"
+                  class="footer-logo"
+                  alt=""
+              /></a>
+              <ul class="footer-link">
+                <li>
+                  <a href="index.html">Home</a>
+                </li>
+                <li>
+                  <a href="about.html">Solutions</a>
+                </li>
+                <li>
+                  <a target="_blank" href="https://docs.mymoney.credit/">Docs</a>
+                </li>
+                <li>
+                  <a href="blog.html">Blog</a>
+                </li>
+                <li>
+                  <a href="contact.html">Contact</a>
+                </li>
+              </ul>
+            </div>
+            <div class="footer-follow">
+              <span class="visible-lg">Follow us:</span>
+              <ul class="footer-social visible-lg">
+                <li>
+                  <a href="#!">
+                    <img src="../images/PC_index/icon-fb.png" alt="" />
+                  </a>
+                </li>
+                <li>
+                  <a href="#!">
+                    <img src="../images/PC_index/icon-twitter.png" alt="" />
+                  </a>
+                </li>
+              </ul>
+              <ul class="footer-download">
+                <li>
+                  <a href="#!">
+                    <img src="../images/PC_index/img-GooglePlay.svg" alt="" />
+                  </a>
+                </li>
+                <li>
+                  <a target="_blank" href="https://testflight.apple.com/join/ipqxh4LQ">
+                    <img src="../images/PC_index/img-AppStore.svg" alt="" />
+                  </a>
+                </li>
+                <li>
+                  <a target="_blank" href="https://drive.google.com/file/d/1UT9ZL1gUsmAmK3gvFDAbDHwSXo8byTrP/view?usp=sharing">
+                    <img src="../images/PC_index/img-Android.svg" alt="" />
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="footer-input">
+              <div class="footer-input-title">Sign up for updates:</div>
+              <form action="">
+                <input type="email" placeholder="Enter Email Field" />
+                <button>Register</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div class="container">
+            <ul class="footer-social visible-s">
+              <li>
+                <a href="#!">
+                  <img src="../images/PC_index/icon-fb.svg" alt="" />
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <img src="../images/PC_index/icon-tt.svg" alt="" />
+                </a>
+              </li>
+            </ul>
+            <p class="footer-copyright">© 2023 MyMoney.Credit | All rights reserved</p>
+          </div>
+        </div>
+        <a href="#" class="back-to-top">
+          <img src="../images/PC_index/keyboard_double_arrow_up.svg" alt="" />
+        </a>
+      </footer>
+    </div>
+    <script>
+      function viewMore(Id){
+
+        console.log("Id------" + Id);
+        var card = document.getElementById(Id);
+        card.style.minHeight = "auto";
+        card.style.height = "unset";
+
+        var text = document.getElementById("more"+Id);
+        text.style.display = "block";
+
+        var btn = document.getElementById("btnView"+Id);
+        btn.style.display = "none"
+      }
+
+      function hideTxt(Id){
+
+        console.log("Id------" + Id);
+        var card = document.getElementById(Id);
+        card.style.minHeight = "unset";
+        card.style.height = "370px";
+
+        var text = document.getElementById("more"+Id);
+        text.style.display = "none";
+
+        var btn = document.getElementById("btnView"+Id);
+        btn.style.display = "block"
+      }
+
+    </script>
+    <script
+      type="text/javascript"
+      src="//code.jquery.com/jquery-1.11.0.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+    ></script>
+    <script src="../js/slide.js"></script>
+    <script src="../js/app.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+      integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </body>
+</html>

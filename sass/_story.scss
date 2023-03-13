@@ -1,0 +1,96 @@
+.story{
+        padding: 80px;
+        background-color: #F6FAFD;
+}
+.story-top{
+        font-weight: bold;
+        font-size: 56px;
+        line-height: 120%;
+        max-width: 960px;
+        margin-bottom: 40px;
+    }
+    
+    .story-top strong{
+        color: #0765FF;
+    }
+    
+    .story-list{
+        border: 1px solid #0765FF;
+        border-radius: 20px 0 0 20px;
+        margin-right: -120px;
+    }
+    
+    .story-heading{
+        font-weight: bold;
+        font-size: 64px;
+        line-height: 120%;
+        margin-bottom: 22px;
+    }
+    
+    .story-heading strong:nth-child(2){
+        color: #0765FF;
+    }
+    
+    .story-title{
+        font-size: 30px;
+        font-weight: 600;
+        line-height: 110%;
+        margin-bottom: 22px;
+    }
+    
+    .story-desc{
+        color: #4B4B4B;
+        font-size: 18px;
+        line-height: 120%;
+    }
+    
+    .story-wrap{
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    .slick-arrow{
+        position: absolute;
+        top: -90px;
+        cursor: pointer;
+        right: 150px;
+        border-radius: 50%;
+        font-size: 0;
+        border: 1px solid black;
+        width: 44px;
+        height: 44px;
+        background: white;
+    }
+    
+    .slick-arrow.slick-disabled{
+        opacity: 0.5;
+    }
+    
+    .slick-arrow::after{
+        content: '';
+        position: absolute;
+        width: 23px;
+        height: 23px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+    .slick-arrow.slick-prev{
+        right: 206px;
+    
+    }
+    .slick-arrow.slick-prev::after{
+        background: url("/images/PC_index/btn-prev-roadmap.svg") no-repeat center center;
+    }
+    .slick-arrow.slick-next{
+        background: #0765FF;
+        border-color: #0765FF;
+    }
+    .slick-arrow.slick-next::after{
+        background: url("/images/PC_index/btn-next-roadmap.svg") no-repeat center center;
+    }
+    
+    .story-item{
+        border-radius: 20px 0 0 20px;
+        padding: 52px;
+        background: url("/images/PC_index/bg-item-roadmap.png") no-repeat center / contain;
+    }

@@ -1,0 +1,55 @@
+.trust {
+  background: url(../images/PC_index/BG-money-you-can-trust.png) top center/
+    cover;
+  padding: 50px 100px;
+  &-title {
+    text-align: center;
+    margin-bottom: 50px;
+    padding: 0 100px;
+    font-size: 24px;
+    line-height: 36px;
+  }
+
+  &-list {
+    display: flex;
+    justify-content: center;
+  }
+
+  &-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 33.33%;
+  }
+  &-item-content{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 36px;
+    color: #004B6A;
+    margin: 0 auto;
+  }
+  &-item-desc{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 16px;
+    color: #667080;
+  }
+
+  @media screen and (max-width: 767px) {
+    padding: 50px 20px;
+    background: url(../images/PC_index/bg-trust-xs.png) top center/ cover;
+    &-list {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px 0;
+      padding: 0;
+    }
+    &-item {
+      width: 100%;
+    }
+  }
+}

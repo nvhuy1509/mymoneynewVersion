@@ -1,0 +1,136 @@
+.contact {
+  background: linear-gradient(180deg, #f3faff 0%, rgba(243, 250, 255, 0) 100%);
+  padding-top: 65px;
+  padding-bottom: 77px;
+  &-header {
+    text-align: center;
+  }
+  &-title {
+    font-size: 24px;
+    line-height: 36px;
+  }
+  &-desc {
+    padding-top: 8px;
+    font-size: 14px;
+    line-height: 22px;
+    color: #667080;
+  }
+  &-input {
+    background: transparent;
+    resize: none;
+  }
+  &-icon {
+    display: flex;
+    margin-right: 12px;
+    img {
+      margin-right: 12px;
+    }
+  }
+  &-infor-item {
+    display: flex;
+    margin-bottom: 19px;
+  }
+  &-main {
+    display: flex;
+    justify-content: center;
+    gap: 0 41px;
+    margin-top: 21px;
+  }
+  &-detail {
+    width: 30%;
+    form {
+      display: block;
+      width: 100%;
+      input {
+        display: block;
+        width: 100%;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #c4c4c4;
+        margin-bottom: 10px;
+      }
+      textarea {
+        display: block;
+        width: 100%;
+        padding-bottom: 6px;
+        border-bottom: 1px solid #c4c4c4;
+        margin-bottom: 28px;
+      }
+      button {
+        display: block;
+        width: 100%;
+        font-weight: bold;
+        color: white;
+        background-color: #29b9f2;
+        padding-block: 13px;
+      }
+    }
+  }
+  button {
+    width: 100%;
+    padding: 13px;
+    background-color: #15b1ff;
+    border: 1px solid white;
+    border-left: transparent;
+    padding-inline: 7px;
+    color: white;
+    font-weight: bold;
+  }
+
+  textarea {
+    display: block;
+    width: 100%;
+  }
+
+  @media screen and (max-width: 767px) {
+    &-main {
+      padding: 0 20px;
+      display: block;
+    }
+    &-detail {
+      width: 100%;
+    }
+    &-infor {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 26px;
+    }
+    &-icon {
+      display: flex;
+      margin-left: 3%;
+      margin-right: 0 !important;
+    }
+  }
+}
+
+.reveal {
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 1s all ease;
+}
+
+.reveal.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.why-trust {
+  @media screen and (max-width: 767px) {
+    padding: 34px 20px;
+    padding-bottom: 80px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  header.contact-page {
+    background: unset;
+    padding-bottom: 20px;
+    .header-top {
+      margin-bottom: 0;
+    }
+    .header-content {
+      display: none;
+    }
+  }
+}
