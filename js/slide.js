@@ -168,10 +168,10 @@ $(document).ready(function(){
   });
   $(".owl-carousel").owlCarousel({
     loop: true,
-    margin: 10,
-    autoplay: true,
+    autoplay: false,
     autoplayTimeout: 3500,
     nav:true,
+    navText : ['<i class="fa fa-angle-left" aria-hidden="true"></i>','<i class="fa fa-angle-right" aria-hidden="true"></i>'],
     autoplayHoverPause: true,
     responsive: {
       0: {
@@ -181,6 +181,7 @@ $(document).ready(function(){
         items: 2,
       },
       1000: {
+        margin: 30,
         items: 3,
       },
     },

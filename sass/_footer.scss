@@ -8,6 +8,12 @@ footer {
       display: flex;
       justify-content: space-between;
     } 
+    @media screen and (max-width: 767px) {
+      img{
+        padding-left: 20px;
+      }
+      
+}
   }
   .footer-text{
     font-style: normal;
@@ -34,6 +40,11 @@ footer {
     /* Neutral/06 */
 
     color: rgba(246, 250, 253, 0.6);
+    @media screen and (max-width: 767px) {
+      font-size: 14px;
+      padding-left: 30px;
+      text-align: left;
+    }
   }
 
   .footer-follow {
@@ -136,6 +147,9 @@ footer {
     .active{
       color: #0765FF;
     }
+    @media screen and (max-width: 767px) {
+      gap: 25px;
+    }
   }
 
   @media screen and (min-width: 767px) and (max-width: 1127px){
@@ -182,7 +196,8 @@ footer {
       margin-right: 0;
     }
     .footer-social {
-      justify-content: center;
+      justify-content: flex-start;
+      padding-left: 30px;
       li {
         flex-shrink: 0;
       }
@@ -191,9 +206,6 @@ footer {
       background-color: unset;
       .container {
         display: block;
-      }
-      p {
-        text-align: center;
       }
 
       .footer-link {

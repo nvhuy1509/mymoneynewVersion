@@ -9,25 +9,45 @@
                         font-weight: 700;
                         font-size: 60px;
                         line-height: 120%;
-                        text-align: center;
                         color: #1E232B;
+                        text-align: center;
+                        padding: 0px 140px;
+                        @media screen and (max-width: 767px) {
+                                font-size: 40px;
+                                padding: 0px 25px;
+                        }
                 }
                 &-content{
                         /* Text 24 */
                         font-style: normal;
                         font-weight: 400;
-                        font-size: 24px;
-                        line-height: 36px;
                         text-align: center;
-                        padding: 28px 0px;
+                        font-size: 24px;
+                        line-height: 20px;
+                        padding: 28px 240px;
                         /* Neutral/03 */
 
                         color: #4B4B4B;
+                        @media screen and (max-width: 767px) {
+                                font-size: 15px;
+                                padding: 14px 23px;
+                        }
                 }
                 &-download{
                         display: flex;
                         justify-content: center;
-                        gap: 30px
+                        gap: 30px;
+
+                        @media screen and (max-width: 767px) {
+                                gap: 20px;
+                                img{
+                                        width: 70%;
+                                }
+                                a:nth-child(1){
+                                        display: flex;
+                                        justify-content: end
+                                }
+                        }
                 }
         }
 }

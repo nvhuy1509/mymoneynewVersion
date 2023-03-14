@@ -3,7 +3,9 @@
   margin: 0 auto;
   padding: 0;
 }
-
+html{
+  overflow-x: hidden;
+}
 body {
   overflow-x: hidden;
   scroll-behavior: smooth;
@@ -61,7 +63,7 @@ body {
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 992px) {
   .visible-s {
     display: none !important;
   }
@@ -70,12 +72,9 @@ body {
   }
 }
 
-@media screen and (max-width: 1193px) {
+@media screen and (min-width: 992px) {
   .visible-s {
-    display: flex !important;
-  }
-  .visible-lg {
-    display: none;
+    display: none !important;
   }
 }
 
