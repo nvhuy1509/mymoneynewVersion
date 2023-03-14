@@ -230,6 +230,7 @@ li {
 
 .story-list {
   border: 1px solid #0765FF;
+  border-right: 0;
   border-radius: 20px 0 0 20px;
   margin-right: -120px;
 }
@@ -313,7 +314,7 @@ li {
 }
 
 .slick-arrow.slick-prev::after {
-  background: url("/images/PC_index/btn-prev-roadmap.svg") no-repeat center center;
+  background: url("../images/PC_index/btn-prev-roadmap.svg") no-repeat center center;
 }
 
 .slick-arrow.slick-next {
@@ -322,7 +323,7 @@ li {
 }
 
 .slick-arrow.slick-next::after {
-  background: url("/images/PC_index/btn-next-roadmap.svg") no-repeat center center;
+  background: url("../images/PC_index/btn-next-roadmap.svg") no-repeat center center;
 }
 
 .story-item {
@@ -338,6 +339,11 @@ li {
   }
 }
 
+@media (max-width: 767px) {
+  .story-list {
+    margin-right: -40px;
+  }
+}
 .investing {
   background-color: #F6FAFD;
   padding: 60px 150px;
@@ -1234,6 +1240,16 @@ header.contact-page .header-top {
   margin: 0 !important;
 }
 
+@media (min-width: 768px) and (max-width: 991px) {
+  .header-top .header-btn {
+    flex-shrink: 0;
+    order: 1;
+    margin-right: 30px;
+  }
+  .header-top .header-bar {
+    order: 2;
+  }
+}
 .register {
   padding: 44px 105px;
   margin-bottom: 36px;
@@ -2697,9 +2713,9 @@ footer .footer-link .active {
 }
 @media screen and (max-width: 767px) {
   footer .footer-input,
-footer .footer-download,
-footer .footer-phone,
-footer .footer-mail {
+  footer .footer-download,
+  footer .footer-phone,
+  footer .footer-mail {
     display: none;
   }
   footer .footer-link {

@@ -751,3 +751,17 @@ header.contact-page {
     margin: 0 !important;
   }
 }
+
+@include ipad {     
+  .header-top{
+    .header-btn{
+      flex-shrink: 0;
+      order: 1;
+      margin-right: 30px;
+    }
+
+    .header-bar{
+      order: 2;
+    }
+  }
+}   
