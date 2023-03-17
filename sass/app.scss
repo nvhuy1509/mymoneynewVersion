@@ -1,25 +1,16 @@
 @import "reset";
 
-@import "./mixins";
 @import "global";
+@import "solution";
 @import "home";
 @import "company";
 @import "story";
 @import "investing";
+@import "mixins";
 @import "team";
 
 @import "header";
-@import "./register";
-@import "./trust";
-@import "./mission";
 @import "./why";
-@import "./roadmap";
-@import "./coin";
-@import "./rating";
-@import "./up";
-@import "./customers";
-@import "./borrowers";
-@import "./products";
 @import "./contact";
 
 @import "footer";

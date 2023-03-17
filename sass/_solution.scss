@@ -1,0 +1,143 @@
+
+    *,
+    *:before,
+    *:after {
+      box-sizing: border-box;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      font: inherit;
+    }
+    body {
+      min-height: 100vh;
+    }
+    
+    ul,li{
+        list-style: none;
+    }
+    
+    .header-right{
+        display: flex;
+        align-items: center;
+        gap: 0 54px;
+    }
+    
+    .banner{
+        position: relative;
+    }
+    
+    .tab-list{
+        z-index: 100;
+        transform: rotate(-90deg);
+        position: relative;
+        display: flex;
+        gap: 15px;
+        flex-direction: row-reverse;
+        left: -200px;
+        top: -210px;
+    }
+
+    .banner-sidebar{
+        position: absolute;
+        bottom: 0;
+        left: 20px;
+    }
+    
+    .menu-solution{
+        color: rgba(75, 75, 75, 0.5) !important;
+    }
+    
+    .menu-solution-active{
+        color: #1E6ECC !important;
+    }
+    
+    .banner-list .banner-item:not(.active){
+        display: none;
+        opacity: 0;
+    }
+    
+    .banner-item.active{
+        animation: opacity 0.5s linear forwards;
+    }
+    
+    .thumb-wrap{
+        overflow: hidden;
+    }
+
+    .banner-item{
+        position: relative;
+        transition: all 0.35s;
+    }
+    
+    .banner-img{
+        img{
+             width: 100%;
+        }
+       
+    }
+
+    .banner-text{
+        position: absolute;   
+        max-width: 428px;
+        font-size: 60px;
+        top: 256px;
+        left: 165px;
+    }
+    
+    .banner-thumb{
+        position: absolute;
+        bottom: 0;
+        z-index: 50;
+        left: 50px;
+    }
+        
+    .thumb-list{
+        display: flex;
+        overflow-x: auto;
+    }
+    
+    .thumb-item{
+        border: 1px solid rgba(7, 101, 255, 1);
+        display: flex;
+        align-items: center;
+        width: fit-content;
+        padding: 12px;
+        cursor: pointer;
+        overflow: hidden;
+        position: relative;
+        transition: all 0.35s;
+    }
+    
+    .thumb-item.active{
+        padding-left: 163px;
+    }
+    
+    .thumb-item.active .thumb-img{
+        left: 12px;
+    }
+    
+    .thumb-img{
+        position: absolute;
+        flex-shrink: 0;
+        left: -100%;
+        transition: all 0.35s;
+    }
+    
+    .thumb-text{
+        padding: 0 12px;
+        min-width: 227px;
+    }
+    
+    
+     
+    @keyframes opacity {
+        0%{
+            opacity: 0;
+        }
+        100%{
+            opacity: 1;
+        }
+    }
+
+ 

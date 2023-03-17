@@ -22,7 +22,6 @@
     
     .story-list{
         border: 1px solid #0765FF;
-        border-right: 0;
         border-radius: 20px 0 0 20px;
         margin-right: -120px;
     }
@@ -97,14 +96,14 @@
         }
     }
     .slick-arrow.slick-prev::after{
-        background: url("../images/PC_index/btn-prev-roadmap.svg") no-repeat center center;
+        background: url("/images/PC_index/btn-prev-roadmap.svg") no-repeat center center;
     }
     .slick-arrow.slick-next{
         background: #0765FF;
         border-color: #0765FF;
     }
     .slick-arrow.slick-next::after{
-        background: url("../images/PC_index/btn-next-roadmap.svg") no-repeat center center;
+        background: url("/images/PC_index/btn-next-roadmap.svg") no-repeat center center;
     }
     
     .story-item{
@@ -117,11 +116,3 @@
             max-width:  370px;
         }
     }
-
-@include tablet{
-    .story{
-        &-list{
-            margin-right: -40px;
-        }
-    }
-}

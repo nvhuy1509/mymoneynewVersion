@@ -171,13 +171,14 @@ $(document).ready(function(){
     autoplay: false,
     autoplayTimeout: 3500,
     nav:true,
-    navText : ['<i class="fa fa-angle-left" aria-hidden="true"></i>','<i class="fa fa-angle-right" aria-hidden="true"></i>'],
+    navText : ['<img src="./images/PC_index/btn-prev-slide-team.svg" alt="">','<img src="./images/PC_index/btn-next-slide-team.svg" alt="">'],
     autoplayHoverPause: true,
     responsive: {
       0: {
         items: 1,
       },
       600: {
+        margin: 15,
         items: 2,
       },
       1000: {

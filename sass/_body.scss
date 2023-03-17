@@ -58,6 +58,9 @@ body {
   .visible-s {
     display: block;
   }
+  .visible-md {
+    display: none;
+  }
   .visible-lg {
     display: none !important;
   }
@@ -72,11 +75,30 @@ body {
   }
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 768px) and (max-width: 992px){
+  .visible-md {
+    display: block !important;
+  }
   .visible-s {
-    display: none !important;
+    display: block !important;
   }
 }
+
+
+@media screen and (max-width: 1200px) {
+  .visible-cpn1{
+          display: block;
+  }
+  .visible-cpn2{
+          display: none;
+  }
+} 
+
+@media screen and (min-width: 1201px) {
+  .visible-cpn1{
+          display: none;
+  }
+} 
 
 h3 {
   font-weight: bold;

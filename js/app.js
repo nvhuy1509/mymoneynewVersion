@@ -23,7 +23,7 @@ iconCloseHeaderFixed.addEventListener("click", () => {
   headerFixed.classList.remove("show");
 });
 
-const header = document.querySelector("header");
+const header = document.querySelector(".header-top");
 const backToTop = document.querySelector(".back-to-top");
 window.addEventListener("scroll", (e) => {
   const srollY = window.pageYOffset;
@@ -120,3 +120,19 @@ function changeLanguage() {
   }
 }
 
+// page solution
+
+$(document).ready(function(){
+  var itemBanners = $('.banner-item');
+  var itemThumbs = $('.thumb-item');
+  console.log(itemBanners.length, itemThumbs.length);
+
+  itemThumbs.each(function(index){
+      $(this).on('click', function(){
+          itemThumbs.removeClass('active');
+          $(this).addClass('active');
+          itemBanners.removeClass('active');
+          $(itemBanners[index]).addClass('active');
+      })
+  })
+})

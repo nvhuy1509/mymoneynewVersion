@@ -18,14 +18,23 @@
 		}
 	}
 
+	&-content {
+		padding: 0px 20px;
+	}
+	
 	&-list{
 		max-width: 960px;
 		margin: 0 auto;
 	}
 
 	&-item{
-		// max-width:  290px;
-		li::before {content: "•"; color: #0765FF}
+		ul, li {
+			list-style: disc !important;
+		}
+
+		li::marker {
+			color: #0765FF;
+		}
 	}
 
 	&-top{
@@ -103,26 +112,24 @@
 
 .owl-carousel .owl-nav button.owl-next{
 	position: absolute;
-	right: -1%;
+	right: -1.5%;
 	bottom: 79%;
 	color: #ffffff;
 	background-color: #0765FF;
 	border-radius: 15px;
-	padding: 1px 9px !important;
 	@media screen and (max-width: 767px) {
-		right: 3%;
+		right: 1%;
 	}
 }
 
 .owl-carousel .owl-nav button.owl-prev{
 	position: absolute;
-	left: -1%;
+	left: -1.5%;
 	bottom: 79%;
 	color: #ffffff;
 	background-color: #0765FF;
 	border-radius: 15px;
-	padding: 1px 9px !important;
 	@media screen and (max-width: 767px) {
-		left: 3%;
+		left: 1%;
 	}
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="overflow-x: hidden;">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -26,7 +26,6 @@
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="assets/css/docs.theme.min.css" />
 
     <!-- Owl Stylesheets -->
 
@@ -63,30 +62,35 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+    
+    <script>
+      function saveInter(Id) {
+        var element = document.getElementById(Id);
+        console.log(element)
+      }
+
+    </script>
   </head>
   <body>
     <div class="wrapper">
-      <header class="contact-page">
+      <header>
         <div class="header-top">
           <a href="index.html" class="logo">
-            <img src="../images/PC_index/logo.svg" alt="" />
+            <img src="./images/PC_index/logo.svg" alt="" />
           </a>
           <div class="header-bar visible-s">
-            <a
-              href="contact.html"
-              class="link-home menu-link menu-active actived"
-              >Contact</a
-            >
-            <img src="../images/PC_index/icon-bar.svg" alt="" />
+            <img src="./images/PC_index/icon-bar.svg" alt="" />
           </div>
           <div class="header-fixed">
             <ul class="menu">
               <li class="menu-item menu-home">
-                <a href="index.html" class="menu-link menu-active">Home</a>
-                <i class="fas fa-times close-header-fixed visible-s"></i>
+                <a href="index.html" class="menu-link menu-active "
+                  >Home</a
+                >
+                <i class="fa fa-times close-header-fixed visible-s"></i>
               </li>
               <li class="menu-item">
-                <a href="about.html" class="menu-link menu-active">Solutions</a>
+                <a href="solution.html" class="menu-link menu-active">Solutions</a>
               </li>
               <li class="menu-item">
                 <a
@@ -95,44 +99,11 @@
                   >Docs
                 </a>
               </li>
-              <!-- <li class="menu-item">
-                <div class="menu-item-wrapper">
-                  <span>
-                    <a href="investors.html" class="menu-link menu-active"
-                      >Investors</a
-                    >
-                  </span>
-                  <span class="menu-icon-header"
-                    ><img
-                      src="../images/PC_index/icon-menu.svg"
-                      class="visible-lg"
-                      alt=""
-                  /></span>
-                  <img
-                    src="../images/PC_index/icon-dropdown-mb.svg"
-                    class="visible-s"
-                    alt=""
-                  />
-                </div>
-                <ul class="menu-dropdown bg-menu">
-                  <li class="dropdown-item">
-                    <a href="investors.html" class="menu-link">White Paper</a>
-                  </li>
-                  <li class="dropdown-item">
-                    <a href="investors.html" class="menu-link">Products</a>
-                  </li>
-                  <li class="dropdown-item">
-                    <a href="detail.html" class="menu-link">FAQs</a>
-                  </li>
-                </ul>
-              </li> -->
               <li class="menu-item">
                 <a href="blog.html" class="menu-link menu-active">Blog</a>
               </li>
               <li class="menu-item">
-                <a href="contact.html" class="menu-link menu-active actived"
-                  >Contact</a
-                >
+                <a href="contact.html" class="menu-link menu-active actived">Contact</a>
               </li>
             </ul>
             <ul class="header-cta">
@@ -154,173 +125,206 @@
                 <button class="active">Login</button>
               </li>
             </ul>
-            <ul class="header-social footer-social visible-s">
+            <!-- <ul class="header-social footer-social visible-s">
               <li>
                 <a href="#!">
-                  <img src="../images/PC_index/header-icon-fb.svg" alt="" />
+                  <img src="./images/PC_index/header-icon-fb.svg" alt="" />
                 </a>
               </li>
-              <!-- <li>
-                <a href="#!">
-                  <img src="../images/PC_index/header-icon-insta.svg" alt="" />
-                </a>
-              </li> -->
               <li>
                 <a href="#!">
-                  <img src="../images/PC_index/header-icon-tt.svg" alt="" />
+                  <img src="./images/PC_index/header-icon-tt.svg" alt="" />
                 </a>
               </li>
-              
-            </ul>
+            </ul> -->
           </div>
+          <button class="header-btn visible-lg">Learn more</button>
         </div>
       </header>
       <main>
         <section class="contact">
-          <div class="contact-header">
+          <div class="container">
+            <div class="contact-header">
+              Contact Us
+            </div>
             <div class="contact-title">
-              <strong>Got any question for us?</strong>
+              Got a Question?
             </div>
-            <p class="contact-desc">We are happy to help</p>
-          </div>
-          <ul class="contact-main">
-            <li class="contact-detail">
-              <form action="">
-                <input
-                  type="text"
-                  class="contact-input"
-                  placeholder="Your email address*"
-                />
-                <input
-                  type="text"
-                  class="contact-input"
-                  placeholder="Subject*"
-                />
-                <textarea
-                  class="contact-input"
-                  rows="3"
-                  placeholder="Your message*"
-                ></textarea>
-                <button>Send message</button>
-              </form>
-            </li>
-            <li class="contact-infor">
-              <div class="contact-icon">
-                <img src="../images/PC_contact/icon-fb.svg" alt="" />
-                <img src="../images/PC_contact/icon-twitter.svg" alt="" />
+            <div class="contact-card row">
+              <div class="contact-left col-lg-6 col-md-12">
+                <div class="contact-left-title">
+                  We'd Love to Hear from You
+                </div>
+                <div class="contact-social">
+                  <a href="#!"><img src="/images/PC_contact/icon-twitter.svg" alt=""></a>
+                  <a href="#!"><img src="/images/PC_contact/icon-fb.svg" alt=""></a>
+                  <a href="mailto:business@mymoney.credit"><img src="/images/PC_contact/icon-mail.svg" alt=""></a>
+                  <a href="#!"><img src="/images/PC_contact/icon-tele.svg" alt=""></a>
+                </div>
+                <img src="/images/PC_contact/img-contact.svg" class="contact-imgLeft" alt="">
               </div>
-            </li>
-          </ul>
-        </section>
-        <section
-          class="why-trust"
-          style="
-            background: linear-gradient(
-              180deg,
-              #f3faff 0%,
-              rgba(243, 250, 255, 0) 100%
-            ); ;
-          "
-        >
-          <div class="why-trust-content reveal">
-            <div class="why-trust-title">
-              <span>Join </span> <strong> our team</strong>
+              <div class="contact-right col-lg-6 col-md-12">
+                <form  class="contact-form">
+                  <div class="contact-form-header">
+                    Contact Us
+                  </div>
+                  <div class="contact-form-header1">
+                    We'd Love to Hear from You
+                  </div>
+                  <div>
+                    <div  class="contact-form-title">
+                      I’m intersted in...
+                    </div>
+                    <div class="contact-interested">
+                      <div>
+                        <div class="select">
+                          <input type="checkbox" id="inter1" onclick="saveInter(id)">
+                          <label class="btn button_select" for="inter1">Lending & Loan Service</label>
+                        </div>
+                        <div class="select">
+                          <input type="checkbox" id="inter2" onclick="saveInter(id)">
+                          <label class="btn button_select" for="inter2">VND Stablecoin</label>
+                        </div>
+                      </div>
+                      <div>
+                        <div class="select">
+                          <input type="checkbox" id="inter3" onclick="saveInter(id)">
+                          <label class="btn button_select" for="inter3">In-App Stock Trading & Holding</label>
+                        </div>
+                        <div class="select">
+                          <input type="checkbox" id="inter4" onclick="saveInter(id)">
+                          <label class="btn button_select" for="inter4">MMC Token</label>
+                        </div>
+                      </div>
+                      <div>
+                        <div class="select">
+                          <input type="checkbox" id="inter5" onclick="saveInter(id)">
+                          <label class="btn button_select" for="inter5">Tokenized Stock & Assets</label>
+                        </div>
+                        <div class="select">
+                          <input type="checkbox" id="inter6" onclick="saveInter(id)">
+                          <label class="btn button_select" for="inter6">P2P Lending & P2P Market</label>
+                        </div>
+                      </div>
+                      <div class="select">
+                        <input type="checkbox" id="inter7" onclick="saveInter(id)">
+                        <label class="btn button_select" for="inter7">Remittance & USDC/VND  USDT/VND Transactions</label>
+                      </div>
+                      <div>
+                        <div class="select">
+                          <input type="checkbox" id="inter8" onclick="saveInter(id)">
+                          <label class="btn button_select" for="inter8">Stablecoin Premium</label>
+                        </div>
+                        <div class="select">
+                          <input type="checkbox" id="inter9" onclick="saveInter(id)">
+                          <label class="btn button_select" for="inter9">MMC Wallet</label>
+                        </div>
+                      </div>
+                      <div class="select">
+                        <input type="checkbox" id="inter10" onclick="saveInter(id)">
+                        <label class="btn button_select" for="inter10">Financial Tools</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div  class="contact-form-title">
+                      What is your name?
+                    </div>
+                    <input type="text" placeholder="Type your full name">
+                  </div>
+                  <div>
+                    <div  class="contact-form-title">
+                      What is your email address?
+                    </div>
+                    <input type="text" placeholder="example@gmail.com">
+                  </div>
+                  <div>
+                    <div  class="contact-form-title">
+                      What is your phone number?
+                    </div>
+                    <input type="text" placeholder="+12 345 678 910">
+                  </div>
+                  <div>
+                    <div  class="contact-form-title">
+                      Write your subject
+                    </div>
+                    <input type="text" placeholder="Type your subject">
+                  </div>
+                  <div>
+                    <div  class="contact-form-title">
+                      Write a description of your problem
+                    </div>
+                    <input type="text" placeholder="Type your message">
+                  </div>
+                  <div>
+                    <button type="submit" class="contact-form-send" id="inter10" >Send message 
+                      <span class="contact-btnSend1"><img src="/images/PC_contact/icon-outward.svg" alt=""></span> 
+                      <span class="contact-btnSend2"><img src="/images/PC_contact/icon-outward-black.svg" alt=""></span> 
+                    </button>
+                  </div>
+                </form>
+              </div>
             </div>
-            <p class="why-trust-desc">
-              We're always on the lookout for talented hard-working people who share
-               our vision and can help us achieve our goals. Take a look at our vacancies 
-               below and join our team!
-            </p>
-            <a class="why-trust-link-item" href="#">
-              <strong> See all vacancies</strong>
-            </a>
           </div>
         </section>
       </main>
       <footer>
         <div class="footer-top">
           <div class="container">
-            <div class="footer-contact">
-              <a href="index.html"
-                ><img
-                  src="../images/PC_index/logo-footer.svg"
-                  class="footer-logo"
-                  alt=""
-              /></a>
-              <ul class="footer-link">
-                <li>
-                  <a href="index.html">Home</a>
-                </li>
-                <li>
-                  <a href="about.html">Solutions</a>
-                </li>
-                <li>
-                  <a target="_blank" href="https://docs.mymoney.credit/">Docs</a>
-                </li>
-                <li>
-                  <a href="blog.html">Blog</a>
-                </li>
-                <li>
-                  <a href="contact.html">Contact</a>
-                </li>
-              </ul>
+            <div>
+              <img src="/images/PC_index/logo.svg" alt="">
             </div>
-            <div class="footer-follow">
-              <span class="visible-lg">Follow us:</span>
-              <ul class="footer-social visible-lg">
-                <li>
-                  <a href="#!">
-                    <img src="../images/PC_index/icon-fb.png" alt="" />
-                  </a>
-                </li>
-                <li>
-                  <a href="#!">
-                    <img src="../images/PC_index/icon-twitter.png" alt="" />
-                  </a>
-                </li>
-              </ul>
-              <ul class="footer-download">
-                <li>
-                  <a href="#!">
-                    <img src="../images/PC_index/img-GooglePlay.svg" alt="" />
-                  </a>
-                </li>
-                <li>
-                  <a target="_blank" href="https://testflight.apple.com/join/ipqxh4LQ">
-                    <img src="../images/PC_index/img-AppStore.svg" alt="" />
-                  </a>
-                </li>
-                <li>
-                  <a target="_blank" href="https://drive.google.com/file/d/1UT9ZL1gUsmAmK3gvFDAbDHwSXo8byTrP/view?usp=sharing">
-                    <img src="../images/PC_index/img-Android.svg" alt="" />
-                  </a>
-                </li>
-              </ul>
-            </div>
-            <div class="footer-input">
+            <!-- <div class="footer-input">
               <div class="footer-input-title">Sign up for updates:</div>
               <form action="">
-                <input type="email" placeholder="Enter Email Field" />
+                <input type="email" placeholder="&#xf003;      Enter email address" style="font-family:Inter, FontAwesome" placeholder="Enter Email Field" />
                 <button>Register</button>
               </form>
-            </div>
+            </div> -->
           </div>
+          <ul class="footer-link">
+            <li>
+              <a href="index.html" >Home</a>
+            </li>
+            <li>
+              <a href="solution.html">Solutions</a>
+            </li>
+            <li>
+              <a target="_blank" href="https://docs.mymoney.credit/">Docs</a>
+            </li>
+            <li>
+              <a href="blog.html">Blog</a>
+            </li>
+            <li>
+              <a href="contact.html" class="active">Contact</a>
+            </li>
+          </ul>
         </div>
         <div class="footer-bottom">
           <div class="container">
-            <ul class="footer-social visible-s">
+            <p class="footer-copyright">© Copyright 2023, All Rights Reserved by MMC</p>
+            <ul class="footer-social ">
               <li>
                 <a href="#!">
-                  <img src="../images/PC_index/icon-fb.svg" alt="" />
+                  <img src="../images/PC_index/foot-twitter.svg" alt="" />
                 </a>
               </li>
               <li>
                 <a href="#!">
-                  <img src="../images/PC_index/icon-tt.svg" alt="" />
+                  <img src="../images/PC_index/foot-fb.svg" alt="" />
+                </a>
+              </li>
+              <li>
+                <a href="mailto:business@mymoney.credit">
+                  <img src="../images/PC_index/foot-mail.svg" alt="" />
+                </a>
+              </li>
+              <li>
+                <a href="#!">
+                  <img src="../images/PC_index/foot-tele.svg" alt="" />
                 </a>
               </li>
             </ul>
-            <p class="footer-copyright">© 2023 MyMoney.Credit | All rights reserved</p>
           </div>
         </div>
         <a href="#" class="back-to-top">

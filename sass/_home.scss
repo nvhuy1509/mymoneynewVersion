@@ -16,6 +16,10 @@
                                 font-size: 40px;
                                 padding: 0px 25px;
                         }
+                        @media screen and (min-width: 768px) and (max-width: 992px) {
+                                font-size: 46px;
+                                padding: 0px 200px;
+                        }
                 }
                 &-content{
                         /* Text 24 */
@@ -23,14 +27,18 @@
                         font-weight: 400;
                         text-align: center;
                         font-size: 24px;
-                        line-height: 20px;
-                        padding: 28px 240px;
+                        line-height: 35px;
+                        padding: 20px 200px;
                         /* Neutral/03 */
 
                         color: #4B4B4B;
                         @media screen and (max-width: 767px) {
                                 font-size: 15px;
                                 padding: 14px 23px;
+                        }
+                        @media screen and (min-width: 768px) and (max-width: 992px) {
+                                font-size: 19px;
+                                padding: 14px 200px;
                         }
                 }
                 &-download{
