@@ -2,7 +2,6 @@ $(document).ready(function(){
     var itemBanners = $('.banner-item');
     var itemThumbs = $('.thumb-item');
     var tabSidebar = $('.tab-item');
-    console.log(itemBanners.length, itemThumbs.length);
 
     itemThumbs.each(function(index){
         $(this).on('click', function(){
@@ -26,3 +25,15 @@ $(document).ready(function(){
         })
     })
 })
+
+const scrollContainer = document.querySelector(".thumb-list");
+
+scrollContainer.addEventListener("wheel", (evt) => {
+    evt.preventDefault();
+    scrollContainer.scrollLeft += evt.deltaY;
+    if(scrollContainer.scrollLeft > 0){
+        scrollContainer.classList.add("scrolling");
+    }else{
+        scrollContainer.classList.remove("scrolling");
+    }
+});

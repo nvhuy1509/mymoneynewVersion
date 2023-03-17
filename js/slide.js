@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(function () {gi
   $(".slide-list").slick({
     autoplay: true,
     autoplaySpeed: 3500,
@@ -60,6 +60,15 @@ $(document).ready(function(){
       },
     ],
   });
+
+  if($(window).width() < 640){
+    console.log('ab');
+    $('.banner-list').slick({
+        infinite: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+    });
+}  
 });
  
 

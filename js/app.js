@@ -125,7 +125,7 @@ function changeLanguage() {
 $(document).ready(function(){
   var itemBanners = $('.banner-item');
   var itemThumbs = $('.thumb-item');
-  console.log(itemBanners.length, itemThumbs.length);
+  console.log($(body).height());
 
   itemThumbs.each(function(index){
       $(this).on('click', function(){
