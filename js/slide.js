@@ -60,15 +60,6 @@ $(document).ready(function(){
       },
     ],
   });
-
-  if($(window).width() < 640){
-    console.log('ab');
-    $('.banner-list').slick({
-        infinite: false,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-    });
-}  
 });
  
 

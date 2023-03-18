@@ -11,6 +11,9 @@ $(document).ready(function(){
             $(itemBanners[index]).addClass('active');
             tabSidebar.removeClass('active');
             $(tabSidebar[index]).addClass('active');
+            if(index === 0){
+                $('.thumb-list').removeClass('scrolling');
+            }
         })
     })
 
@@ -24,7 +27,25 @@ $(document).ready(function(){
             $(itemThumbs[index]).addClass('active');
         })
     })
-})
+
+    if($(window).width() < 600 && itemBanners.length > 1){
+        $('.banner-list').slick({
+                items: 1,
+                dots: true,
+                autoplay: false,
+                autoplayTimeout: 3500,
+                nav:true,
+                arrows: false,
+            }
+        );
+
+        var itemDot = $('.banner-list .slick-dots li button');
+        tabSidebar.each(function(index){
+            var text = $(this).text();
+            $(itemDot[index]).html(`<span>${text}</span>`);
+        })
+    }  
+});
 
 const scrollContainer = document.querySelector(".thumb-list");
 

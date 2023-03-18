@@ -107,7 +107,6 @@ li {
 }
 .banner-img img {
   width: 100%;
-  object-fit: cover;
 }
 
 .tab-list {
@@ -233,6 +232,9 @@ li {
   .banner-thumb {
     display: none;
   }
+  .banner-sidebar {
+    display: none;
+  }
   .banner-text {
     font-size: 30px;
   }
@@ -251,13 +253,6 @@ li {
   }
 }
 @media screen and (max-width: 575px) {
-  .banner-sidebar {
-    display: none;
-  }
-  .banner-list {
-    display: flex;
-    overflow-x: auto;
-  }
   .banner-item {
     width: 100%;
     padding-left: 18px;
@@ -268,7 +263,66 @@ li {
   }
   .banner-img {
     width: 100%;
-    min-height: 232px;
+    height: 232px;
+  }
+}
+@media screen and (min-width: 420px) {
+  .banner .slick-dots {
+    display: block !important;
+    left: 20px;
+    transform: translate(0);
+    bottom: 0;
+    overflow-y: auto;
+    max-width: 93px;
+    height: 100%;
+    max-height: 652px;
+  }
+  .banner .slick-dots li {
+    width: fit-content;
+    padding: 8px;
+    background: transparent;
+    transform: rotate(-90deg) translateX(-30px);
+    display: block;
+    margin-bottom: 63px;
+  }
+  .banner .slick-dots li.slick-active {
+    background-color: transparent;
+  }
+  .banner .slick-dots li.slick-active button {
+    color: black;
+  }
+  .banner .slick-dots li button {
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(75, 75, 75, 0.5);
+    width: auto;
+    height: auto;
+    background: transparent;
+  }
+  .banner .slick-dots li button::before {
+    display: none;
+  }
+}
+@media screen and (max-width: 419px) {
+  .banner .slick-dots {
+    display: flex;
+    gap: 0;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    justify-content: center;
+  }
+  .banner .slick-dots li {
+    margin: 0;
+    width: 18px;
+    height: 2px;
+    background: #C8C8C8;
+  }
+  .banner .slick-dots li.slick-active {
+    background: rgb(7, 101, 255);
+  }
+  .banner .slick-dots li button::before {
+    display: none;
   }
 }
 @keyframes opacity {
