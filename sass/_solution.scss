@@ -10,6 +10,7 @@
 @mixin textClamp($rows: 1) {
     display: -webkit-box;
     -webkit-line-clamp: $rows;
+    line-clamp: $rows; 
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -83,9 +84,43 @@
     }
 
     &-text{
-        font-size: 60px;
         max-width: 428px;
         transition: all 1s;
+        &-top{
+            font-style: normal;
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 120%;
+            /* or 14px */
+            padding-bottom: 5px;
+            border-bottom: 1px solid #1E232B;
+            /* Neutral/04 */
+
+            color: #1E232B;
+
+        }
+        &-mid{
+            margin: 22px 0px;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 57px;
+            line-height: 120%;
+            &-blue{
+                color: #0765FF;
+            }
+        }
+        &-bot{
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 130%;
+            /* or 21px */
+
+
+            /* Neutral/03 */
+
+            color: #4B4B4B;
+        }
     }
 
     &-img{
@@ -120,6 +155,9 @@
 }
 
 .thumb{
+    &-content{
+        padding-left: 10px;
+    }
     &-list{
         display: flex;
         overflow-x: auto;
@@ -174,19 +212,36 @@
     }
 
     &-title{
+        font-style: normal;
+        font-weight: 700;
         font-size: 14px;
-        margin-bottom: 12px;
+        line-height: 120%;
+        &-blue{
+            color: #0765FF;
+        }
     }
 
     &-text{
         max-width: 227px;
-        @include textClamp(3);
+        @include textClamp(2);
+        font-style: normal;
+        font-weight: 400;
         font-size: 10px;
+        line-height: 130%;
+        padding: 12px 0px;
     }
 
     &-readmore{
+        font-style: normal;
+        font-weight: 400;
         font-size: 10px;
+        line-height: 120%;
+        /* identical to box height, or 12px */
         margin-top: 12px;
+
+        /* Primary */
+
+        color: #0765FF;
     }
 }
 
