@@ -1,4 +1,4 @@
-$(document).ready(function () {gi
+$(document).ready(function () {
   $(".slide-list").slick({
     autoplay: true,
     autoplaySpeed: 3500,
@@ -31,7 +31,6 @@ $(document).ready(function () {gi
     ],
   });
 
-$(document).ready(function(){
   $('.story-list').slick({
       infinite: false,
       slidesToShow: 2,
@@ -60,8 +59,7 @@ $(document).ready(function(){
       },
     ],
   });
-});
- 
+  
 
   $(window).on("load resize orientationchange", function () {
     $(".mission-list").each(function () {
@@ -187,4 +185,45 @@ $(document).ready(function(){
       },
     },
   });
+  
+  
+  $(".owl-blog").owlCarousel({
+    rtl:true,
+    loop:true,
+    margin:10,
+    nav:true,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:3
+        },
+        1000:{
+            items:5
+        }
+    }
+  });
+
+});
+
+$('.slider-for').slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: false,
+  fade: false,
+});
+$('.slider-nav').slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: false,
+  asNavFor: '.slider-for',
+  dots: false,
+  focusOnSelect: false
+});
+
+$('a[data-slide]').click(function(e) {
+  e.preventDefault();
+  var slideno = $(this).data('slide');
+  console.log(slideno);
 });

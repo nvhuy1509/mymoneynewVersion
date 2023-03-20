@@ -82,7 +82,11 @@ body {
   .visible-s {
     display: block !important;
   }
+  .logo-desktop{
+    display: none !important;
+  }
 }
+
 
 
 @media screen and (max-width: 1200px) {
