@@ -63,15 +63,15 @@
       $(document).ready(function () {
         var blogActive = document.querySelectorAll(".slick-active .blog-image img");
 
-        var item = document.getElementById("myBlog");
-        item.style.background = "url('"+blogActive[0].src+"') no-repeat center/cover";
+        var bgBlur = $('.blog .bg-blur');
+        bgBlur.css("background","url('"+blogActive[0].src+"') no-repeat center/cover");
 
 
         $(".slider").on("afterChange", function (){
           var blogActive = document.querySelectorAll(".slick-active .blog-image img");
   
-          var item = document.getElementById("myBlog");
-          item.style.background = "url('"+blogActive[0].src+"') no-repeat center/cover";
+          var bgBlur = $('.blog .bg-blur');
+          bgBlur.css("background","url('"+blogActive[0].src+"') no-repeat center/cover");
         });
         
       })
@@ -150,7 +150,7 @@
         <main>  
 
             <section class="blog" id="myBlog">
-              <div class="blurry"></div>
+              <div class="bg-blur"></div>
               <img src="/images/PC_blog/img-blog-5.svg" class="img-abso1" alt="">
               <img src="/images/PC_blog/img-blog-6.svg" class="img-abso2" alt="">
               <div class="slider slider-for" >
