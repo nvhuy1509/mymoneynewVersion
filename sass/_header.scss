@@ -25,6 +25,10 @@ header {
     width: 100%;
     padding: 20px 100px;
     z-index: 99;
+    @media screen and (max-width: 768px){
+      gap: 25px;
+      padding: 20px 60px;
+    }
   }
 
   .header-btn{

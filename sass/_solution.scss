@@ -34,6 +34,7 @@
             color: rgba(75, 75, 75, 0.5);
         }
     }
+   
 }
 
 .banner{
@@ -49,7 +50,7 @@
         display: flex;
         padding: 186px 164px 127px;
         align-items: center;
-
+        justify-content: space-evenly;
         &:not(.active){
             display: none;
         }
@@ -125,7 +126,8 @@
 
     &-img{
         img{
-            width: 100%;
+            width: 655px;
+            height: 579px;
             // object-fit: cover;
         }
     }
@@ -209,6 +211,9 @@
         position: absolute;
         left: -100%;
         transition: all 1s;
+        img {
+            width: 167px;
+        }
     }
 
     &-title{
