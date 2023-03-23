@@ -35,7 +35,6 @@ $(document).ready(function(){
                 $('.thumb-list').addClass('scrolling');
             }
 
-            
             currIdx = index;
             var newScrollLeft = widthThumbSmall*(currIdx - preIdx);
             if(preIdx < currIdx){
@@ -43,11 +42,13 @@ $(document).ready(function(){
                     scrollLeft += newScrollLeft;
                 }
                 $('.thumb-list').animate({scrollLeft: scrollLeft}, "slow");
-                console.log(scrollLeft);
             }else if(preIdx > currIdx){
-                console.log('prev');
-                scrollLeft -= widthThumbSmall;
-                console.log(scrollLeft);
+            var newScrollRight = widthThumbSmall*(-currIdx + preIdx);
+                scrollLeft -= newScrollRight;
+                if(scrollLeft < 0){
+                    scrollLeft = 0;
+                }
+                // console.log(scrollLeft);
                 $('.thumb-list').animate({scrollLeft: scrollLeft}, "slow");
             }
             preIdx = currIdx;
