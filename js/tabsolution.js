@@ -1,7 +1,25 @@
+
+const scrollContainer = document.querySelector(".thumb-list");
+console.log(scrollContainer.scrollWidth);
+
+scrollContainer.addEventListener("wheel", (evt) => {
+    evt.preventDefault();
+    scrollContainer.scrollLeft += evt.deltaY;
+    if(scrollContainer.scrollLeft > 0){
+        scrollContainer.classList.add("scrolling");
+    }else{
+        scrollContainer.classList.remove("scrolling");
+    }
+});
+
 $(document).ready(function(){
     var itemBanners = $('.banner-item');
     var itemThumbs = $('.thumb-item');
     var tabSidebar = $('.tab-item');
+    var currIdx = 0;
+    var preIdx = 0;
+    var widthThumbSmall = $(itemThumbs[1]).width();
+    var scrollLeft = 0;
 
     itemThumbs.each(function(index){
         $(this).on('click', function(){
@@ -13,7 +31,26 @@ $(document).ready(function(){
             $(tabSidebar[index]).addClass('active');
             if(index === 0){
                 $('.thumb-list').removeClass('scrolling');
+            }else if(index === itemThumbs.length - 1){
+                $('.thumb-list').addClass('scrolling');
             }
+
+            
+            currIdx = index;
+            var newScrollLeft = widthThumbSmall*(currIdx - preIdx);
+            if(preIdx < currIdx){
+                if(index < itemThumbs.length - 1){
+                    scrollLeft += newScrollLeft;
+                }
+                $('.thumb-list').animate({scrollLeft: scrollLeft}, "slow");
+                console.log(scrollLeft);
+            }else if(preIdx > currIdx){
+                console.log('prev');
+                scrollLeft -= widthThumbSmall;
+                console.log(scrollLeft);
+                $('.thumb-list').animate({scrollLeft: scrollLeft}, "slow");
+            }
+            preIdx = currIdx;
         })
     })
 
@@ -47,14 +84,3 @@ $(document).ready(function(){
     }  
 });
 
-const scrollContainer = document.querySelector(".thumb-list");
-
-scrollContainer.addEventListener("wheel", (evt) => {
-    evt.preventDefault();
-    scrollContainer.scrollLeft += evt.deltaY;
-    if(scrollContainer.scrollLeft > 0){
-        scrollContainer.classList.add("scrolling");
-    }else{
-        scrollContainer.classList.remove("scrolling");
-    }
-});
