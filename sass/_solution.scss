@@ -185,9 +185,9 @@
         &.scrolling{
             transform: translateX(-93px);
         }
-        @media screen and (max-width: 750px){
-            display: none;
-        }
+        // @media screen and (max-width: 750px){
+        //     display: none;
+        // }
     }
 
     &-item{
@@ -297,8 +297,16 @@
         }
 
         &-item{
-            padding-left: 115px;
-            padding-right: 44px;
+            &:nth-child(odd){
+                padding-left: 115px;
+                padding-right: 44px;
+            }
+
+            &:nth-child(even){
+                padding-right: 115px;
+                padding-left: 44px;
+            }
+            
             padding-bottom: 254px;
         }
 

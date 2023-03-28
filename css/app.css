@@ -200,11 +200,6 @@ li {
 .thumb-list.scrolling {
   transform: translateX(-93px);
 }
-@media screen and (max-width: 750px) {
-  .thumb-list {
-    display: none;
-  }
-}
 .thumb-item {
   min-width: 252px;
   flex-shrink: 0;
@@ -298,9 +293,15 @@ li {
     font-size: 30px;
   }
   .banner-item {
+    padding-bottom: 254px;
+  }
+  .banner-item:nth-child(odd) {
     padding-left: 115px;
     padding-right: 44px;
-    padding-bottom: 254px;
+  }
+  .banner-item:nth-child(even) {
+    padding-right: 115px;
+    padding-left: 44px;
   }
   .banner-img {
     width: 346px;
@@ -1896,8 +1897,8 @@ footer .footer-link .active {
 }
 @media screen and (max-width: 767px) {
   footer .footer-download,
-footer .footer-phone,
-footer .footer-mail {
+  footer .footer-phone,
+  footer .footer-mail {
     display: none;
   }
   footer .footer-link {
