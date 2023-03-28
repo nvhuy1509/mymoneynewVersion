@@ -32,6 +32,9 @@
     .menu{
         a{
             color: rgba(75, 75, 75, 0.5);
+            @media screen and (max-width: 992px){
+                color: #FFFFFF
+              }
         }
     }
    
@@ -109,6 +112,10 @@
             &-blue{
                 color: #0765FF;
             }
+            @media screen and (min-width: 861px) and (max-width: 1159px){
+                margin: 10px 0px;
+                font-size: 35px;
+            }
         }
         &-bot{
             font-style: normal;
@@ -121,7 +128,12 @@
             /* Neutral/03 */
 
             color: #4B4B4B;
+            @media screen and (min-width: 861px) and (max-width: 1159px){
+                font-size: 13px;
+            }
         }
+        
+        
     }
 
     &-img{
@@ -139,6 +151,10 @@
         width: 93px;
         overflow-y: auto;
         @include hideSroll;
+
+        @media screen and (max-width: 715px) {
+            display: none;
+        }
     }
 
     &-item{
@@ -168,6 +184,9 @@
 
         &.scrolling{
             transform: translateX(-93px);
+        }
+        @media screen and (max-width: 750px){
+            display: none;
         }
     }
 
@@ -278,7 +297,7 @@
         }
 
         &-item{
-            padding-left: 164px;
+            padding-left: 115px;
             padding-right: 44px;
             padding-bottom: 254px;
         }
@@ -340,53 +359,61 @@
     }
 }
 
-@media screen and (min-width: 420px){
+// @media screen and (min-width: 420px){
+//     .banner{
+//         .slick-dots{
+//             display: block !important;
+//             left: 20px;
+//             transform: translate(0);
+//             bottom: 0;
+//             overflow-y: auto;
+//             max-width: 93px;
+//             height: 100%;
+//             max-height: 652px;
+
+//             li{
+//                 width: fit-content;
+//                 padding: 8px;
+//                 background: transparent;
+//                 transform: rotate(-90deg) translateX(-30px);
+//                 display: block;
+//                 margin-bottom: 63px;
+
+//                 &.slick-active{
+//                     background-color: transparent;
+
+//                     button{
+//                         color: black;
+//                     }
+//                 }
+
+//                 button{
+//                     font-size: 14px;
+//                     font-weight: 500;
+//                     color: rgba(75, 75, 75, 0.5);
+//                     width: auto;
+//                     height: auto;
+//                     background: transparent;
+
+
+//                     &::before{
+//                         display: none;
+//                     }
+//                 }
+//             }   
+//         }
+//     }
+// }
+
+@media screen and (min-width: 768px) {
     .banner{
         .slick-dots{
-            display: block !important;
-            left: 20px;
-            transform: translate(0);
-            bottom: 0;
-            overflow-y: auto;
-            max-width: 93px;
-            height: 100%;
-            max-height: 652px;
-
-            li{
-                width: fit-content;
-                padding: 8px;
-                background: transparent;
-                transform: rotate(-90deg) translateX(-30px);
-                display: block;
-                margin-bottom: 63px;
-
-                &.slick-active{
-                    background-color: transparent;
-
-                    button{
-                        color: black;
-                    }
-                }
-
-                button{
-                    font-size: 14px;
-                    font-weight: 500;
-                    color: rgba(75, 75, 75, 0.5);
-                    width: auto;
-                    height: auto;
-                    background: transparent;
-
-
-                    &::before{
-                        display: none;
-                    }
-                }
-            }   
+            display: none !important;
         }
     }
 }
 
-@media screen and (max-width: 419px){
+@media screen and (max-width: 767px){
     .banner{
         .slick-dots{
             display: flex;

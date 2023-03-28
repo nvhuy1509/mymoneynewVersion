@@ -185,26 +185,7 @@ $(document).ready(function () {
       },
     },
   });
-  
-  
-  $(".owl-blog").owlCarousel({
-    rtl:true,
-    loop:true,
-    margin:10,
-    nav:true,
-    responsive:{
-        0:{
-            items:1
-        },
-        600:{
-            items:3
-        },
-        1000:{
-            items:5
-        }
-    }
-  });
-
+    
 });
 
 $('.slider-for').slick({
@@ -222,8 +203,16 @@ $('.slider-nav').slick({
   focusOnSelect: false
 });
 
-$('a[data-slide]').click(function(e) {
+$('.slider-onclick').click(function(e) {
   e.preventDefault();
-  var slideno = $(this).data('slide');
-  console.log(slideno);
+  // var slideno = $(this).data('slide');
+  $('.slider-for').slick('slickNext');
+});
+
+$('.slider-mbBlog').slick({
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  arrows: false,
+  dots: true,
+  fade: false,
 });
