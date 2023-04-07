@@ -48,25 +48,61 @@
     ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            const textEl = document.querySelectorAll('.banner-text-mid')
+            for (let i = 0; i < textEl.length; i++) {
+                const text = textEl[i].innerText;
+                textEl[i].innerText = '';
+                const textArr = text.split(" ");
+                textArr.map((item, index) => {
+                    const newEl = document.createElement("span");
+                    newEl.innerText = item;
+                    if ((index + 1) % 2 !== 0) {
+                        newEl.style.color = '#0765FF'
+                    }
+                    textEl[i].appendChild(newEl);
+                })
+            }
+            
+            const textEl1 = document.querySelectorAll('.thumb-title')
+            for (let i = 0; i < textEl1.length; i++) {
+                const text1 = textEl1[i].innerText;
+                textEl1[i].innerText = '';
+                const textArr1 = text1.split(" ");
+                textArr1.map((item, index) => {
+                    const newEl1 = document.createElement("span");
+                    newEl1.innerText = item;
+                    if ((index + 1) % 2 !== 0) {
+                        newEl1.style.color = '#0765FF'
+                    }
+                    textEl1[i].appendChild(newEl1);
+                })
+            }
+            
+        });
+    </script>
   </head>
   <body>
     <div class="wrapper">
         <header >
             <div class="header-solution">
-                <a href="index.html" class="logo">
+                <a id="logoHeader" href="index.html" class="logo">
                   <img src="./images/PC_solution/logo-desktop.svg" class="visible-lg logo-desktop" alt="" />
                   <img src="./images/PC_solution/logo_mb.svg" class="visible-s" alt="" />
                 </a>
-                <div class="header-bar visible-s">
+                <div id="imgBarHeader" class="header-bar visible-s">
                   <img src="./images/PC_index/icon-bar.svg" alt="" />
                 </div>
                 <div class="header-fixed">
                   <ul class="menu">
-                    <li class="menu-item menu-home">
+                    <li class="menu-item">
+                        <i class="fa fa-times close-header-fixed visible-s"></i>
+                    </li>
+                    <li class="menu-item">
                       <a href="index.html" class="menu-link menu-solution menu-active "
                         >Home</a
                       >
-                      <i class="fa fa-times close-header-fixed visible-s"></i>
                     </li>
                     <li class="menu-item">
                       <a href="solution.html" class="menu-link menu-solution-active menu-active actived" >Solutions</a>
@@ -141,40 +177,44 @@
                             <li class="banner-item active">
                                 <div class="banner-text">
                                     <div > <label class="banner-text-top">Solution 01</label> </div>
-                                    <div class="banner-text-mid"><span class="banner-text-mid-blue">Lending</span> and <span class="banner-text-mid-blue">Loan</span> Services</div>
-                                    <div class="banner-text-bot">Users can borrow fiat money or 
-                                        cryptocurrency by using their digital assets as collateral. 
-                                        The lending and loan services offer better annual percentage 
-                                        yield for lenders who choose to receive MMC tokens.
+                                    <div class="banner-text-mid">Lendingand LoanServices</div>
+                                    <div class="banner-text-bot">
+                                        Users can borrow fiat money or cryptocurrency by
+                                        using their digital assets as collateral.
+                                        The lending and loan services offer better annual
+                                        percentage yield for lenders who choose to receive MMC tokens.
                                     </div>
                                 </div>
                                 <div class="banner-img">
-                                    <img src="/images/PC_solution/img-solution1.svg" alt="">
+                                    <!-- <video controls autoplay loop>
+                                        <source src="/images/PC_solution/solution1.gif" type="video/mp4">
+                                    </video> -->
+                                    <img src="/images/PC_solution/solution1.gif" alt=""   />
+
+                                    <!-- <img src="/images/PC_solution/img-solution1.svg" alt=""> -->
                                 </div>
                             </li>
                             <li class="banner-item">
                                 <div class="banner-text">
                                     <div > <label class="banner-text-top">Solution 02</label> </div>
-                                    <div class="banner-text-mid"> VND <span class="banner-text-mid-blue">Stablecoin</span></div>
-                                    <div class="banner-text-bot">The VND stablecoin is a digital asset that
-                                         is pegged to the value of the Vietnamese Dong, providing a stable
-                                          store of value and reducing volatility. It allows access to the 
-                                          Vietnamese market and can be used for a range of purposes, including
-                                           paying for goods and services, investment, and trading.
+                                    <div class="banner-text-mid"> Vietnam Dong Coin(DONG) </div>
+                                    <div class="banner-text-bot">
+                                        Tokenizing VND through DONG, a VND-pegged digital asset issued by
+                                        My Money Credit, for seamless trading, remittance, and other use 
+                                        cases on multiple blockchains.
                                     </div>
                                 </div>
                                 <div class="banner-img">
-                                    <img src="/images/PC_solution/img-solution2.svg" alt="">
+                                    <img src="/images/PC_solution/solution2.gif" alt="">
                                 </div>
                             </li>
                             <li class="banner-item">
                                 <div class="banner-text">
                                     <div > <label class="banner-text-top">Solution 03</label> </div>
-                                    <div class="banner-text-mid"><span class="banner-text-mid-blue">Lending</span> and <span class="banner-text-mid-blue">Loan</span> Services</div>
-                                    <div class="banner-text-bot">Users can borrow fiat money or 
-                                        cryptocurrency by using their digital assets as collateral. 
-                                        The lending and loan services offer better annual percentage 
-                                        yield for lenders who choose to receive MMC tokens.
+                                    <div class="banner-text-mid">In-App Stock Trading and Holding</span></div>
+                                    <div class="banner-text-bot">Simplifies the process of trading and holding stocks,
+                                        providing easy access to the US stock market and convenient 
+                                        investment management.
                                     </div>
                                 </div>
                                 <div class="banner-img">
@@ -184,12 +224,10 @@
                             <li class="banner-item">
                                 <div class="banner-text">
                                     <div > <label class="banner-text-top">Solution 04</label> </div>
-                                    <div class="banner-text-mid"> VND <span class="banner-text-mid-blue">Stablecoin</span></div>
-                                    <div class="banner-text-bot">The VND stablecoin is a digital asset that
-                                         is pegged to the value of the Vietnamese Dong, providing a stable
-                                          store of value and reducing volatility. It allows access to the 
-                                          Vietnamese market and can be used for a range of purposes, including
-                                           paying for goods and services, investment, and trading.
+                                    <div class="banner-text-mid">Tokenized Stocks and Assets</span></div>
+                                    <div class="banner-text-bot">Users can add fully backed, regulated tokenized stocks and 
+                                        assets to their portfolio from Bond Protocol and Backed Finance, 
+                                        providing global accessibility, DeFi readiness, efficiency, and innovation.
                                     </div>
                                 </div>
                                 <div class="banner-img">
@@ -199,11 +237,11 @@
                             <li class="banner-item">
                                 <div class="banner-text">
                                     <div > <label class="banner-text-top">Solution 05</label> </div>
-                                    <div class="banner-text-mid"><span class="banner-text-mid-blue">Lending</span> and <span class="banner-text-mid-blue">Loan</span> Services</div>
-                                    <div class="banner-text-bot">Users can borrow fiat money or 
-                                        cryptocurrency by using their digital assets as collateral. 
-                                        The lending and loan services offer better annual percentage 
-                                        yield for lenders who choose to receive MMC tokens.
+                                    <div class="banner-text-mid">P2P Lending&  P2P Market</span></div>
+                                    <div class="banner-text-bot">My Money Credit's P2P lending system utilizes big 
+                                        data for credit scoring and eKYC identification, allowing both domestic and 
+                                        international users to lend and borrow at competitive interest rates while 
+                                        ensuring information security and regulatory compliance.
                                     </div>
                                 </div>
                                 <div class="banner-img">
@@ -213,12 +251,10 @@
                             <li class="banner-item">
                                 <div class="banner-text">
                                     <div > <label class="banner-text-top">Solution 06</label> </div>
-                                    <div class="banner-text-mid"> VND <span class="banner-text-mid-blue">Stablecoin</span></div>
-                                    <div class="banner-text-bot">The VND stablecoin is a digital asset that
-                                         is pegged to the value of the Vietnamese Dong, providing a stable
-                                          store of value and reducing volatility. It allows access to the 
-                                          Vietnamese market and can be used for a range of purposes, including
-                                           paying for goods and services, investment, and trading.
+                                    <div class="banner-text-mid"> Remittance and USDC/VND USDT/VNDTransactions</div>
+                                    <div class="banner-text-bot">Our app offers a solution for users to save on remittance
+                                         costs by converting USD to USDC or USDT at a 1:1 rate and trading the USDC/VND 
+                                         and USDT/VND pairs at a minimal expense or no cost on MMC.
                                     </div>
                                 </div>
                                 <div class="banner-img">
@@ -228,11 +264,11 @@
                             <li class="banner-item">
                                 <div class="banner-text">
                                     <div > <label class="banner-text-top">Solution 07</label> </div>
-                                    <div class="banner-text-mid"><span class="banner-text-mid-blue">Lending</span> and <span class="banner-text-mid-blue">Loan</span> Services</div>
-                                    <div class="banner-text-bot">Users can borrow fiat money or 
-                                        cryptocurrency by using their digital assets as collateral. 
-                                        The lending and loan services offer better annual percentage 
-                                        yield for lenders who choose to receive MMC tokens.
+                                    <div class="banner-text-mid"> StablecoinPremium</div>
+                                    <div class="banner-text-bot">The stablecoin premium in Vietnam refers to the 
+                                        situation where the market value of USDT and USDC is higher than USD when
+                                         converted to VND, leading to higher costs for acquiring stablecoins in Vietnam, 
+                                         but presenting arbitrage opportunities for investors with access to international money markets.
                                     </div>
                                 </div>
                                 <div class="banner-img">
@@ -242,12 +278,10 @@
                             <li class="banner-item">
                                 <div class="banner-text">
                                     <div > <label class="banner-text-top">Solution 08</label> </div>
-                                    <div class="banner-text-mid"> VND <span class="banner-text-mid-blue">Stablecoin</span></div>
-                                    <div class="banner-text-bot">The VND stablecoin is a digital asset that
-                                         is pegged to the value of the Vietnamese Dong, providing a stable
-                                          store of value and reducing volatility. It allows access to the 
-                                          Vietnamese market and can be used for a range of purposes, including
-                                           paying for goods and services, investment, and trading.
+                                    <div class="banner-text-mid"> MMCToken</div>
+                                    <div class="banner-text-bot">MMC token is an utility token issued on Ethereum’s Layer 
+                                        2 by My Money Credit, serving as collateral for loans, interest payment, platform 
+                                        profitability, equity representation, fee distribution, auto buyback, and governance.
                                     </div>
                                 </div>
                                 <div class="banner-img">
@@ -257,11 +291,11 @@
                             <li class="banner-item">
                                 <div class="banner-text">
                                     <div > <label class="banner-text-top">Solution 09</label> </div>
-                                    <div class="banner-text-mid"><span class="banner-text-mid-blue">Lending</span> and <span class="banner-text-mid-blue">Loan</span> Services</div>
-                                    <div class="banner-text-bot">Users can borrow fiat money or 
-                                        cryptocurrency by using their digital assets as collateral. 
-                                        The lending and loan services offer better annual percentage 
-                                        yield for lenders who choose to receive MMC tokens.
+                                    <div class="banner-text-mid">MMC Wallet</span></div>
+                                    <div class="banner-text-bot">My Money Credit offers an e-wallet to store, mortgage, 
+                                        and lend coins/tokens, with the ability to collateralize various assets for 
+                                        loans at different Loan-to-Value ratios, and with profitable interest rates 
+                                        for deposited assets and low interest rates for secured loans.
                                     </div>
                                 </div>
                                 <div class="banner-img">
@@ -271,12 +305,11 @@
                             <li class="banner-item">
                                 <div class="banner-text">
                                     <div > <label class="banner-text-top">Solution 10</label> </div>
-                                    <div class="banner-text-mid"> VND <span class="banner-text-mid-blue">Stablecoin</span></div>
-                                    <div class="banner-text-bot">The VND stablecoin is a digital asset that
-                                         is pegged to the value of the Vietnamese Dong, providing a stable
-                                          store of value and reducing volatility. It allows access to the 
-                                          Vietnamese market and can be used for a range of purposes, including
-                                           paying for goods and services, investment, and trading.
+                                    <div class="banner-text-mid"> ToolsAnd  Softwares</span></div>
+                                    <div class="banner-text-bot">My Money Credit offers a range of tools and software 
+                                        including social trading software, an OTC trading dApp, a trading bot system, 
+                                        tax calculators, and management tools based on customer data to facilitate 
+                                        blockchain and crypto businesses.
                                     </div>
                                 </div>
                                 <div class="banner-img">
@@ -294,11 +327,10 @@
                                     </div>
                                     <div class="thumb-content">
                                         <div class="thumb-title">
-                                            <span class="thumb-title-blue">Lending</span>  and <span  class="thumb-title-blue">Loan</span> Services
+                                            Lending and LoanServices
                                         </div>                                        
                                         <div class="thumb-text">
-                                            Users can borrow fiat money or cryptocurrency by using their digital assets as collateral. The lending and loan services offer better annual percentage yield for lenders who choose to receive MMC tokens.
-                                        </div>
+                                            Users can borrow fiat money or cryptocurrency by using their digital assets as collateral. The lending and loan services offer better annual percentage yield for lenders who choose to receive MMC tokens.                                        </div>
                                         <div class="thumb-readmore">
                                             Read more <i class="fa fa-angle-double-right" ></i>
                                         </div>
@@ -312,11 +344,10 @@
                                     </div>
                                     <div class="thumb-content">
                                         <div class="thumb-title">
-                                            VND <span class="thumb-title-blue">Stablecoin</span> 
+                                            Vietnam Dong   Coin(DONG)
                                         </div>                                        
                                         <div class="thumb-text">
-                                            The VND stablecoin is a digital asset that is pegged to the value of the Vietnamese Dong, providing a stable store of value and reducing volatility. It allows access to the Vietnamese market and can be used for a range of purposes, including paying for goods and services, investment, and trading.    
-                                        </div>
+                                            Tokenizing VND through DONG, a VND-pegged digital asset issued by My Money Credit, for seamless trading, remittance, and other use cases on multiple blockchains.                                        </div>
                                         <div class="thumb-readmore">
                                             Read more <i class="fa fa-angle-double-right" ></i>
                                         </div>
@@ -330,11 +361,10 @@
                                     </div>
                                     <div class="thumb-content">
                                         <div class="thumb-title">
-                                            <span class="thumb-title-blue">Lending</span>  and <span  class="thumb-title-blue">Loan</span> Services
+                                            In-App StockTrading  and Holding</span>
                                         </div>                                        
                                         <div class="thumb-text">
-                                            Users can borrow fiat money or cryptocurrency by using their digital assets as collateral. The lending and loan services offer better annual percentage yield for lenders who choose to receive MMC tokens.
-                                        </div>
+                                            Simplifies the process of trading and holding stocks, providing easy access to the US stock market and convenient investment management.                                        </div>
                                         <div class="thumb-readmore">
                                             Read more <i class="fa fa-angle-double-right" ></i>
                                         </div>
@@ -348,11 +378,10 @@
                                     </div>
                                     <div class="thumb-content">
                                         <div class="thumb-title">
-                                            <span class="thumb-title-blue">Lending</span>  and <span  class="thumb-title-blue">Loan</span> Services
+                                            Tokenized Stocks  and Assets</span>
                                         </div>                                        
                                         <div class="thumb-text">
-                                            Users can borrow fiat money or cryptocurrency by using their digital assets as collateral. The lending and loan services offer better annual percentage yield for lenders who choose to receive MMC tokens.
-                                        </div>
+                                            Users can add fully backed, regulated tokenized stocks and assets to their portfolio from Bond Protocol and Backed Finance, providing global accessibility, DeFi readiness, efficiency, and innovation.                                        </div>
                                         <div class="thumb-readmore">
                                             Read more <i class="fa fa-angle-double-right" ></i>
                                         </div>
@@ -366,11 +395,10 @@
                                     </div>
                                     <div class="thumb-content">
                                         <div class="thumb-title">
-                                            <span class="thumb-title-blue">Lending</span>  and <span  class="thumb-title-blue">Loan</span> Services
+                                            P2P Lending   & P2P Market
                                         </div>                                        
                                         <div class="thumb-text">
-                                            Users can borrow fiat money or cryptocurrency by using their digital assets as collateral. The lending and loan services offer better annual percentage yield for lenders who choose to receive MMC tokens.
-                                        </div>
+                                            My Money Credit's P2P lending system utilizes big data for credit scoring and eKYC identification, allowing both domestic and international users to lend and borrow at competitive interest rates while ensuring information security and regulatory compliance.                                        </div>
                                         <div class="thumb-readmore">
                                             Read more <i class="fa fa-angle-double-right" ></i>
                                         </div>
@@ -384,11 +412,10 @@
                                     </div>
                                     <div class="thumb-content">
                                         <div class="thumb-title">
-                                            <span class="thumb-title-blue">Lending</span>  and <span  class="thumb-title-blue">Loan</span> Services
+                                            Remittance andUSDC/VND USDT/VND Transactions
                                         </div>                                        
                                         <div class="thumb-text">
-                                            Users can borrow fiat money or cryptocurrency by using their digital assets as collateral. The lending and loan services offer better annual percentage yield for lenders who choose to receive MMC tokens.
-                                        </div>
+                                            Our app offers a solution for users to save on remittance costs by converting USD to USDC or USDT at a 1:1 rate and trading the USDC/VND and USDT/VND pairs at a minimal expense or no cost on MMC.                                        </div>
                                         <div class="thumb-readmore">
                                             Read more <i class="fa fa-angle-double-right" ></i>
                                         </div>
@@ -402,11 +429,10 @@
                                     </div>
                                     <div class="thumb-content">
                                         <div class="thumb-title">
-                                            <span class="thumb-title-blue">Lending</span>  and <span  class="thumb-title-blue">Loan</span> Services
+                                            Stablecoin  Premium
                                         </div>                                        
                                         <div class="thumb-text">
-                                            Users can borrow fiat money or cryptocurrency by using their digital assets as collateral. The lending and loan services offer better annual percentage yield for lenders who choose to receive MMC tokens.
-                                        </div>
+                                            The stablecoin premium in Vietnam refers to the situation where the market value of USDT and USDC is higher than USD when converted to VND, leading to higher costs for acquiring stablecoins in Vietnam, but presenting arbitrage opportunities for investors with access to international money markets.                                        </div>
                                         <div class="thumb-readmore">
                                             Read more <i class="fa fa-angle-double-right" ></i>
                                         </div>
@@ -420,11 +446,10 @@
                                     </div>
                                     <div class="thumb-content">
                                         <div class="thumb-title">
-                                            <span class="thumb-title-blue">Lending</span>  and <span  class="thumb-title-blue">Loan</span> Services
+                                            MMC Token
                                         </div>                                        
                                         <div class="thumb-text">
-                                            Users can borrow fiat money or cryptocurrency by using their digital assets as collateral. The lending and loan services offer better annual percentage yield for lenders who choose to receive MMC tokens.
-                                        </div>
+                                            MMC token is an utility token issued on Ethereum’s Layer 2 by My Money Credit, serving as collateral for loans, interest payment, platform profitability, equity representation, fee distribution, auto buyback, and governance.                                        </div>
                                         <div class="thumb-readmore">
                                             Read more <i class="fa fa-angle-double-right" ></i>
                                         </div>
@@ -438,11 +463,10 @@
                                     </div>
                                     <div class="thumb-content">
                                         <div class="thumb-title">
-                                            <span class="thumb-title-blue">Lending</span>  and <span  class="thumb-title-blue">Loan</span> Services
+                                            MMC Wallet 
                                         </div>                                        
                                         <div class="thumb-text">
-                                            Users can borrow fiat money or cryptocurrency by using their digital assets as collateral. The lending and loan services offer better annual percentage yield for lenders who choose to receive MMC tokens.
-                                        </div>
+                                            My Money Credit offers an e-wallet to store, mortgage, and lend coins/tokens, with the ability to collateralize various assets for loans at different Loan-to-Value ratios, and with profitable interest rates for deposited assets and low interest rates for secured loans.                                        </div>
                                         <div class="thumb-readmore">
                                             Read more <i class="fa fa-angle-double-right" ></i>
                                         </div>
@@ -456,11 +480,10 @@
                                     </div>
                                     <div class="thumb-content">
                                         <div class="thumb-title">
-                                            <span class="thumb-title-blue">Lending</span>  and <span  class="thumb-title-blue">Loan</span> Services
+                                            Tools  And Softwares
                                         </div>                                        
                                         <div class="thumb-text">
-                                            Users can borrow fiat money or cryptocurrency by using their digital assets as collateral. The lending and loan services offer better annual percentage yield for lenders who choose to receive MMC tokens.
-                                        </div>
+                                            My Money Credit offers a range of tools and software including social trading software, an OTC trading dApp, a trading bot system, tax calculators, and management tools based on customer data to facilitate blockchain and crypto businesses.                                        </div>
                                         <div class="thumb-readmore">
                                             Read more <i class="fa fa-angle-double-right" ></i>
                                         </div>

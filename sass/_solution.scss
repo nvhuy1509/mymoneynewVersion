@@ -40,6 +40,10 @@
    
 }
 
+video{
+    pointer-events: none; /* Disable any user interaction at all */
+  }
+
 .banner{
     position: relative;
 
@@ -115,6 +119,10 @@
             @media screen and (min-width: 861px) and (max-width: 1159px){
                 margin: 10px 0px;
                 font-size: 35px;
+            }
+
+            span {
+                padding-right: 8px;
             }
         }
         &-bot{
@@ -243,6 +251,9 @@
         &-blue{
             color: #0765FF;
         }
+        span {
+            padding-right: 8px;
+        }
     }
 
     &-text{
@@ -293,27 +304,36 @@
 @media screen and (max-width: 860px){
     .banner{
         &-text{
-            font-size: 30px;
+            &-mid{
+                font-size: 40px ;
+            }
+            
         }
 
         &-item{
+            padding-top: 110px;
+            height: 100%;
             &:nth-child(odd){
-                padding-left: 115px;
+                padding-left: 60px;
                 padding-right: 44px;
             }
 
             &:nth-child(even){
-                padding-right: 115px;
+                padding-right: 60px;
                 padding-left: 44px;
             }
             
-            padding-bottom: 254px;
+            padding-bottom: 254px !important;
         }
 
         &-img{
             width: 346px;
             height: 306px;
         }
+    }
+    
+    .slick-track > li {
+        height: 100%;
     }
 }
 

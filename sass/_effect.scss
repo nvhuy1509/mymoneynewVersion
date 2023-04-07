@@ -1,0 +1,98 @@
+
+:root {
+	--color: var(--gray-0);
+	--font-size: var(--font-size-fluid-3);
+	--transition-speed: 0;
+	--transition-step: 0;
+}
+
+
+
+.ulEffect {
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+	height: 100vh;
+	width: 100vw;
+	scroll-snap-type: y mandatory;
+	overflow: auto;
+}
+
+.effect {
+	height: 100%;
+	width: 100%;
+	background: var(--blue-8);
+	scroll-snap-align: center;
+	place-items: center;
+	font-size: var(--font-size);
+	font-weight: var(--font-weight-9);
+	overflow: hidden;
+	max-inline-size: 100%;
+}
+
+.effect > div {
+	height: 100%;
+}
+
+.effect:nth-of-type(n) {
+	background: var(--pink-9);
+}
+.effect:nth-of-type(2n) {
+	background: var(--green-9);
+}
+.effect:nth-of-type(3n) {
+	background: var(--blue-9);
+}
+.effect:nth-of-type(4n) {
+	background: var(--yellow-9);
+}
+.effect:nth-of-type(5n) {
+	background: var(--grape-9);
+}
+.effect:nth-of-type(6n) {
+	background: var(--red-9);
+}
+.effect:nth-of-type(7n) {
+	background: var(--lime-9);
+}
+.effect:nth-of-type(8n) {
+	background: var(--gray-9);
+}
+
+/* Util */
+[data-scroll] .char {
+	transition: all var(--transition-speed) calc((var(--char-index) + 1) * var(--transition-step));
+}
+
+/* Slots */
+.slots {
+	--color: var(--gray-0);
+	--speed: 0.5s;
+	--delay: var(--transition-speed);
+	--size: var(--font-size-fluid-3);
+	height: calc(var(--size) * 3);
+	overflow: hidden;
+}
+
+.slots .char {
+	text-transform: uppercase;
+	color: var(--color);
+	animation: slots var(--speed) var(--delay) infinite linear;
+  text-shadow: 0 calc(var(--size) * -1) 0 var(--color),
+    0 calc(var(--size) * -2) 0 var(--color),
+    0 calc(var(--size) * -3) 0 var(--color),
+    0 calc(var(--size) * 1) 0 var(--color),
+    0 calc(var(--size) * 2) 0 var(--color),
+    0 calc(var(--size) * 3) 0 var(--color);
+}
+
+.slots .char:nth-of-type(odd) {
+	animation: slots calc(var(--speed) * 0.75) var(--delay) infinite linear reverse;
+}
+
+@keyframes slots {
+	to {
+		transform: translate(0, calc(var(--size) * -1));
+	}
+}
+

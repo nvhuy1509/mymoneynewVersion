@@ -216,3 +216,4 @@ $('.slider-mbBlog').slick({
   dots: true,
   fade: false,
 });
+

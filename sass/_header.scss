@@ -23,11 +23,10 @@ header {
     left: 0;
     right: 0;
     width: 100%;
-    padding: 20px 100px;
+    padding: 20px 150px;
     z-index: 101;
-    @media screen and (max-width: 768px){
-      gap: 25px;
-      padding: 20px 35px;
+    @media screen and (max-width: 767px){
+      padding: 20px 30px;
     }
   }
 
@@ -62,6 +61,9 @@ header {
     }
     @media screen and (min-width: 768px)  and (max-width: 1200px) {
       width: 85%;
+    }
+    img{
+      max-width: unset;
     }
   }
   .hide {
@@ -124,10 +126,10 @@ header {
       }
     }
   }
-
-  .menu-active.actived {
-    color: #0765FF;
-  }
+ 
+    .menu-active.actived {
+      color: #007bff;
+    }
 
   .menu-item {
     &:hover > .menu-dropdown {
@@ -204,40 +206,45 @@ header {
 
     .header-fixed {
       position: fixed;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background-color: #000000;
+      top: -200px;
+      background-color: rgba(30, 35, 43, 0.8);;
       width: 100%;
       z-index: 999;
       display: block;
       padding: 20px;
-      transform: translateX(100%);
+      transform: translateY(-51%);
       transition: all 0.2s;
       // transform: ;
     }
 
     .header-fixed.show {
-      transform: translateX(0);
+      transform: translateY(50%);
+      top: -165px;
     }
 
     .menu {
       display: block;
       margin-bottom: 20px;
+      text-align: right;
       &-item {
         padding-bottom: 10px;
-        border-bottom: 1px solid #c4c4c4;
         display: block;
         i {
           font-size: 20px;
-          color: #0095d4;
+          color: #FFFFFF;
+          padding-bottom: 20px;
+        }
+        a{
+          font-size: 0;
         }
         span {
           display: flex;
           align-items: center;
           justify-content: space-between;
         }
+      }
+      &-itemShow{
+        animation: showText 1s ease-in-out forwards;
       }
       &-item:not(:first-child) {
         padding-top: 10px;
@@ -304,6 +311,14 @@ header {
   }
 }
 
+@keyframes showText {
+  from {
+    font-size: 0; /* Start font-size at 0 */
+  }
+  to {
+    font-size: 16px; /* End font-size at 16 */
+  }
+}
 
 
 @include ipad {     

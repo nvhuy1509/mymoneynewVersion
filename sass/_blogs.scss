@@ -5,10 +5,9 @@
   }
 }
 
-.menu-blog-active{
-  color: #0765FF !important;
+.menu-blog-active {
+  color: #007bff !important;
 }
-
 .blog{
    padding: 8% 0%;
    position: relative;
@@ -138,6 +137,7 @@
     display: block !important;
     &-item{
       padding: 100px 20px 100px 20px;
+      height: 100%;
     }
     // padding: 100px 20px 0px 20px;
     &-top{
@@ -168,7 +168,7 @@
       font-size: 24px;
       line-height: 110%;
       /* or 22px */
-      padding: 8px 0px;
+      padding: 20px 0px;
       color: #1E232B;
       @media screen and (min-width: 768px) and (max-width: 992px) {
         padding: 20px 0px;
@@ -218,11 +218,12 @@
     }
     &-img{
       width: 100%;
+      padding-top: 30px;
     }
   }
   .slick-dots{
     gap: 0px !important;
-    bottom: 70px !important;
+    bottom: 25% !important;
   }
   .slick-dots li.slick-active {
     background-color: #0765FF !important;
@@ -230,10 +231,10 @@
   .slick-dots li {
     background-color: #C8C8C8 !important;
   }
-  .mbBlog-item:nth-child(odd) {
+  .mbBlog-item-odd {
     background: linear-gradient(241.94deg, rgba(7, 101, 255, 0.1) 14.08%, rgba(7, 101, 255, 0) 100.57%), #FFFFFF;
   }
-  .mbBlog-item:nth-child(even) {
+  .mbBlog-item-even {
     background: linear-gradient(241.94deg, rgba(202, 209, 219, 0.5) 14.08%, rgba(5, 88, 224, 0.5) 100.57%), #FFFFFF;
   }
 }

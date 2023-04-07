@@ -73,6 +73,13 @@
           bgBlur.css("background","url('"+blogActive[0].src+"') no-repeat center/cover");
         });
         
+        const btn = [].slice.call(document.getElementsByTagName("button"));
+          btn.forEach((item, index) => {
+            item.addEventListener("click", function () {
+              document.getElementById("tab").children[index].scrollIntoView();
+            });
+          });
+        
       })
     </script>
   </head>
@@ -80,20 +87,22 @@
     <div class="wrapper">
         <header >
             <div class="header-solution"> 
-                <a href="index.html" class="logo">
+                <a id="logoHeader" href="index.html" class="logo">
                   <img src="./images/PC_blog/Logo.svg" class="visible-lg logo-desktop" alt="" />
                   <img src="./images/PC_blog/Logo.svg" class="visible-s" alt="" />
                 </a>
-                <div class="header-bar visible-s">
+                <div id="imgBarHeader" class="header-bar visible-s">
                   <img src="./images/PC_blog/icon-bar.svg" alt="" />
                 </div>
                 <div class="header-fixed">
                   <ul class="menu">
-                    <li class="menu-item menu-home">
+                    <li class="menu-item">
+                      <i class="fa fa-times close-header-fixed visible-s"></i>
+                    </li>
+                    <li class="menu-item">
                       <a href="index.html" class="menu-link menu-blog menu-active "
                         >Home</a
                       >
-                      <i class="fa fa-times close-header-fixed visible-s"></i>
                     </li>
                     <li class="menu-item">
                       <a href="solution.html" class="menu-link menu-blog menu-active " >Solutions</a>
@@ -162,12 +171,9 @@
                           <div class="blog-header-date">17 Mar, 2023</div>
                         </div>
                         <div class="blog-mid">
-                          Crytocurrency is losing its fame as the market goes down
-                        </div>
+                          My Money Credit — Bridge the Gap Between Traditional Finance and Decentralized Finance                        </div>
                         <div class="blog-bottom">
-                          The VND stablecoin is a digital asset that is pegged to the value of the Vietnamese Dong, 
-                          providing a stable store of value and reducing volatility. It allows access to the Vietnamese 
-                          market and can be used for a range of purposes, including paying for goods and services, investment, and trading.
+                          My Money Credit is an innovative platform that offers credit services and financial products to both individuals and institutions, domestically and internationally.
                         </div>
                       </div>
                     </div> 
@@ -188,12 +194,9 @@
                           <div class="blog-header-date">17 Mar, 2023</div>
                         </div>
                         <div class="blog-mid">
-                          Crytocurrency is losing its fame as the market goes down
-                        </div>
+                          My Money Credit’s Tentative Roadmap — Stages of growth                        </div>
                         <div class="blog-bottom">
-                          The VND stablecoin is a digital asset that is pegged to the value of the Vietnamese Dong, 
-                          providing a stable store of value and reducing volatility. It allows access to the Vietnamese 
-                          market and can be used for a range of purposes, including paying for goods and services, investment, and trading.
+                          The development team at My Money Credit always strives to develop the project in accordance with the roadmap. This is also a way for the My Money Credit team to build trust with investors as well as users of the platform.
                         </div>
                       </div>
                     </div> 
@@ -205,7 +208,7 @@
                     <img src="/images/PC_blog/img-blog-2.svg" alt="">
                   </div>
                 </div>
-                <div class="blog-item">
+                <!-- <div class="blog-item">
                   <div class="blog-content"> 
                     <div class="blog-content-wrap">
                       <div class="blog-left">
@@ -282,11 +285,11 @@
                   <div class="blog-image"> 
                     <img src="/images/PC_blog/img-blog-5.svg" alt="">
                   </div>
-                </div>
+                </div> -->
               </div>
             </section>
             <section class="mbBlog">
-              <div class="slider slider-mbBlog">
+              <!-- <div class="slider slider-mbBlog">
                 <div class="mbBlog-item">
                   <div class="mbBlog-top ">
                     <div class="mbBlog-date">17 Mar, 2023</div>
@@ -329,71 +332,93 @@
                     <img class="mbBlog-img" src="/images/PC_blog/feature-blog1.svg" alt="">
                   </div>
                 </div>
-                <div class="mbBlog-item">
-                  <div class="mbBlog-top ">
-                    <div class="mbBlog-date">17 Mar, 2023</div>
-                    <div class="mbBlog-title">
-                      Crytocurrency is losing its fame as the market goes down
+              </div> -->
+              <ul class="ulEffect">
+                <li class="effect">
+                  <div class="mbBlog-item mbBlog-item-odd">
+                    <div class="mbBlog-top ">
+                      <div class="mbBlog-date">17 Mar, 2023</div>
+                      <div class="mbBlog-title">
+                        My Money Credit — Bridge the Gap Between Traditional Finance and Decentralized Finance
+                      </div>
+                      <div class="mbBlog-desc">
+                        My Money Credit is an innovative platform that offers credit services and financial products to both individuals and institutions, domestically and internationally.
+                      </div>
+                      <div >
+                        <a  class="mbBlog-more"> Read more <img src="/images/PC_blog/icon-more.svg" alt=""></a>
+                      </div>
                     </div>
-                    <div class="mbBlog-desc">
-                      The VND stablecoin is a digital asset that is pegged to the value of the 
-                      Vietnamese Dong, providing a stable store of value and reducing volatility. 
-                      It allows access to the Vietnamese market and can be used for a range of purposes, 
-                      including paying for goods and services, investment, and trading...
-                    </div>
-                    <div >
-                      <a  class="mbBlog-more"> Read more <img src="/images/PC_blog/icon-more.svg" alt=""></a>
-                    </div>
-                  </div>
-                  
-                  <div>
-                    <img class="mbBlog-img" src="/images/PC_blog/feature-blog1.svg" alt="">
-                  </div>
-                </div>
-                <div class="mbBlog-item">
-                  <div class="mbBlog-top ">
-                    <div class="mbBlog-date">17 Mar, 2023</div>
-                    <div class="mbBlog-title">
-                      Crytocurrency is losing its fame as the market goes down
-                    </div>
-                    <div class="mbBlog-desc">
-                      The VND stablecoin is a digital asset that is pegged to the value of the 
-                      Vietnamese Dong, providing a stable store of value and reducing volatility. 
-                      It allows access to the Vietnamese market and can be used for a range of purposes, 
-                      including paying for goods and services, investment, and trading...
-                    </div>
-                    <div >
-                      <a  class="mbBlog-more"> Read more <img src="/images/PC_blog/icon-more.svg" alt=""></a>
+                    
+                    <div>
+                      <img class="mbBlog-img" src="/images/PC_blog/feature-blog1.svg" alt="">
                     </div>
                   </div>
-                  
-                  <div>
-                    <img class="mbBlog-img" src="/images/PC_blog/feature-blog1.svg" alt="">
-                  </div>
-                </div>
-                <div class="mbBlog-item">
-                  <div class="mbBlog-top ">
-                    <div class="mbBlog-date">17 Mar, 2023</div>
-                    <div class="mbBlog-title">
-                      Crytocurrency is losing its fame as the market goes down
+                </li>
+                <li class="effect ">
+                  <div aria-hidden="true" data-splitting="">
+                    <div class="mbBlog-item  mbBlog-item-even">
+                      <div class="mbBlog-top ">
+                        <div class="mbBlog-date">17 Mar, 2023</div>
+                        <div class="mbBlog-title">
+                          My Money Credit’s Tentative Roadmap — Stages of growth
+                        </div>
+                        <div class="mbBlog-desc">
+                          The development team at My Money Credit always strives to develop the project in accordance with the roadmap. This is also a way for the My Money Credit team to build trust with investors as well as users of the platform.
+                        </div>
+                        <div >
+                          <a  class="mbBlog-more"> Read more <img src="/images/PC_blog/icon-more.svg" alt=""></a>
+                        </div>
+                      </div>
+                      
+                      <div>
+                        <img class="mbBlog-img" src="/images/PC_blog/feature-blog1.svg" alt="">
+                      </div>
                     </div>
-                    <div class="mbBlog-desc">
-                      The VND stablecoin is a digital asset that is pegged to the value of the 
-                      Vietnamese Dong, providing a stable store of value and reducing volatility. 
-                      It allows access to the Vietnamese market and can be used for a range of purposes, 
-                      including paying for goods and services, investment, and trading...
-                    </div>
-                    <div >
-                      <a  class="mbBlog-more"> Read more <img src="/images/PC_blog/icon-more.svg" alt=""></a>
+                  </div>
+                </li>
+                <li class="effect">
+                  <div aria-hidden="true" data-splitting="">
+                    <div class="mbBlog-item mbBlog-item-odd">
+                      <div class="mbBlog-top ">
+                        <div class="mbBlog-date">17 Mar, 2023</div>
+                        <div class="mbBlog-title">
+                          My Money Credit — Bridge the Gap Between Traditional Finance and Decentralized Finance
+                        </div>
+                        <div class="mbBlog-desc">
+                          My Money Credit is an innovative platform that offers credit services and financial products to both individuals and institutions, domestically and internationally.
+                        </div>
+                        <div >
+                          <a  class="mbBlog-more"> Read more <img src="/images/PC_blog/icon-more.svg" alt=""></a>
+                        </div>
+                      </div>
+                      
+                      <div>
+                        <img class="mbBlog-img" src="/images/PC_blog/feature-blog1.svg" alt="">
+                      </div>
                     </div>
                   </div>
-                  
-                  <div>
-                    <img class="mbBlog-img" src="/images/PC_blog/feature-blog1.svg" alt="">
+                </li>
+                <li class="effect">
+                  <div class="mbBlog-item  mbBlog-item-even">
+                    <div class="mbBlog-top ">
+                      <div class="mbBlog-date">17 Mar, 2023</div>
+                      <div class="mbBlog-title">
+                        My Money Credit’s Tentative Roadmap — Stages of growth
+                      </div>
+                      <div class="mbBlog-desc">
+                        The development team at My Money Credit always strives to develop the project in accordance with the roadmap. This is also a way for the My Money Credit team to build trust with investors as well as users of the platform.
+                      </div>
+                      <div >
+                        <a  class="mbBlog-more"> Read more <img src="/images/PC_blog/icon-more.svg" alt=""></a>
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <img class="mbBlog-img" src="/images/PC_blog/feature-blog1.svg" alt="">
+                    </div>
                   </div>
-                </div>
-              </div>
-              
+                </li>
+              </ul>
               
             </section>
         </main>
@@ -412,6 +437,7 @@
     ></script>
     <script src="./js/slide.js"></script>
     <script src="./js/app.js"></script>
+    <script src="./js/effect.js"></script>
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
       integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="

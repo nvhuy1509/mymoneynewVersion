@@ -12,16 +12,7 @@ $(document).ready(function () {
   });
 });
 
-const headerBar = document.querySelector(".header-bar img");
-const headerFixed = document.querySelector(".header-fixed");
-headerBar.addEventListener("click", () => {
-  headerFixed.classList.add("show");
-});
 
-const iconCloseHeaderFixed = document.querySelector(".close-header-fixed");
-iconCloseHeaderFixed.addEventListener("click", () => {
-  headerFixed.classList.remove("show");
-});
 
 const header = document.querySelector(".header-top");
 const backToTop = document.querySelector(".back-to-top");
@@ -34,6 +25,37 @@ window.addEventListener("scroll", (e) => {
     backToTop.classList.remove("show");
   }
 });
+
+
+const headerBar = document.querySelector(".header-bar img");
+const headerFixed = document.querySelector(".header-fixed");
+const menuItem = document.querySelectorAll(".menu-link");
+let logo = document.getElementById("logoHeader");
+let bar = document.getElementById("imgBarHeader");
+
+headerBar.addEventListener("click", () => {
+  headerFixed.classList.add("show");
+  menuItem.forEach((element) => {
+    element.classList.add("menu-itemShow");
+  });
+  logo.style.display = "none";
+  bar.style.display = "none";
+  header.style.background = "transparent"
+ 
+});
+
+const iconCloseHeaderFixed = document.querySelector(".close-header-fixed");
+iconCloseHeaderFixed.addEventListener("click", () => {
+  headerFixed.classList.remove("show");
+  menuItem.forEach((element) => {
+    element.classList.remove("menu-itemShow");
+  });
+  logo.style.display = "block";
+  bar.style.display = "block";
+  header.style.background = "#000000"
+  
+});
+
 
 const roadmapOverlay = document.querySelectorAll(".roadmap-overlay");
 roadmapOverlay.forEach((item) =>

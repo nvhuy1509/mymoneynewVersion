@@ -73,11 +73,14 @@ body {
   .visible-lg {
     display: block;
   }
+  .visible-md {
+    display: block;
+  }
 }
 
 @media screen and (min-width: 768px) and (max-width: 992px){
   .visible-md {
-    display: block !important;
+    display: none !important;
   }
   .visible-s {
     display: block !important;
@@ -106,4 +109,25 @@ body {
 
 h3 {
   font-weight: bold;
+}
+
+
+@keyframes grow {
+  0% {
+    font-size: 0;
+  }
+  100% {
+    font-size: 16px;
+  }
+}
+
+.grows {
+  animation-name: grow;
+  animation-duration: 10s;
+}
+
+.growsandstays {
+  animation-name: grow;
+  animation-duration: 10s;
+  animation-fill-mode: forwards;
 }
