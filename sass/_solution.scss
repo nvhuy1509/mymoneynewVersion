@@ -113,6 +113,9 @@ video{
             font-weight: 700;
             font-size: 57px;
             line-height: 120%;
+            max-width: 428px;
+            display: flex;
+            flex-wrap: wrap;
             &-blue{
                 color: #0765FF;
             }

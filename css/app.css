@@ -131,6 +131,9 @@ video {
   font-weight: 700;
   font-size: 57px;
   line-height: 120%;
+  max-width: 428px;
+  display: flex;
+  flex-wrap: wrap;
 }
 .banner-text-mid-blue {
   color: #0765FF;
@@ -1927,8 +1930,8 @@ footer .footer-link .active {
 }
 @media screen and (max-width: 767px) {
   footer .footer-download,
-footer .footer-phone,
-footer .footer-mail {
+  footer .footer-phone,
+  footer .footer-mail {
     display: none;
   }
   footer .footer-link {
