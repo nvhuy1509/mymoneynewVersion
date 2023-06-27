@@ -8,24 +8,9 @@ header {
     padding: 20px 150px;
     background-color: #000000;
     width: 100%;
-    justify-content: space-evenly;
+    justify-content: space-between;
     z-index: 99;
     @media screen and (max-width: 768px) {
-      padding: 20px 30px;
-    }
-  }
-  .header-solution{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    padding: 20px 150px;
-    z-index: 101;
-    @media screen and (max-width: 767px){
       padding: 20px 30px;
     }
   }
@@ -50,10 +35,6 @@ header {
     align-items: center;
   }
 
-  .bg-menu {
-    background-color: #ffffff;
-  }
-
   .logo {
     width: 20%;
     @media screen and (max-width: 768px) {
@@ -72,6 +53,7 @@ header {
   .menu {
     display: flex;
     gap: 0 24px;
+    align-items: center;
     &-item {
       padding: 0 14px;
       display: flex;
@@ -88,21 +70,56 @@ header {
       .menu-dropdown {
         position: absolute;
         bottom: -10px;
-        left: -7px;
-        width: 100%;
-        max-width: 100%;
+        border-radius: 20px;
+        border: 1px solid var(--neutral-04, #6A6A6A);
+        background: var(--neutral-05, #141414) !important;
+        // max-width: 100%;
+        padding: 12px 24px;
         transform: translateY(100%);
         opacity: 0;
         visibility: hidden;
         transition: all 0.25s;
       }
+
+      .bg-dropdown1 {
+        min-width: 293px ;
+        left: -70px;
+      }
+
+      .bg-dropdown2 {
+        min-width: 210px ;
+        left: -35px;
+      }
+
+      .bg-dropdown3 {
+        min-width: 245px ;
+        left: -45px;
+      }
+
+      .menu-button{
+        padding: 16px 28px 16px 28px;
+        border-radius: 40px;
+        border: 2px solid #0962FF;
+      }
+      .menu-button:hover{
+        background: #0962FF;
+        color: var(--neutral-01, #FFF);
+      }
+
       .dropdown-item {
-        padding: 10px 0;
-        border-top: 1px solid #c4c4c4;
-        text-align: center;
+        padding: 5px 0;
         white-space: unset;
+        color:  #919494 !important;
+        /* H4 -1440 */
+        font-family: "Manrope";
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 110%;
         &:hover {
           background-color: unset;
+        }
+        a{
+          color: #919494;
         }
       }
       i {
@@ -126,7 +143,12 @@ header {
       }
     }
   }
- 
+  .menu-item:hover {
+    img {
+      transition: all 0.4s ease-in-out;
+      transform: rotate(180deg);
+    }
+  }
     .menu-active.actived {
       color: #007bff;
     }
@@ -135,6 +157,7 @@ header {
     &:hover > .menu-dropdown {
       opacity: 1;
       visibility: visible;
+      background-color: #000000;
     }
     .menu-item-wrapper {
       display: flex;
