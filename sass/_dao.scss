@@ -1,0 +1,80 @@
+.dao-foster{
+        padding: 80px 0px;
+        background: var(--neutral-05, #141414) ;
+
+        .dao-title{
+                font-size: 37px;
+                font-family: Manrope;
+                font-style: normal;
+                font-weight: 800;
+                line-height: 110%;
+        }
+        .dao-desc{
+                color: var(--neutral-02, #9BA3B9);
+                /* Text - 1440 */
+                padding: 20px 0px;
+                font-size: 18px;
+                font-family: Manrope;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 120%;
+        }
+        .dao-btn{
+                padding-top: 40px;
+                a {
+                        border-radius: 40px;
+                        border: 1px solid var(--primary-01, #0962FF);
+                        
+                        padding: 16px 28px;
+                        color: var(--neutral-01, #FFF);
+                        /* Button Text - 1440 */
+                        font-size: 18px;
+                        font-family: Manrope;
+                        font-style: normal;
+                        font-weight: 800;
+                        line-height: 24px;
+                        cursor: pointer;
+                }
+                a:hover{
+                        background: var(--primary-01, #0962FF);
+                        text-decoration: unset;
+                }
+        }
+        .dao-content{
+                border: 1px solid var(--neutral-04, #6A6A6A);
+                border-radius: 15px;
+                
+                .dao-item{
+                        display: flex;
+                        gap: 20px;
+                        align-items: center;
+                        padding: 25px;
+                        &-title{
+                                color: var(--primary-02, #86B2FF);
+                                /* H4 -1440 */
+                                font-size: 24px;
+                                font-family: Manrope;
+                                font-style: normal;
+                                font-weight: 700;
+                                line-height: 110%;
+                        }
+                        &-desc{
+                                padding-top: 10px;
+                                color: var(--neutral-02, #9BA3B9);
+                                /* Text - 1440 */
+                                font-size: 18px;
+                                font-family: Manrope;
+                                font-style: normal;
+                                font-weight: 400;
+                                line-height: 120%;
+                        }
+                }
+                .dao-item:nth-child(1){
+                        border-top: 0;
+                }
+                .dao-item:nth-child(n) {
+                        border-top: 1px solid var(--neutral-04, #6A6A6A);
+                }
+        }
+}
+
