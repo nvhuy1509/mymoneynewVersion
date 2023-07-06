@@ -173,7 +173,7 @@ $(document).ready(function () {
     autoplayHoverPause: true,
     responsive: {
       0: {
-        items: 1.5,
+        items: 1,
         margin: 15,
       },
       600: {
