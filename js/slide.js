@@ -188,32 +188,32 @@ $(document).ready(function () {
     
 });
 
-$('.slider-for').slick({
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  arrows: false,
-  fade: false,
-});
-$('.slider-nav').slick({
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  arrows: false,
-  asNavFor: '.slider-for',
-  dots: false,
-  focusOnSelect: false
-});
+// $('.slider-for').slick({
+//   slidesToShow: 1,
+//   slidesToScroll: 1,
+//   arrows: false,
+//   fade: false,
+// });
+// $('.slider-nav').slick({
+//   slidesToShow: 1,
+//   slidesToScroll: 1,
+//   arrows: false,
+//   asNavFor: '.slider-for',
+//   dots: false,
+//   focusOnSelect: false
+// });
 
-$('.slider-onclick').click(function(e) {
-  e.preventDefault();
-  // var slideno = $(this).data('slide');
-  $('.slider-for').slick('slickNext');
-});
+// $('.slider-onclick').click(function(e) {
+//   e.preventDefault();
+//   // var slideno = $(this).data('slide');
+//   $('.slider-for').slick('slickNext');
+// });
 
-$('.slider-mbBlog').slick({
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  arrows: false,
-  dots: true,
-  fade: false,
-});
+// $('.slider-mbBlog').slick({
+//   slidesToShow: 1,
+//   slidesToScroll: 1,
+//   arrows: false,
+//   dots: true,
+//   fade: false,
+// });
 

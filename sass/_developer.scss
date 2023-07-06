@@ -11,6 +11,9 @@
                         font-style: normal;
                         font-weight: 800;
                         line-height: 100%;
+                        @media screen and (max-width: 767px) {
+                                font-size: 36px;
+                        }
                 }
                 .replayer-desc{
                         color: var(--neutral-02, #9BA3B9);
@@ -24,6 +27,9 @@
                         line-height: 120%;
                         p {
                                 margin-bottom: 0px;
+                        }
+                        @media screen and (max-width: 767px) {
+                                font-size: 16px;
                         }
                 }
                 .replayer-btn{
@@ -40,6 +46,9 @@
                                 font-weight: 800;
                                 line-height: 24px;
                                 cursor: pointer;
+                                @media screen and (max-width: 767px) {
+                                        font-size: 16px;
+                                }
                         }
                         a:hover{
                                 text-decoration: unset;
@@ -51,6 +60,9 @@
                         display: flex;
                         justify-content: center;
                         padding-top: 10px;
+                        @media screen and (max-width: 767px) {
+                                padding: 10px 20px;
+                        }
                 }
         }
 
@@ -84,6 +96,19 @@
                         font-weight: 700;
                         line-height: 110%;
                 }
+                @media screen and (max-width: 767px) {
+                        padding: 0px 20px 60px 20px;
+                        &-title{
+                                font-size: 32px;
+                        }
+                        ul {
+                                flex-direction: column;
+                                gap: 40px
+                        }
+                }
+        }
+        @media screen and (max-width: 767px) {
+                padding-top: 120px;
         }
 }
 
@@ -100,6 +125,10 @@
                 p {
                         margin-bottom: 0px;
                 }
+                @media screen and (max-width: 767px) {
+                        font-size: 32px;
+                        text-align: left;
+                }
         }
         &-header{
                 font-size: 40px;
@@ -107,6 +136,9 @@
                 font-style: normal;
                 font-weight: 800;
                 line-height: 110%; 
+                @media screen and (max-width: 767px) {
+                        font-size: 32px;
+                }
         }
         &-txtBlue{
                 color: var(--primary-02, #86B2FF) !important;
@@ -129,6 +161,9 @@
                 font-style: normal;
                 font-weight: 800;
                 line-height: 110%;
+                @media screen and (max-width: 767px) {
+                        font-size: 32px;
+                }
         }
         &-desc{
                 color: var(--neutral-02, #9BA3B9);
@@ -139,7 +174,9 @@
                 font-weight: 400;
                 line-height: 120%;
                 padding: 10px 0px;
-               
+                @media screen and (max-width: 767px) {
+                        font-size: 16px;
+                }
         }
         &-btn{
                 padding-top: 20px;
@@ -156,6 +193,9 @@
                         font-weight: 800;
                         line-height: 24px;
                         cursor: pointer;
+                        @media screen and (max-width: 767px) {
+                                font-size: 16px;
+                        }
                 }
                 a:hover{
                         background: var(--primary-01, #0962FF);

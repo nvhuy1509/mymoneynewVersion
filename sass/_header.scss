@@ -250,7 +250,6 @@ header {
     .menu {
       display: block;
       margin-bottom: 20px;
-      text-align: right;
       &-item {
         padding-bottom: 10px;
         display: block;
@@ -264,6 +263,19 @@ header {
           align-items: center;
           justify-content: space-between;
         }
+        .menu-button {
+          margin-top: 10px;
+          width: 100%;
+          text-align: center;
+          background: var(--primary-01, #0962FF);
+          display: block;
+        }
+      }
+      &-item:first-child {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 30px;
       }
       &-item:not(:first-child) {
         padding-top: 10px;
@@ -276,17 +288,23 @@ header {
 
       .menu-item-wrapper {
         display: flex;
-        justify-content: space-between;
         width: 100%;
         img.visible-s.active {
           transform: rotate(-90deg);
         }
+         img {
+          transform: rotate(90deg);
+        }
+        
       }
 
       .menu-dropdown {
         position: static;
         transform: translate(0);
         opacity: 1;
+        background: transparent !important;
+        border: none;
+        padding: 0;
         visibility: visible;
         display: none;
       }
