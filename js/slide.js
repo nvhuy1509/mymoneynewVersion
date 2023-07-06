@@ -165,22 +165,23 @@ $(document).ready(function () {
     });
   });
   $(".owl-carousel").owlCarousel({
-    loop: true,
-    autoplay: false,
-    autoplayTimeout: 3500,
+    // loop: true,
+    // autoplay: false,
+    // autoplayTimeout: 3500,
     nav:true,
     navText : ['<img src="./images/PC_index/btn-prev-slide-team.svg" alt="">','<img src="./images/PC_index/btn-next-slide-team.svg" alt="">'],
     autoplayHoverPause: true,
     responsive: {
       0: {
-        items: 1,
+        items: 1.5,
+        margin: 15,
       },
       600: {
         margin: 15,
         items: 2,
       },
-      1000: {
-        margin: 30,
+      1024: {
+        margin: 20,
         items: 3,
       },
     },

@@ -639,7 +639,11 @@ li {
 
 .roadmap {
   background: var(--primary-01, #0962FF);
-  padding-left: 15%;
+  padding-left: 70px;
+}
+.roadmap .row {
+  margin: 0;
+  flex-wrap: nowrap;
 }
 .roadmap-title {
   color: var(--neutral-01, #FFF);
@@ -651,10 +655,20 @@ li {
   line-height: 110%;
   padding: 40px 0px;
 }
-.roadmap-content {
-  padding-bottom: 40px;
+.roadmap-image {
+  width: 30.65%;
+  flex-shrink: 0;
+}
+.roadmap-image img {
+  height: 100%;
+  object-fit: cover;
+}
+.roadmap-main {
+  flex: 1;
+  padding-left: 40px;
 }
 .roadmap-content-item {
+  color: white;
   padding: 40px 20px 0px 20px;
   border-radius: 20px;
   background: var(--neutral-05, #141414);
@@ -664,6 +678,32 @@ li {
   padding-bottom: 40px;
 }
 
+@media screen and (max-width: 1024px) {
+  .roadmap-content-item {
+    min-height: 250px;
+    padding: 15px;
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 640px) {
+  .roadmap {
+    padding: 0;
+  }
+  .roadmap .row {
+    flex-wrap: wrap;
+  }
+  .roadmap-image {
+    width: 100%;
+  }
+  .roadmap-main {
+    padding: 20px;
+  }
+  .roadmap-content-item {
+    min-height: 200px;
+    padding: 10px;
+    font-size: 12px;
+  }
+}
 .dao-foster {
   padding: 80px 0px;
   background: var(--neutral-05, #141414);
