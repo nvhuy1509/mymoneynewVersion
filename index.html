@@ -324,7 +324,7 @@
         <section class="home-what">
           <div class="container">
             <div class="row">
-              <div class="col-md-6 d-flex justify-content-center">
+              <div class="col-md-6 ">
                 <img src="/images/PC_index/img-homestory.svg" alt="">
               </div>
               <div class="col-md-6">
@@ -475,54 +475,6 @@
                   </ul>
                 </div>
                 
-              </div>
-            </div>
-          </div>
-        </section>
-        <section class="roadmap">
-          <div class="row">
-            <div class="roadmap-image">
-              <img src="/images/PC_index/img-roadmap.svg" alt="">
-            </div>
-            <div class="roadmap-main">
-              <div class="roadmap-title">Roadmap</div>
-              <div  class="roadmap-content-secondary owl-carousel">
-                <div class="roadmap-content-item">
-                  <div>Q2 2022</div>
-                  <div>Finished</div>
-                  <ul>
-                    <li>Core team assembled</li>
-                    <li>White Paper v1.0 released; website and social media activated</li>
-                    <li>Crowdfunding starts</li>
-                  </ul>
-                </div>
-                <div class="roadmap-content-item">
-                  <div>Q3 2022</div>
-                  <div>Finished</div>
-                  <ul>
-                    <li>Product development begins</li>
-                    <li>Expansion of development and compliance teams</li>
-                    <li>Finalization of financial and legal structure for the project</li>
-                  </ul>
-                </div>
-                <div class="roadmap-content-item">
-                  <div>Q3 2022</div>
-                  <div>Finished</div>
-                  <ul>
-                    <li>Product development begins</li>
-                    <li>Expansion of development and compliance teams</li>
-                    <li>Finalization of financial and legal structure for the project</li>
-                  </ul>
-                </div>
-                <div class="roadmap-content-item">
-                  <div>Q3 2022</div>
-                  <div>Finished</div>
-                  <ul>
-                    <li>Product development begins</li>
-                    <li>Expansion of development and compliance teams</li>
-                    <li>Finalization of financial and legal structure for the project</li>
-                  </ul>
-                </div>
               </div>
             </div>
           </div>
@@ -837,21 +789,23 @@
 
     <script>
       function showInforTeam(id){
+        console.log('show thông tin')
         var pageImg = document.getElementById("imgT"+id);
         var pageInfor = document.getElementById("InforT"+id);
 
         pageImg.style.display = 'none';
         pageInfor.style.display = 'block';
-        console.log('show thông tin')
+        
       } 
       
       function hideInforTeam(id){
+        console.log('ẩn thông tin')
         var pageImg = document.getElementById("imgT"+id);
         var pageInfor = document.getElementById("InforT"+id);
 
         pageImg.style.display = 'block';
         pageInfor.style.display = 'none';
-        console.log('ẩn thông tin')
+        
       }
     </script>
     <script
