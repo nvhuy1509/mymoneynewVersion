@@ -1,4 +1,5 @@
 @import url("https://fonts.cdnfonts.com/css/manrope");
+@import url("https://fonts.cdnfonts.com/css/poppins");
 html {
   box-sizing: border-box;
 }
@@ -323,6 +324,11 @@ li {
   line-height: 120%;
   max-width: 392px;
 }
+@media screen and (max-width: 767px) {
+  .home-about-desc div {
+    font-size: 16px;
+  }
+}
 .home-about .row {
   align-items: center;
 }
@@ -355,6 +361,10 @@ li {
 .home-about-btn a:hover {
   text-decoration: unset;
   background: #0962FF;
+}
+.home-about .homeabout-main {
+  flex-direction: column !important;
+  gap: 30px;
 }
 .home-about .about-top {
   padding-top: 80px;
@@ -415,8 +425,19 @@ li {
   padding-bottom: 20px;
   line-height: 110%;
 }
+@media screen and (max-width: 767px) {
+  .home-customers-title {
+    font-size: 20px;
+    text-align: center;
+  }
+}
 .home-customers .d-flex {
   justify-content: space-evenly;
+}
+@media screen and (max-width: 767px) {
+  .home-customers {
+    padding: 70px 20px;
+  }
 }
 
 .home-what {
@@ -616,11 +637,13 @@ li {
   font-size: 32px;
   position: absolute;
   top: 0;
+  cursor: pointer;
+  color: #0962FF !important;
   right: 32px;
 }
 .home-team-item .iteam-team-btn:hover {
   text-decoration: unset;
-  color: #cad4e0;
+  color: #cad4e0 !important;
 }
 .home-team .item-team {
   position: absolute;
@@ -647,6 +670,38 @@ li {
 .home-team .item-team img {
   border-radius: 20px;
   position: absolute;
+}
+.home-team .infor-team {
+  position: absolute;
+  width: 92%;
+  padding-bottom: 10px;
+  height: 91%;
+  top: 40px;
+  background: linear-gradient(180deg, rgba(6, 6, 6, 0) 0%, #060606 93.23%);
+  border-radius: 13px;
+}
+.home-team .infor-team-title {
+  color: #0962FF;
+  text-align: center;
+  font-family: Manrope;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.home-team .infor-team ul {
+  color: #FFF;
+  font-family: Poppins;
+  font-size: 18px;
+  font-style: normal;
+  list-style: disc !important;
+  padding-left: 40px;
+  font-weight: 400;
+  line-height: normal;
+}
+.home-team .infor-team li {
+  padding-top: 10px;
+  list-style: disc !important;
 }
 .home-team .row {
   justify-content: center;
@@ -723,6 +778,46 @@ li {
   border-radius: 20px;
   background: var(--neutral-05, #141414);
   min-height: 312px;
+}
+.roadmap-content-item .roadmap-item-title {
+  padding-bottom: 15px;
+  border-bottom: 2px solid #6A6A6A;
+}
+.roadmap-content-item .roadmap-item-time {
+  color: var(--neutral-03, #919494);
+  /* H5 - 1440 */
+  font-family: Manrope;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 110%;
+  text-transform: uppercase;
+}
+.roadmap-content-item .roadmap-item-status {
+  color: var(--neutral-01, #FFF);
+  /* H5 - 1440 */
+  padding-top: 5px;
+  font-family: Manrope;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 110%;
+  text-transform: uppercase;
+}
+.roadmap-content-item ul {
+  color: var(--neutral-02, #9BA3B9);
+  /* Text - 1440 */
+  font-family: Manrope;
+  font-size: 18px;
+  padding-left: 20px;
+  font-style: normal;
+  list-style: disc !important;
+  font-weight: 400;
+  line-height: 120%;
+}
+.roadmap-content-item li {
+  padding-top: 3px;
+  list-style: disc !important;
 }
 .roadmap-content .owl-nav {
   position: absolute;
