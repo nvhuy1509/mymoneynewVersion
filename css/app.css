@@ -738,6 +738,200 @@ li {
     font-size: 12px;
   }
 }
+.home-blog {
+  background: #060606;
+  margin: -1px 0;
+  color: white;
+  padding: 80px 0;
+}
+.home-blog .home-blog-wrap {
+  display: flex;
+  gap: 0 183px;
+  align-items: center;
+  padding-left: 70px;
+}
+.home-blog .blog-heading {
+  width: 40.46%;
+  flex-shrink: 0;
+}
+.home-blog .heading-text {
+  font-size: 40px;
+  font-weight: 600;
+  margin-bottom: 40px;
+}
+.home-blog .heading-text .heading-highlight {
+  color: #0962FF;
+}
+.home-blog .heading-more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+  padding: 16px 28px;
+  border: 1px solid #0962FF;
+  border-radius: 40px;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  transition: 0.25s ease-in-out;
+}
+.home-blog .heading-more:hover {
+  background: #0962FF;
+  color: white;
+  text-decoration: none;
+}
+.home-blog .blog-list-wrap {
+  flex: 1;
+}
+.home-blog .blog-list-iphone {
+  position: absolute;
+}
+.home-blog .blog-item {
+  padding: 166px 34px 62px;
+}
+.home-blog .blog-item.swiper-slide-active {
+  background: url("/images/blog-iphone.png") no-repeat center center;
+}
+.home-blog .blog-item-wrap {
+  padding: 60px 28px;
+  border: 1px solid #6A6A6A;
+  border-radius: 20px;
+  background: url("/images/blog-vector.svg") no-repeat bottom right;
+}
+.home-blog .blog-title {
+  font-size: 24px;
+}
+.home-blog .blog-desc {
+  color: #919494;
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+.home-blog .blog-readmore {
+  display: flex;
+  font-size: 18px;
+  color: white;
+  line-height: 24px;
+  gap: 0 8px;
+}
+.home-blog .blog-readmore .blog-readmore-arrow {
+  color: #0962FF;
+}
+.home-blog .blog-button-slide {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  left: 342px;
+  background: #0962FF;
+}
+.home-blog .blog-button-slide::after {
+  background: url("/images/icon-arrow-right.svg") no-repeat center center;
+  font-size: 0;
+  width: 36px;
+  height: 36px;
+}
+.home-blog .blog-button-slide.swiper-button-prev {
+  display: none;
+}
+.home-blog .blog-button-slide.swiper-button-prev::after {
+  transform: rotate(-180deg);
+}
+.home-blog.only-next .blog-button-slide.swiper-button-prev {
+  display: none;
+}
+.home-blog.only-next .blog-button-slide.swiper-button-next {
+  display: flex;
+}
+.home-blog.only-prev .blog-button-slide.swiper-button-prev {
+  display: flex;
+}
+.home-blog.only-prev .blog-button-slide.swiper-button-next {
+  display: none;
+}
+
+@media screen and (max-width: 1024px) {
+  .home-blog {
+    padding: 60px 16px;
+  }
+  .home-blog .home-blog-wrap {
+    padding-left: 0;
+    gap: 0 60px;
+  }
+  .home-blog .heading-text {
+    font-size: 35px;
+    margin-bottom: 30px;
+  }
+  .home-blog .heading-text .heading-highlight {
+    color: #0962FF;
+  }
+  .home-blog .heading-more {
+    font-size: 16px;
+  }
+  .home-blog .blog-item {
+    padding: 186px 34px 62px;
+  }
+  .home-blog .blog-title {
+    font-size: 20px;
+  }
+  .home-blog .blog-desc {
+    font-size: 16px;
+  }
+  .home-blog .blog-readmore {
+    font-size: 16px;
+    line-height: 18px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .home-blog {
+    padding: 40px 16px;
+  }
+  .home-blog .home-blog-wrap {
+    flex-direction: column;
+  }
+  .home-blog .blog-heading {
+    width: 100%;
+    margin-bottom: 47px;
+  }
+  .home-blog .heading-text {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+  .home-blog .heading-text .heading-highlight {
+    color: #0962FF;
+  }
+  .home-blog .heading-more {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .home-blog .blog-list-wrap {
+    padding-left: 0;
+  }
+  .home-blog .blog-item {
+    padding: 122px 24px 62px;
+  }
+  .home-blog .blog-item.swiper-slide-active {
+    background: url("/images/blog-iphone-mb.png") no-repeat top center;
+  }
+  .home-blog .blog-item-wrap {
+    padding: 44px 20px;
+  }
+  .home-blog .blog-title {
+    font-size: 17px;
+    margin-bottom: 6px;
+  }
+  .home-blog .blog-desc {
+    font-size: 13px;
+    margin-bottom: 6px;
+  }
+  .home-blog .blog-readmore {
+    font-size: 13px;
+    line-height: 18px;
+  }
+  .home-blog .blog-button-slide {
+    width: 58px;
+    height: 58px;
+    left: 248px;
+  }
+}
 .dao-foster {
   padding: 80px 0px;
   background: var(--neutral-05, #141414);

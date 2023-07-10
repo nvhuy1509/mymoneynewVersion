@@ -164,7 +164,7 @@ $(document).ready(function () {
       }
     });
   });
-  $(".owl-carousel").owlCarousel({
+  $(".roadmap-content").owlCarousel({
     // loop: true,
     // autoplay: false,
     // autoplayTimeout: 3500,
@@ -186,7 +186,65 @@ $(document).ready(function () {
       },
     },
   });
-    
+
+  $(".roadmap-content-secondary").owlCarousel({
+    // loop: true,
+    // autoplay: false,
+    // autoplayTimeout: 3500,
+    nav:true,
+    navText : ['<img src="./images/PC_index/btn-prev-slide-team.svg" alt="">','<img src="./images/PC_index/btn-next-slide-team.svg" alt="">'],
+    autoplayHoverPause: true,
+    responsive: {
+      0: {
+        items: 1,
+        margin: 15,
+      },
+      600: {
+        margin: 15,
+        items: 2,
+      },
+      1024: {
+        margin: 20,
+        items: 3,
+      },
+    },
+  });
+
+  const swiperHomeBlog = new Swiper('.home-blog .blog-list-wrap', {
+    direction: 'horizontal',
+    loop: false,
+
+    breakpoints: {
+      320: {
+        width: 279,
+        spaceBetween: -5,
+      },
+      769: {
+        width: 385,
+        spaceBetween: -8,
+      }
+    },
+    navigation: {
+      nextEl: '.home-blog .swiper-button-next',
+      prevEl: '.home-blog .swiper-button-prev',
+    },
+  });
+  swiperHomeBlog.on('slideChange', function(){
+    var blogItems = $('.home-blog .blog-item');
+    blogItems.each((index, item) => {
+      if($(item).hasClass("swiper-slide-active")){
+        if(index==0 || index == 1){
+          $('.home-blog').addClass('only-next');
+          $('.home-blog').removeClass('only-prev');
+        }else if(index == blogItems.length - 2){
+          $('.home-blog').removeClass('only-next');
+          $('.home-blog').addClass('only-prev');
+        }
+      }
+      // console.log(item);
+      // console.log(index);
+    });
+  })
 });
 
 // $('.slider-for').slick({
