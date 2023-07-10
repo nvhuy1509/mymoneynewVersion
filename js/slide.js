@@ -29,7 +29,7 @@ $(document).ready(function () {
     loop: false,
     autoplay: false,
     // autoplayTimeout: 3500,
-    nav:false,
+    nav:true,
     navText : ['<img src="/images/PC_index/icon-prev-team.svg" alt="">','<img src="/images/PC_index/icon-next-team.svg" alt="">'],
     // navText : ['<i class="fa fa-sm fa-arrow-left" aria-hidden="true"></i>','<i class="fa fa-arrow-right" aria-hidden="true"></i>'],
     autoplayHoverPause: true,
@@ -43,7 +43,7 @@ $(document).ready(function () {
         items: 2,
       },
       1024: {
-        margin: 10,
+        margin: 40,
         items: 2,
       },
     },

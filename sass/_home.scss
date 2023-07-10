@@ -448,6 +448,15 @@
 					background: var(--neutral-05, #141414);
 					min-height: 312px;
                 }
+                .owl-nav {
+                        position: absolute;
+                        top: -90px;
+                        gap: 20px;
+                        display: flex;
+                        left: 38%;
+                }
+                
+                
         }
         .col-md-9{
                 padding-bottom: 40px;
@@ -473,6 +482,9 @@
                 &-content{
                         position: absolute;
                         bottom: 100px;
+                        .owl-item{
+                                width: unset !important;
+                        }
                 }
         }
         &-title{
@@ -488,7 +500,7 @@
                 border-radius: 20px;
                 border: 1px solid var(--neutral-04, #6A6A6A);
                 background: var(--neutral-05, #141414);
-                padding: 40px 20px;
+                padding: 35px 20px;
                 width: 345px;
                 margin-left: 19px;
                 &-title{
