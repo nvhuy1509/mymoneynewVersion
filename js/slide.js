@@ -1,5 +1,26 @@
 $(document).ready(function () {
-
+  $(window).on("load resize orientationchange", function () {
+    $(".customers-list").each(function () {
+      var $mission = $(this);
+      if ($(window).width() > 767) {
+        if ($mission.hasClass("slick-initialized")) {
+          $mission.slick("unslick");
+        }
+      } else {
+        if (!$mission.hasClass("slick-initialized")) {
+            $mission.slick({
+              slidesToShow: 3,
+              autoplay: true,
+              autoplaySpeed: 3500,
+              slidesToScroll: 1,
+              mobileFirst: true,
+              arrows: false,
+              dots: false,
+          });
+        }
+      }
+    });
+  });
   $(".roadmap-slider").owlCarousel({
     loop: false,
     autoplay: false,

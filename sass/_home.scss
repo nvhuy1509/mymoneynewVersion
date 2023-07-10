@@ -47,6 +47,9 @@
                         font-family: "Manrope";
                         line-height: 120%;
                         max-width: 392px;
+                        @media screen and (max-width: 767px) {
+                                font-size: 16px;
+                        }
                 }
         }
         .row {
@@ -78,6 +81,10 @@
                         background: #0962FF;
                         
                 }
+        }
+        .homeabout-main{
+                flex-direction: column !important;
+                gap: 30px
         }
         .about-top {
                 padding-top: 80px;
@@ -128,9 +135,16 @@
                         font-weight: 700;
                         padding-bottom: 20px;
                         line-height: 110%;
+                        @media screen and (max-width: 767px) {
+                                font-size: 20px;
+                                text-align: center;
+                        }
                 }
                 .d-flex{
                         justify-content: space-evenly;
+                }
+                @media screen and (max-width: 767px) {
+                        padding: 70px 20px;
                 }
         }
 
