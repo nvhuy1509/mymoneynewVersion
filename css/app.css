@@ -765,13 +765,17 @@ li {
   top: 0;
   padding-top: 60px;
   max-height: 100%;
-  overflow-y: auto;
+  padding-inline: 20px;
   background: linear-gradient(180deg, rgba(6, 6, 6, 0) 0%, #060606 93.23%);
   border-radius: 13px;
+}
+.home-team .infor-team .infor-team-main {
+  overflow-y: auto;
+  max-height: 100%;
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
-.home-team .infor-team::-webkit-scrollbar {
+.home-team .infor-team .infor-team-main::-webkit-scrollbar {
   display: none;
 }
 .home-team .infor-team-title {
@@ -794,7 +798,7 @@ li {
   font-size: 18px;
   font-style: normal;
   list-style: disc !important;
-  padding-left: 40px;
+  padding-left: 20px;
   font-weight: 400;
   line-height: normal;
 }

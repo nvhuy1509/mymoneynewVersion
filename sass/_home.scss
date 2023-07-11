@@ -444,14 +444,20 @@
                 top: 0;
                 padding-top: 60px;
                 max-height: 100%;
-                overflow-y: auto;
+                padding-inline: 20px;
                 background: linear-gradient(180deg, rgba(6, 6, 6, 0.00) 0%, #060606 93.23%);
                 border-radius: 13px;
-                -ms-overflow-style: none;
-                scrollbar-width: none;
-                &::-webkit-scrollbar {
-                        display: none;
+
+                .infor-team-main{
+                        overflow-y: auto;
+                        max-height: 100%;
+                        -ms-overflow-style: none;
+                        scrollbar-width: none;
+                        &::-webkit-scrollbar {
+                                display: none;
+                        }
                 }
+
                 &-title{
                         color: #0962FF;
                         text-align: center;
@@ -470,7 +476,7 @@
                         font-size: 18px;
                         font-style: normal;
                         list-style: disc !important;
-                        padding-left: 40px;
+                        padding-left: 20px;
                         font-weight: 400;
                         line-height: normal;
                         @media screen and (max-width: 767px) {
