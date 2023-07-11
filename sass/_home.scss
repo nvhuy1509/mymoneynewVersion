@@ -30,7 +30,7 @@
                 /* Text - 1440 */
                 padding-top: 15px;
                 font-size: 18px;
-                font-family: Manrope;
+                font-family: "Manrope";
                 font-style: normal;
                 font-weight: 400;
                 line-height: 120%;
@@ -67,7 +67,7 @@
                         color: var(--neutral-01, #FFF);
                         /* Button Text - 1440 */
                         font-size: 18px;
-                        font-family: Manrope;
+                        font-family: "Manrope";
                         font-style: normal;
                         font-weight: 800;
                         line-height: 24px;
@@ -90,7 +90,7 @@
                         max-width: 640px;
                         margin: auto;
                         font-size: 48px;
-                        font-family: Manrope;
+                        font-family: "Manrope";
                         font-style: normal;
                         font-weight: 800;
                         line-height: 100%;
@@ -106,7 +106,7 @@
                         text-align: center;
                         /* Text - 1440 */
                         font-size: 18px;
-                        font-family: Manrope;
+                        font-family: "Manrope";
                         font-style: normal;
                         font-weight: 400;
                         line-height: 120%;
@@ -332,6 +332,7 @@
                 font-size: 40px;
                 font-family: "Manrope";
                 font-weight: 800;
+                padding-bottom: 20px;
                 line-height: 110%;
                 @media screen and (max-width: 767px) {
                         font-size: 32px;
@@ -449,7 +450,7 @@
                 &-title{
                         color: #0962FF;
                         text-align: center;
-                        font-family: Manrope;
+                        font-family: "Manrope";
                         font-size: 28px;
                         font-style: normal;
                         font-weight: 700;
@@ -548,7 +549,7 @@
         &-title{
                 color: var(--neutral-01, #FFF);
                 /* H2- 1440 */
-                font-family: Manrope;
+                font-family: "Manrope";
                 font-size: 40px;
                 font-style: normal;
                 font-weight: 800;
@@ -584,7 +585,7 @@
                         .roadmap-item-time{
                                 color: var(--neutral-03, #919494);
                                 /* H5 - 1440 */
-                                font-family: Manrope;
+                                font-family: "Manrope";
                                 font-size: 16px;
                                 font-style: normal;
                                 font-weight: 700;
@@ -595,7 +596,7 @@
                                 color: var(--neutral-01, #FFF);
                                 /* H5 - 1440 */
                                 padding-top: 5px;
-                                font-family: Manrope;
+                                font-family: "Manrope";
                                 font-size: 16px;
                                 font-style: normal;
                                 font-weight: 700;
@@ -605,7 +606,7 @@
                         ul{
                                 color: var(--neutral-02, #9BA3B9);
                                 /* Text - 1440 */
-                                font-family: Manrope;
+                                font-family: "Manrope";
                                 font-size: 18px;
                                 padding-left: 20px;
                                 font-style: normal;
@@ -660,7 +661,7 @@
         &-title{
                 color: #FFF;
                 /* H2- 1440 */
-                font-family: Manrope;
+                font-family: "Manrope";
                 font-size: 40px;
                 font-style: normal;
                 font-weight: 800;
@@ -676,7 +677,7 @@
                 &-title{
                         color: var(--neutral-01, #FFF);
                         /* H4 -1440 */
-                        font-family: Manrope;
+                        font-family: "Manrope";
                         font-size: 24px;
                         font-style: normal;
                         font-weight: 700;
@@ -685,7 +686,7 @@
                 &-desc{
                         color: var(--neutral-03, #919494);
                         padding: 10px 0px;
-                        font-family: Manrope;
+                        font-family: "Manrope";
                         font-size: 18px;
                         font-style: normal;
                         font-weight: 400;
@@ -701,7 +702,7 @@
                         color: var(--neutral-01, #FFF);
                         /* Button Text - 1440 */
                         font-size: 18px;
-                        font-family: Manrope;
+                        font-family: "Manrope";
                         font-style: normal;
                         font-weight: 800;
                         line-height: 24px;
@@ -782,7 +783,7 @@
 		font-size: 40px;
 		font-weight: 600;
 		margin-bottom: 40px;
-
+                font-family: "Manrope";
 		.heading-highlight{
 			color: #0962FF;
 		}
