@@ -148,7 +148,6 @@ function changeLanguage() {
 $(document).ready(function(){
   var itemBanners = $('.banner-item');
   var itemThumbs = $('.thumb-item');
-  console.log($(body).height());
 
   itemThumbs.each(function(index){
       $(this).on('click', function(){
@@ -157,5 +156,16 @@ $(document).ready(function(){
           itemBanners.removeClass('active');
           $(itemBanners[index]).addClass('active');
       })
+  });
+
+  //Toggle Infor Team 
+  var buttonToggleInfo = $('.home-team .iteam-team-btn');
+  console.log(buttonToggleInfo);
+  buttonToggleInfo.each(function(){
+    $(this).on('click', function(){
+      $(this).parent().find('.team-info-wrap').slideToggle(300);
+      ($(this).text() === "+") ? $(this).text("-") : $(this).text("+");
+    });
   })
+  //End Toggle Infor Team
 })

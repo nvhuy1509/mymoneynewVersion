@@ -694,32 +694,29 @@ li {
 .home-team-item:nth-child(3) {
   padding-top: 30px;
 }
-.home-team-item:nth-child(3) .iteam-team-btn {
-  top: 77px;
-}
 @media screen and (max-width: 767px) {
   .home-team-item:nth-child(3) {
     padding-top: 25px;
-  }
-  .home-team-item:nth-child(3) .iteam-team-btn {
-    top: 25px;
   }
 }
 @media screen and (max-width: 767px) {
   .home-team-item:nth-child(1) {
     padding-top: 25px;
   }
-  .home-team-item:nth-child(1) .iteam-team-btn {
-    top: 20px;
-  }
 }
 .home-team-item .iteam-team-btn {
   font-size: 32px;
   position: absolute;
-  top: 0;
+  top: 20px;
+  right: 20px;
   cursor: pointer;
   color: #0962FF !important;
-  right: 32px;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
 }
 .home-team-item .iteam-team-btn:hover {
   text-decoration: unset;
@@ -763,12 +760,19 @@ li {
 }
 .home-team .infor-team {
   position: absolute;
-  width: 92%;
-  padding-bottom: 10px;
-  height: 91%;
-  top: 40px;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  padding-top: 60px;
+  max-height: 100%;
+  overflow-y: auto;
   background: linear-gradient(180deg, rgba(6, 6, 6, 0) 0%, #060606 93.23%);
   border-radius: 13px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.home-team .infor-team::-webkit-scrollbar {
+  display: none;
 }
 .home-team .infor-team-title {
   color: #0962FF;
@@ -803,17 +807,6 @@ li {
   padding-top: 10px;
   list-style: disc !important;
 }
-.home-team .infor-team:nth-child(2) {
-  top: 70px;
-}
-.home-team .infor-team:nth-child(3) {
-  top: 110px;
-}
-@media screen and (max-width: 767px) {
-  .home-team .infor-team:nth-child(3) {
-    top: 65px;
-  }
-}
 .home-team .row {
   justify-content: center;
 }
@@ -827,6 +820,22 @@ li {
   .home-team {
     padding: 70px 20px;
   }
+}
+.home-team .team-image-wrap {
+  position: relative;
+}
+.home-team .team-info-wrap {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+}
+.home-team .d-flex {
+  gap: 0 20px;
+}
+.home-team .home-team-item {
+  width: calc((100% - 40px) / 3);
 }
 
 @media screen and (min-width: 1024px) {
@@ -849,8 +858,15 @@ li {
   .home-team .d-flex::-webkit-scrollbar {
     display: none;
   }
-  .home-team-item {
-    min-width: 300px;
+  .home-team .iteam-team-btn {
+    right: 20px;
+    top: 10px;
+  }
+  .home-team .home-team-item {
+    width: 100%;
+  }
+  .home-team .infor-team {
+    padding-top: 30px;
   }
 }
 .txt-purple {
