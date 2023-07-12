@@ -129,6 +129,7 @@ function reveal() {
       reveals[i].classList.remove("active");
     }
   }
+  console.log('có vào reveal')
 }
 
 window.addEventListener("scroll", reveal);
@@ -169,3 +170,30 @@ $(document).ready(function(){
   })
   //End Toggle Infor Team
 })
+
+
+//next roadmap index 
+$(document).ready(function(){
+  var owl = $('.owl-carousel');
+  owl.owlCarousel();
+  // Go to the next item
+  var imgNext = document.getElementById("nextRM");
+  var imgPrev = document.getElementById("prevRM");
+  $('.owl-next').click(function() {
+      owl.trigger('next.owl.carousel');
+      
+      imgNext.src = "/images/PC_index/next-slide-active.svg";
+      imgPrev.src = "/images/PC_index/icon-prev-team.svg"
+      console.log("next-slide===============");
+      console.log(btnNext);
+  })
+  // Go to the previous item
+  $('.owl-prev').click(function() {
+      // With optional speed parameter
+      // Parameters has to be in square bracket '[]'
+      owl.trigger('prev.owl.carousel', [300]);
+      imgNext.src = "/images/PC_index/icon-next-team.svg";
+      imgPrev.src = "/images/PC_index/prev-slide-active.svg"
+      console.log("prev-slide===============")
+  })
+});

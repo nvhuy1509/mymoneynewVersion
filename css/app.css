@@ -681,7 +681,7 @@ li {
   padding-top: 15px;
 }
 .home-team-item:nth-child(2) .iteam-team-btn {
-  top: 38px;
+  top: 15px;
 }
 @media screen and (max-width: 767px) {
   .home-team-item:nth-child(2) {
@@ -959,7 +959,10 @@ li {
   top: -90px;
   gap: 20px;
   display: flex;
-  left: 38%;
+  left: 10%;
+}
+.roadmap-content .owl-nav button {
+  outline: none;
 }
 .roadmap .col-md-9 {
   padding-bottom: 40px;
@@ -1766,9 +1769,10 @@ header .menu-item .menu-button {
   padding: 16px 28px 16px 28px;
   border-radius: 40px;
   border: 2px solid #0962FF;
+  background-color: #0962FF;
 }
 header .menu-item .menu-button:hover {
-  background: #0962FF;
+  background-color: transparent;
   color: var(--neutral-01, #FFF);
 }
 header .menu-item .dropdown-item {

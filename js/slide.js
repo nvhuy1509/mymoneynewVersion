@@ -26,7 +26,7 @@ $(document).ready(function () {
     autoplay: false,
     // autoplayTimeout: 3500,
     nav:true,
-    navText : ['<img src="/images/PC_index/icon-prev-team.svg" alt="">','<img src="/images/PC_index/icon-next-team.svg" alt="">'],
+    navText : ['<img src="/images/PC_index/icon-prev-team.svg" id="prevRM" alt="">','<img src="/images/PC_index/icon-next-team.svg" id="nextRM"  alt="">'],
     // navText : ['<i class="fa fa-sm fa-arrow-left" aria-hidden="true"></i>','<i class="fa fa-arrow-right" aria-hidden="true"></i>'],
     autoplayHoverPause: true,
     responsive: {
