@@ -636,7 +636,7 @@ li {
 .home-team .d-flex {
   align-items: start;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 640px) {
   .home-team .d-flex {
     display: block !important;
   }
@@ -959,10 +959,15 @@ li {
   top: -90px;
   gap: 20px;
   display: flex;
-  left: 10%;
+  left: 600px;
 }
 .roadmap-content .owl-nav button {
   outline: none;
+}
+@media screen and (max-width: 767px) {
+  .roadmap-content .owl-nav {
+    left: 215px;
+  }
 }
 .roadmap .col-md-9 {
   padding-bottom: 40px;
@@ -2220,6 +2225,18 @@ body {
 }
 .slick-dots button {
   font-size: 0;
+}
+
+.reveal {
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 1s all ease;
+}
+
+.reveal.active {
+  transform: translateY(0);
+  opacity: 1;
 }
 
 .back-to-top {

@@ -322,7 +322,7 @@
         padding: 70px 0px;
 		.d-flex{
 			align-items: start;
-                        @media screen and (max-width: 767px) {
+                        @media screen and (max-width: 640px) {
                                 display: block !important;
                         }
 		}
@@ -655,10 +655,13 @@
                         top: -90px;
                         gap: 20px;
                         display: flex;
-                        left: 10%;
+                        left: 600px;
                         button {
                                 outline: none;
                               }
+                        @media screen and (max-width: 767px){
+                                left: 215px;
+                        }
                 }
                 
                 
@@ -868,12 +871,20 @@
 
 	.blog-title{
 		font-size: 24px;
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                overflow: hidden;
+                -webkit-box-orient: vertical;
 	}
 
 	.blog-desc{
 		color: #919494;
 		font-size: 18px;
 		margin-bottom: 8px;
+                display: -webkit-box;
+                overflow: hidden;
+                -webkit-line-clamp: 5;
+                -webkit-box-orient: vertical;
 	}
 
 	.blog-readmore{

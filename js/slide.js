@@ -1,4 +1,35 @@
 $(document).ready(function () {
+  $(".slide-list").slick({
+    autoplay: true,
+    autoplaySpeed: 3500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    arrows: false,
+    dots: true,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 1008,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 800,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  });
   $(window).on("load resize orientationchange", function () {
     $(".customers-list").each(function () {
       var $mission = $(this);
@@ -36,7 +67,7 @@ $(document).ready(function () {
       },
       600: {
         margin: 15,
-        items: 2,
+        items: 1,
       },
       1024: {
         margin: 20,
@@ -64,17 +95,77 @@ $(document).ready(function () {
       prevEl: '.home-blog .swiper-button-prev',
     },
   });
+  var checked = 1;
   swiperHomeBlog.on('slideChange', function(){
     var blogItems = $('.home-blog .blog-item');
+    console.log("blogItems=========")
+    console.log(blogItems);
+  
     blogItems.each((index, item) => {
       if($(item).hasClass("swiper-slide-active")){
-        if(index==0 || index == 1){
-          $('.home-blog').addClass('only-next');
-          $('.home-blog').removeClass('only-prev');
-        }else if(index == blogItems.length - 2){
-          $('.home-blog').removeClass('only-next');
-          $('.home-blog').addClass('only-prev');
+        
+        // var test = document.getElementsByClassName("swiper-slide-prev");
+        // if(item == blogItems[0]) {
+        //   console.log("phần tử đầu tiên -> btn next")
+        // } 
+        // else if( item == blogItems[blogItems.length - 1]) {
+        //   console.log("phần tử cuối -> btn prev")
+        // }
+        // else {
+        //   console.log("phần tử đầu tiên -> btn next")
+        // }
+        // if(blogItems[0].classList.contains("swiper-slide-active") ||  blogItems[1].classList.contains("swiper-slide-active")) {
+        //   console.log(" btn next------")
+        //   $('.home-blog').removeClass('only-prev');
+        //   $('.home-blog').addClass('only-next');
+        //   return;
+        // }
+        if(blogItems.length > 3) {
+          console.log(" nhiều hơn 3 post------")
+          if(blogItems[blogItems.length - 2].classList.contains("swiper-slide-active") ) {
+            
+            $('.home-blog').removeClass('only-next');
+            $('.home-blog').addClass('only-prev');
+            return;
+          } 
+          if(index==0 || index == 1){
+             $('.home-blog').addClass('only-next');
+              $('.home-blog').removeClass('only-prev');
+              return;
+          }
         }
+        if( 1< blogItems.length <=3) {
+          console.log(" ít hơn 3 post------" + blogItems.length )
+          if(checked == 0 || checked == 1) {
+            console.log(" checked111111111------" + checked )
+            $('.home-blog').addClass('only-next');
+            $('.home-blog').removeClass('only-prev');
+            checked +=1;
+            return;
+          } 
+          if(checked == blogItems.length-1) {
+            console.log(" checked22222------" + checked )
+            $('.home-blog').removeClass('only-next');
+            $('.home-blog').addClass('only-prev');
+            checked = checked - 1;
+          }
+          console.log('checked----------' + checked)
+        }
+        //
+        console.log(blogItems[blogItems.length - 1]) ;
+
+       
+        // console.log("blogItems.length---- ---------" + blogItems.length);
+        // if(index==0 || index == 1){
+        //   console.log("index - home-blog-------------" + index);
+        //   $('.home-blog').addClass('only-next');
+        //   $('.home-blog').removeClass('only-prev');
+        // }
+        // if(mainId == blogItems.length - 1){
+        //   console.log("mainId-------------" + mainId);
+        //   $('.home-blog').removeClass('only-next');
+        //   $('.home-blog').addClass('only-prev');
+        // }
       }
     });
   })

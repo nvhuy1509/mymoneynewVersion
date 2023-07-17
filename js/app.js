@@ -129,7 +129,6 @@ function reveal() {
       reveals[i].classList.remove("active");
     }
   }
-  console.log('có vào reveal')
 }
 
 window.addEventListener("scroll", reveal);
