@@ -362,11 +362,26 @@ li {
   text-decoration: unset;
   background: #0962FF;
 }
-.home-about .about-top {
-  padding-top: 80px;
+@media screen and (max-width: 767px) {
+  .home-about {
+    padding: 100px 25px 0px 25px;
+  }
+  .home-about .homeabout-main {
+    flex-direction: column !important;
+    gap: 30px;
+  }
+}
+
+.about-home-main {
+  background: url("/images/PC_about/bg-imgtop.svg") center/cover, #000000 !important;
+}
+
+.about-top {
+  padding: 80px 0px;
+  background-color: #000000;
   text-align: center;
 }
-.home-about .about-top-title {
+.about-top-title {
   max-width: 640px;
   margin: auto;
   font-size: 48px;
@@ -376,11 +391,11 @@ li {
   line-height: 100%;
 }
 @media screen and (max-width: 767px) {
-  .home-about .about-top-title {
+  .about-top-title {
     font-size: 32px;
   }
 }
-.home-about .about-top-desc {
+.about-top-desc {
   max-width: 640px;
   margin: auto;
   padding-top: 15px;
@@ -394,22 +409,13 @@ li {
   line-height: 120%;
 }
 @media screen and (max-width: 767px) {
-  .home-about .about-top-desc {
+  .about-top-desc {
     font-size: 16px;
   }
 }
 @media screen and (max-width: 767px) {
-  .home-about .about-top {
+  .about-top {
     padding: 50px 0px;
-  }
-}
-@media screen and (max-width: 767px) {
-  .home-about {
-    padding: 100px 25px 0px 25px;
-  }
-  .home-about .homeabout-main {
-    flex-direction: column !important;
-    gap: 30px;
   }
 }
 
@@ -1148,11 +1154,19 @@ li {
 }
 .home-blog .blog-title {
   font-size: 24px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
 }
 .home-blog .blog-desc {
   color: #919494;
   font-size: 18px;
   margin-bottom: 8px;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
 }
 .home-blog .blog-readmore {
   display: flex;

@@ -52,11 +52,13 @@ $(document).ready(function () {
       }
     });
   });
-  $(".roadmap-slider").owlCarousel({
+  $(".owl-carousel").owlCarousel({
     loop: false,
     autoplay: false,
     // autoplayTimeout: 3500,
     nav:true,
+    navRewind:true,
+    slideBy: 1,
     navText : ['<img src="/images/PC_index/icon-prev-team.svg" id="prevRM" alt="">','<img src="/images/PC_index/icon-next-team.svg" id="nextRM"  alt="">'],
     // navText : ['<i class="fa fa-sm fa-arrow-left" aria-hidden="true"></i>','<i class="fa fa-arrow-right" aria-hidden="true"></i>'],
     autoplayHoverPause: true,
@@ -64,6 +66,7 @@ $(document).ready(function () {
       0: {
         items: 1,
         margin: 15,
+        
       },
       600: {
         margin: 15,
@@ -75,6 +78,15 @@ $(document).ready(function () {
       },
     },
   });
+
+  // $(".owl-next").click(function(){
+  //  // owl.trigger('to.owl.carousel', [owl.relative(1), 300]);
+  // });
+
+  // // Xử lý sự kiện click cho nút "prev"
+  // $(".owl-prev").click(function(){
+  //   // owl.trigger('to.owl.carousel', [owl.relative(-1), 300]);
+  // });
 
   const swiperHomeBlog = new Swiper('.home-blog .blog-list-wrap', {
     direction: 'horizontal',

@@ -1,7 +1,8 @@
 .home-about
 {
         padding: 160px 0px 80px 0px;
-        background-color: #000000;
+        
+         background-color: #000000;
         &-img{
                 width: 100%;
         }
@@ -82,42 +83,6 @@
                         
                 }
         }
-        
-        .about-top {
-                padding-top: 80px;
-                text-align: center;
-                &-title{
-                        max-width: 640px;
-                        margin: auto;
-                        font-size: 48px;
-                        font-family: "Manrope";
-                        font-style: normal;
-                        font-weight: 800;
-                        line-height: 100%;
-                        @media screen and (max-width: 767px) {
-                                font-size: 32px;
-                        }
-                }
-                &-desc{
-                        max-width: 640px;
-                        margin: auto;
-                        padding-top: 15px;
-                        color: var(--neutral-02, #9BA3B9);
-                        text-align: center;
-                        /* Text - 1440 */
-                        font-size: 18px;
-                        font-family: "Manrope";
-                        font-style: normal;
-                        font-weight: 400;
-                        line-height: 120%;
-                        @media screen and (max-width: 767px) {
-                                font-size: 16px;
-                        }
-                }
-                @media screen and (max-width: 767px) {
-                        padding: 50px 0px;
-                }
-        }
         @media screen and (max-width: 767px) {
                 padding: 100px 25px 0px 25px;
                 .homeabout-main{
@@ -125,7 +90,49 @@
                         gap: 30px
                 }
         }
+        
+        
 }
+.about-home-main{
+        background: url('/images/PC_about/bg-imgtop.svg') center/cover , #000000 !important;
+}
+.about-top {
+        padding: 80px 0px;
+        background-color: #000000;
+        text-align: center;
+        &-title{
+                max-width: 640px;
+                margin: auto;
+                font-size: 48px;
+                font-family: "Manrope";
+                font-style: normal;
+                font-weight: 800;
+                line-height: 100%;
+                @media screen and (max-width: 767px) {
+                        font-size: 32px;
+                }
+        }
+        &-desc{
+                max-width: 640px;
+                margin: auto;
+                padding-top: 15px;
+                color: var(--neutral-02, #9BA3B9);
+                text-align: center;
+                /* Text - 1440 */
+                font-size: 18px;
+                font-family: "Manrope";
+                font-style: normal;
+                font-weight: 400;
+                line-height: 120%;
+                @media screen and (max-width: 767px) {
+                        font-size: 16px;
+                }
+        }
+        @media screen and (max-width: 767px) {
+                padding: 50px 0px;
+        }
+}
+
 .home-customers{
                 background-color: #000000;
                 padding: 70px 0px;

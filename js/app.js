@@ -179,20 +179,21 @@ $(document).ready(function(){
   var imgNext = document.getElementById("nextRM");
   var imgPrev = document.getElementById("prevRM");
   $('.owl-next').click(function() {
-      owl.trigger('next.owl.carousel');
       
       imgNext.src = "/images/PC_index/next-slide-active.svg";
       imgPrev.src = "/images/PC_index/icon-prev-team.svg"
       console.log("next-slide===============");
-      console.log(btnNext);
+      owl.trigger('to.owl.carousel', [owl.relative(1),300]);
+
   })
   // Go to the previous item
   $('.owl-prev').click(function() {
-      // With optional speed parameter
-      // Parameters has to be in square bracket '[]'
-      owl.trigger('prev.owl.carousel', [300]);
+
+      // owl.trigger('prev.owl.carousel', [300]);
       imgNext.src = "/images/PC_index/icon-next-team.svg";
       imgPrev.src = "/images/PC_index/prev-slide-active.svg"
       console.log("prev-slide===============")
+      owl.trigger('to.owl.carousel', [owl.relative(-1),300]);
+
   })
 });
