@@ -2,12 +2,11 @@
 {
         padding: 160px 0px 80px 0px;
         
-         background-color: #000000;
+         background-color: #060606;
         &-img{
                 width: 100%;
         }
         &-item{
-                padding-left: 7% ;
                 @media screen and (max-width: 767px) {
                         padding: 0px 15px;
                 }
@@ -52,6 +51,7 @@
                                 font-size: 16px;
                         }
                 }
+                
         }
         .row {
                 align-items: center;
@@ -90,12 +90,19 @@
                         gap: 30px
                 }
         }
-        
+        .index-homeabout{
+                max-width: unset;
+                width: 730px;
+                @media screen and (max-width: 767px) {
+                        max-width: 100%;
+                        width: unset;
+                }
+        }
         
 }
-.about-home-main{
-        background: url('/images/PC_about/bg-imgtop.svg') center/cover , #000000 !important;
-}
+// .about-home-main{
+//         background: url('/images/PC_about/bg-imgtop.svg') center/cover , #060606 !important;
+// }
 .about-top {
         padding: 80px 0px;
         background-color: #000000;
@@ -195,7 +202,6 @@
                 align-items: center;
                 
                 .col-md-6 img {
-                        width: 80%;
                         @media screen and (max-width: 767px) {
                                 width: 100%;    
                         }
