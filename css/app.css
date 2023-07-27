@@ -49,7 +49,7 @@ li {
 
 .dev-header {
   padding-top: 180px;
-  background-color: #000000;
+  background-color: #060606;
 }
 .dev-header .dev-replayer {
   text-align: center;
@@ -137,6 +137,19 @@ li {
 .dev-header .dev-who ul {
   display: flex;
   gap: 80px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+@media screen and (max-width: 767px) {
+  .dev-header .dev-who ul {
+    align-items: unset;
+  }
+}
+.dev-header .dev-who ul li {
+  display: flex;
+  object-fit: cover;
+  opacity: 0;
+  transform: translateX(-20px);
 }
 .dev-header .dev-who li {
   display: flex;
@@ -449,6 +462,76 @@ li {
   }
 }
 
+.customers-list {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.customers-list img {
+  display: block;
+  object-fit: cover;
+  opacity: 0;
+  transform: translateX(-20px);
+}
+@media screen and (max-width: 767px) {
+  .customers-list img {
+    opacity: 1;
+    transform: unset;
+  }
+}
+
+.image1 {
+  animation: animate 0.2s 0.2s linear forwards;
+}
+
+.image2 {
+  animation: animate 0.2s 0.4s linear forwards;
+}
+
+.image3 {
+  animation: animate 0.2s 0.6s linear forwards;
+}
+
+.image4 {
+  animation: animate 0.2s 0.8s linear forwards;
+}
+
+.image5 {
+  animation: animate 0.2s 1s linear forwards;
+}
+
+.image6 {
+  animation: animate 0.2s 1.2s linear forwards;
+}
+
+.image7 {
+  animation: animate 0.2s 1.4s linear forwards;
+}
+
+.image8 {
+  animation: animate 0.2s 1.6s linear forwards;
+}
+
+.image9 {
+  animation: animate 0.2s 1.8s linear forwards;
+}
+
+@keyframes animate {
+  0% {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(-10px);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
 .home-what {
   background: var(--neutral-05, #141414);
   padding: 70px 0px;
@@ -509,7 +592,7 @@ li {
 }
 
 .home-why {
-  background-color: #000000;
+  background-color: #060606;
   padding: 70px 0px;
 }
 .home-why-header {
@@ -1095,11 +1178,12 @@ li {
   background: #060606;
   margin: -1px 0;
   color: white;
-  padding: 80px 0;
+  padding: 80px 0 0 0;
 }
 .home-blog .home-blog-wrap {
   display: flex;
   gap: 0 183px;
+  border-bottom: 2.5px solid #4B4B4B;
   align-items: center;
   padding-left: 70px;
 }
@@ -1141,7 +1225,7 @@ li {
   position: absolute;
 }
 .home-blog .blog-item {
-  padding: 166px 34px 62px;
+  padding: 166px 34px 23px;
 }
 .home-blog .blog-item.swiper-slide-active {
   background: url("/images/blog-iphone.png") no-repeat center center;
@@ -1150,7 +1234,7 @@ li {
   padding: 60px 28px;
   border: 1px solid #6A6A6A;
   border-radius: 20px;
-  background: url("/images/blog-vector.svg") no-repeat bottom right;
+  background: url("/images/blog-vector.svg") no-repeat bottom right, #141414;
 }
 .home-blog .blog-title {
   font-size: 24px;
@@ -1684,11 +1768,10 @@ li {
   }
 }
 
-@media screen and (max-width: 767px) {
-  .fusion-item:nth-last-child(1) {
-    border-top: 1px solid var(--neutral-04, #6A6A6A);
-  }
+.fusion-item:nth-last-child(1) {
+  border-top: 1px solid var(--neutral-04, #6A6A6A);
 }
+
 header .header-top {
   display: flex;
   align-items: center;
@@ -2059,6 +2142,10 @@ footer .footer-top .container {
 }
 footer .footer-img {
   position: relative;
+}
+footer .footer-img img {
+  width: 530px;
+  border-radius: 20px;
 }
 footer .footer-left {
   position: absolute;

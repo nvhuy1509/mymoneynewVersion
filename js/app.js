@@ -122,6 +122,23 @@ function reveal() {
 
     if (elementTop < windowHeight - elementVisible) {
       reveals[i].classList.add("active");
+      console.log(reveals[i].classList)
+      if(reveals[i].classList.contains("customers-list")) {
+        var test = document.querySelectorAll('.customers-list img')
+
+        for( let i = 1; i<= test.length; i++) {
+          test[i-1].classList.add("image"+i);
+        }
+        // console.log(test)
+      } 
+      if(reveals[i].classList.contains("dev-who")) {
+        
+        var test = document.querySelectorAll('.dev-header li')
+        for( let i = 1; i<= test.length; i++) {
+          test[i-1].classList.add("image"+i);
+        }
+       
+      } 
       // window.addEventListener("scroll", animateValue(obj1, 0, 125, 2000));
       // window.addEventListener("scroll", animateValue(obj2, 0, 20, 1000));
       // window.addEventListener("scroll", animateValue(obj3, 0, 20, 1000));

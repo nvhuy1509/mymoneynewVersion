@@ -1,6 +1,6 @@
 .dev-header{
         padding-top: 180px;
-        background-color: #000000;
+        background-color: #060606;
 
         .dev-replayer {
                 text-align: center;
@@ -81,6 +81,18 @@
                 ul {
                         display: flex;
                         gap: 80px;
+                        align-items: center;
+                        flex-wrap: wrap;
+                        @media screen and (max-width: 767px) {
+                                align-items: unset;
+                        }
+                }
+
+                ul li{
+                        display: flex;
+                        object-fit: cover;
+                        opacity: 0;
+                        transform: translateX(-20px);
                 }
 
 

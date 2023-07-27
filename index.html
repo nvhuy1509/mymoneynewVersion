@@ -275,16 +275,16 @@
             <div class="row">
               <div class="home-customers-title"><span class="txtWhite">Supported by many companies</span> <span class="txtBlue">around the globe</span></div>
             </div>
-            <div class="d-flex customers-list">
-              <img src="/images/PC_index/partner1.svg" alt="">
+            <div class="customers-list reveal">
+              <img src="/images/PC_index/partner1.svg"  alt="">
               <img src="/images/PC_index/partner2.svg" alt="">
-              <img src="/images/PC_index/partner3.svg" alt="">
-              <img src="/images/PC_index/partner4.svg" alt="">
+              <img src="/images/PC_index/partner3.svg"  alt="">
+              <img src="/images/PC_index/partner4.svg"  alt="">
               <img src="/images/PC_index/partner5.svg" alt="">
-              <img src="/images/PC_index/partner6.svg" alt="">
-              <img src="/images/PC_index/partner7.svg" alt="">
-              <img src="/images/PC_index/partner8.svg" alt="">
-              <img src="/images/PC_index/partner9.svg" alt="">
+              <img src="/images/PC_index/partner6.svg"  alt="">
+              <img src="/images/PC_index/partner7.svg"  alt="">
+              <img src="/images/PC_index/partner8.svg"  alt="">
+              <img src="/images/PC_index/partner9.svg"  alt="">
             </div>
           </div>
           
@@ -367,12 +367,12 @@
                       to borrow cash from My Money Credit without selling their assets.</p>
                   </div>
                   <div class="col-md-6 d-flex justify-content-center">
-                    <img src="/images/PC_index/img-why1.svg" alt="">
+                    <img src="/images/PC_index/img-why1.svg" id="whyIndex1" alt="">
                   </div>
                 </div>
                 <div class="col-md-4 home-why-item">
                   <div>
-                    <img src="/images/PC_index/img-why2.svg" alt="">
+                    <img src="/images/PC_index/img-why2.svg" id="whyIndex2" alt="">
                   </div>
                   <div class="home-why-title">Global cash flow</div>
                   <div class="home-why-desc">Investors can easily invest in financial products in other countries without
@@ -382,21 +382,21 @@
               <div class="row">
                 <div class="col-md-4 home-why-item">
                   <div>
-                    <img src="/images/PC_index/img-why3.svg" alt="">
+                    <img src="/images/PC_index/img-why3.svg" id="whyIndex3" alt="">
                   </div>
                   <div class="home-why-title">Tax exemption</div>
                   <div class="home-why-desc">Users can borrow cash or stablecoin for utilities without capital gains taxes on their collateral.</div>
                 </div>
                 <div class="col-md-4 home-why-item">
                   <div>
-                    <img src="/images/PC_index/img-why4.svg" alt="">
+                    <img src="/images/PC_index/img-why4.svg" id="whyIndex4" alt="">
                   </div>
                   <div class="home-why-title">Uncollateralized microloans</div>
                   <div class="home-why-desc">My Money Credit offers unsecured small loans with quick loan approvals due to the use of automatic credit ratings and rating algorithms.</div>
                 </div>
                 <div class="col-md-4 home-why-item">
                   <div>
-                    <img src="/images/PC_index/img-why5.svg" alt="">
+                    <img src="/images/PC_index/img-why5.svg" id="whyIndex5" alt="">
                   </div>
                   <div class="home-why-title">MMC Token</div>
                   <div class="home-why-desc">
@@ -653,7 +653,7 @@
         <section class="home-blog">
           <div class="home-blog-wrap container">
             <div class="blog-heading">
-              <h2 class="heading-text">Get the Latest Updates and Insight on <span class="heading-highlight">Our Blog</span></h2>
+              <h2 class="heading-text">Insights, Ideas, and Inspiration: Explore  <span class="heading-highlight">Our Blog</span></h2>
               <a href="#!" class="heading-more">
                 Explore more
               </a>
@@ -735,7 +735,7 @@
         <div class="footer-top">
           <div class="container">
             <div class="footer-img">
-              <img src="/images/PC_index/img-footer.svg"  alt="">
+              <img src="/images/PC_index/Footer .gif"  alt="">
             </div>
             <div class="footer-left">
               <div class="footer-left-title">Download and invest now!</div>
@@ -815,6 +815,34 @@
         </a>
       </footer>
     </div>
+    <script>
+      $(document).ready(function() {
+        const isHover = e => e.parentElement.querySelector(':hover') === e;    
+
+        for(let i = 1; i<=5; i++) {
+          const myDiv = document.getElementById('whyIndex'+i);
+          document.addEventListener('mousemove', function checkHover() {
+            const hovered = isHover(myDiv);
+            if (hovered !== checkHover.hovered) {
+              console.log(hovered);
+              if(hovered) {
+                myDiv.src = "/images/PC_index/img-why"+i+".gif";
+                if(i != 1) {
+                  myDiv.style.width = "180px";
+                }
+                
+              } else {
+                myDiv.src = "/images/PC_index/img-why"+i+".svg";
+                if(i != 1) {
+                  myDiv.style.width = "unset";
+                }
+              }
+              checkHover.hovered = hovered;
+            }
+          });
+        }
+      });
+    </script>
     <script
       type="text/javascript"
       src="//code.jquery.com/jquery-1.11.0.min.js"
