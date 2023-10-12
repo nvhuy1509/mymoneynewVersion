@@ -1,11 +1,11 @@
 $(document).ready(function () {
   $(".slide-list").slick({
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 3500,
     slidesToShow: 3,
     slidesToScroll: 1,
     arrows: false,
-    dots: true,
+    dots: false,
     responsive: [
       {
         breakpoint: 1200,
@@ -108,79 +108,79 @@ $(document).ready(function () {
     },
   });
   var checked = 1;
-  swiperHomeBlog.on('slideChange', function(){
-    var blogItems = $('.home-blog .blog-item');
-    console.log("blogItems=========")
-    console.log(blogItems);
+  // swiperHomeBlog.on('slideChange', function(){
+  //   var blogItems = $('.home-blog .blog-item');
+  //   console.log("blogItems=========")
+  //   console.log(blogItems);
   
-    blogItems.each((index, item) => {
-      if($(item).hasClass("swiper-slide-active")){
+  //   blogItems.each((index, item) => {
+  //     if($(item).hasClass("swiper-slide-active")){
         
-        // var test = document.getElementsByClassName("swiper-slide-prev");
-        // if(item == blogItems[0]) {
-        //   console.log("phần tử đầu tiên -> btn next")
-        // } 
-        // else if( item == blogItems[blogItems.length - 1]) {
-        //   console.log("phần tử cuối -> btn prev")
-        // }
-        // else {
-        //   console.log("phần tử đầu tiên -> btn next")
-        // }
-        // if(blogItems[0].classList.contains("swiper-slide-active") ||  blogItems[1].classList.contains("swiper-slide-active")) {
-        //   console.log(" btn next------")
-        //   $('.home-blog').removeClass('only-prev');
-        //   $('.home-blog').addClass('only-next');
-        //   return;
-        // }
-        if(blogItems.length > 3) {
-          console.log(" nhiều hơn 3 post------")
-          if(blogItems[blogItems.length - 2].classList.contains("swiper-slide-active") ) {
+  //       // var test = document.getElementsByClassName("swiper-slide-prev");
+  //       // if(item == blogItems[0]) {
+  //       //   console.log("phần tử đầu tiên -> btn next")
+  //       // } 
+  //       // else if( item == blogItems[blogItems.length - 1]) {
+  //       //   console.log("phần tử cuối -> btn prev")
+  //       // }
+  //       // else {
+  //       //   console.log("phần tử đầu tiên -> btn next")
+  //       // }
+  //       // if(blogItems[0].classList.contains("swiper-slide-active") ||  blogItems[1].classList.contains("swiper-slide-active")) {
+  //       //   console.log(" btn next------")
+  //       //   $('.home-blog').removeClass('only-prev');
+  //       //   $('.home-blog').addClass('only-next');
+  //       //   return;
+  //       // }
+  //       if(blogItems.length > 3) {
+  //         console.log(" nhiều hơn 3 post------")
+  //         if(blogItems[blogItems.length - 2].classList.contains("swiper-slide-active") ) {
             
-            $('.home-blog').removeClass('only-next');
-            $('.home-blog').addClass('only-prev');
-            return;
-          } 
-          if(index==0 || index == 1){
-             $('.home-blog').addClass('only-next');
-              $('.home-blog').removeClass('only-prev');
-              return;
-          }
-        }
-        if( 1< blogItems.length <=3) {
-          console.log(" ít hơn 3 post------" + blogItems.length )
-          if(checked == 0 || checked == 1) {
-            console.log(" checked111111111------" + checked )
-            $('.home-blog').addClass('only-next');
-            $('.home-blog').removeClass('only-prev');
-            checked +=1;
-            return;
-          } 
-          if(checked == blogItems.length-1) {
-            console.log(" checked22222------" + checked )
-            $('.home-blog').removeClass('only-next');
-            $('.home-blog').addClass('only-prev');
-            checked = checked - 1;
-          }
-          console.log('checked----------' + checked)
-        }
-        //
-        console.log(blogItems[blogItems.length - 1]) ;
+  //           $('.home-blog').removeClass('only-next');
+  //           $('.home-blog').addClass('only-prev');
+  //           return;
+  //         } 
+  //         if(index==0 || index == 1){
+  //            $('.home-blog').addClass('only-next');
+  //             $('.home-blog').removeClass('only-prev');
+  //             return;
+  //         }
+  //       }
+  //       if( 1< blogItems.length <=3) {
+  //         console.log(" ít hơn 3 post------" + blogItems.length )
+  //         if(checked == 0 || checked == 1) {
+  //           console.log(" checked111111111------" + checked )
+  //           $('.home-blog').addClass('only-next');
+  //           $('.home-blog').removeClass('only-prev');
+  //           checked +=1;
+  //           return;
+  //         } 
+  //         if(checked == blogItems.length-1) {
+  //           console.log(" checked22222------" + checked )
+  //           $('.home-blog').removeClass('only-next');
+  //           $('.home-blog').addClass('only-prev');
+  //           checked = checked - 1;
+  //         }
+  //         console.log('checked----------' + checked)
+  //       }
+  //       //
+  //       console.log(blogItems[blogItems.length - 1]) ;
 
        
-        // console.log("blogItems.length---- ---------" + blogItems.length);
-        // if(index==0 || index == 1){
-        //   console.log("index - home-blog-------------" + index);
-        //   $('.home-blog').addClass('only-next');
-        //   $('.home-blog').removeClass('only-prev');
-        // }
-        // if(mainId == blogItems.length - 1){
-        //   console.log("mainId-------------" + mainId);
-        //   $('.home-blog').removeClass('only-next');
-        //   $('.home-blog').addClass('only-prev');
-        // }
-      }
-    });
-  })
+  //       // console.log("blogItems.length---- ---------" + blogItems.length);
+  //       // if(index==0 || index == 1){
+  //       //   console.log("index - home-blog-------------" + index);
+  //       //   $('.home-blog').addClass('only-next');
+  //       //   $('.home-blog').removeClass('only-prev');
+  //       // }
+  //       // if(mainId == blogItems.length - 1){
+  //       //   console.log("mainId-------------" + mainId);
+  //       //   $('.home-blog').removeClass('only-next');
+  //       //   $('.home-blog').addClass('only-prev');
+  //       // }
+  //     }
+  //   });
+  // })
 });
 
 // $('.slider-for').slick({

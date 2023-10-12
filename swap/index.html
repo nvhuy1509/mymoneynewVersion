@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PulseWallet</title>
+    <link rel="icon" type="image/x-icon" href="../images/logo-mb.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Owl Stylesheets -->
+
+    <link rel="stylesheet" href="../css/app.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-RSP49DVBB2"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'G-RSP49DVBB2');
+	</script>
+    <script>
+        function onChangeUSDTAddress(){
+          var usdtAddress = document.getElementById("txtAddressUSDT").value;
+          var btn = document.getElementById("btnNextStep2");
+            if(usdtAddress != "") {
+              btn.disabled = false; 
+              btn.classList.remove("btnDisable");
+              $("#btnPasteUSDT").hide();
+              $("#btnResetUSDT").show();
+              $("#validateUSDT").hide();
+              $("#validateTopUSDT").hide();
+              var divBox = document.getElementsByClassName("box-bg-inputAdd");
+              divBox[0].style.border = "1px solid #0765FF";
+            } 
+            if(usdtAddress == "") {
+              btn.disabled = true;
+              btn.classList.add("btnDisable");
+              $("#btnPasteUSDT").show();
+              $("#btnResetUSDT").hide();
+            }
+        }
+        function onChangeEmail(){
+          var email = document.getElementById("email-stepMail").value;
+          var btn = document.getElementById("btnNextStepMail");
+          if(email != ""){
+            btn.disabled = false; 
+            btn.classList.remove("btnDisable");
+          } 
+          if(email == ""){
+            btn.disabled = true;
+            btn.classList.add("btnDisable");
+          }
+        }
+        function isValidUSDTAddress(address) {
+          // Kiểm tra xem địa chỉ có độ dài 40 ký tự và bắt đầu bằng "0x" hay không
+          if (/^0x[0-9a-fA-F]{40}$/.test(address)) {
+            return true;
+          }
+          return false;
+        }
+        function pasteTxt(){
+              
+                try {
+                        // Yêu cầu quyền truy cập clipboard từ người dùng
+                        var input = document.getElementById("txtAddressUSDT");
+                        navigator.clipboard.readText().then(function(pastedText) {
+                          // Gán nội dung đã dán vào input
+                          console.log("--------------");
+                          console.log(pastedText);
+                          // Lấy nội dung đã dán vào textarea và gán vào i
+                          input.value = pastedText;
+                          $("#btnResetUSDT").show();
+                          $("#btnPasteUSDT").hide();
+                          $("#validateUSDT").hide();
+                          $("#validateTopUSDT").hide();
+                          var divBox = document.getElementsByClassName("box-bg-inputAdd");
+                          divBox[0].style.border = "1px solid #0765FF";
+                        });
+                      } catch (error) {
+                        console.error('Không thể paste dữ liệu:', error);
+                      }
+        }
+
+        function viewItemTabs(curItem,nextItem){
+                if(curItem=="step2" && nextItem == "step3") {
+                  var usdtAdd = document.getElementById("txtAddressUSDT").value;
+                  console.log("usdtAdd======" + usdtAdd)
+                  if(isValidUSDTAddress(usdtAdd)) {
+                    $("#pastedUSDTAdd").html(usdtAdd);
+                  } else {
+                    var divBox = document.getElementsByClassName("box-bg-inputAdd");
+                    divBox[0].style.border = "1px solid #EB5B56";
+                    console.log()
+                    $("#validateUSDT").show();
+                    $("#validateTopUSDT").show();
+                    return;
+                  }
+                }
+                if(curItem=="stepAddMail" && nextItem == "step4") {
+                  var usdtAdd = document.getElementById("txtAddressUSDT").value;
+                  var email = document.getElementById("email-stepMail").value;
+                //  if(usdtAdd.trim() == "") {
+                  //  return;
+               //   }
+                  $("#pastedUSDTAddStep4").html(usdtAdd);
+                  $("#emailAddStep4").html(email);
+                }
+                if(curItem=="step4" && nextItem == "step5") {
+                  var usdtAdd = document.getElementById("txtAddressUSDT").value;
+                  var email = document.getElementById("email-stepMail").value;
+                //  if(usdtAdd.trim() == "") {
+                  //  return;
+               //   }
+                  $("#pastedUSDTAddStep5").html(usdtAdd);
+                  $("#emailAddStep5").html(email);
+                }
+                if(nextItem == "step4") {
+                  var notify = document.getElementById("notify-email");
+                  console.log("aaaa")
+                  notify.style.display = "flex";
+                  timeCountdown(3, function () {
+                    notify.style.display = "none";
+                  });
+                }
+                if(nextItem == "stepMenu") {
+                  var href = document.getElementById("stepMenuSelect");
+                  href.onclick = function() {
+                    viewItemTabs('stepMenu',curItem); // Thay đổi đối tượng ở đây
+                  };
+                  
+                }
+                $('#' + curItem).hide();
+                $('#' + nextItem).show();
+                
+        }
+        function timeCountdown(time, callback) {
+          if (time > 0) {
+            setTimeout(function () {
+              time--;
+              timeCountdown(time, callback); // Gọi lại chính hàm này để thiết lập đệ quy
+            }, 1000);
+          } else {
+            callback(); // Gọi hàm callback khi đếm ngược kết thúc
+          }
+        }
+
+        function resetInputMail(){
+          document.getElementById("email-stepMail").value = "";
+          var btn = document.getElementById("btnNextStepMail");
+          btn.disabled = true;
+          btn.classList.add("btnDisable");
+        }
+
+        function resetInputUSDT(){
+          document.getElementById("txtAddressUSDT").value = "";
+          $("#btnPasteUSDT").show();
+          $("#btnResetUSDT").hide();
+          $("#validateUSDT").hide();
+          $("#validateTopUSDT").hide();
+          var divBox = document.getElementsByClassName("box-bg-inputAdd");
+          divBox[0].style.border = "1px solid #0765FF";
+          var btn = document.getElementById("btnNextStep2");
+          btn.disabled = true;
+          btn.classList.add("btnDisable");
+        }
+        function closeNotify(id){
+          $("#" + id).hide();
+        }
+
+        function redirectTime(element){
+          var timeleft = 5;
+          var downloadTimer = setInterval(function(){
+            if(timeleft <= 1){
+             
+              clearInterval(downloadTimer);
+              timeCountdown(1, function () {
+                $("#dotLoading").show();
+                element.innerHTML  = "Go to provider  " +  '<i class="fa-solid fa-arrow-up-right-from-square"></i>';
+                document.getElementById("redirectTitle").textContent = "Transaction pending";
+                document.getElementById("redirectDesc").textContent = "The transaction is processed on the side of the provider";
+              });
+            }
+            element.textContent = "Redirect in " + timeleft + " sec";
+            timeleft -= 1;
+           
+          }, 1000);
+        
+          
+        }
+    </script>
+  </head>
+  <body>
+    <div class="wrapper body-swap">
+        <header>
+                <div class="header-top">
+                  <a id="logoHeader" href="../index.html" class="logo">
+                    <img src="../images/PC_index/logo.svg" class="visible-lg" alt="" />
+                    <img src="../images/logo-mb.svg" class="visible-s" alt="" />
+                  </a>
+                  <div id="imgBarHeader" class="header-bar visible-s">
+                    <img src="../images/PC_index/icon-bar.svg" alt="" />
+                  </div>
+                  <div class="header-fixed">
+                    <ul class="menu">
+                      <li class="menu-item">
+                        <i class="fa fa-times close-header-fixed visible-s"></i>
+                      </li>
+                      <li class="menu-item ">
+                        <a href="../index.html" class="menu-link menu-active actived"
+                          >Home</a
+                        >
+                      </li><li class="menu-item ">
+                        <a href="../about.html" class="menu-link menu-active"
+                          >About</a
+                        >
+                      </li>
+                      <li class="menu-item">
+                        <div class="menu-item-wrapper">
+                          <span>
+                            <a
+                              href="#!"
+                              class="menu-link menu-active "
+                              >Solutions
+                            </a>
+                          </span>
+                          <span class="menu-icon-header"
+                            ><img
+                              src="../images/PC_index/icon-menu.svg"
+                              class="visible-lg"
+                              alt=""
+                          /></span>
+                          <img
+                            src="../images/PC_index/icon-dropdown-mb.svg"
+                            class="visible-s"
+                            alt=""
+                          />
+                        </div>
+                        <ul class="menu-dropdown bg-dropdown1">
+                          <li class="dropdown-item">
+                            <a href="../wallet.html" class="menu-link">MMC Wallet </a>
+                          </li>
+                          <li class="dropdown-item">
+                            <a href="../transaction.html" class="menu-link">ETH-Free Transactions</a>
+                          </li>
+                          <li class="dropdown-item">
+                            <a href="../fusion.html" class="menu-link">Fusion Trading</a>
+                          </li>
+                          <li class="dropdown-item">
+                            <a href="../lending.html" class="menu-link">Lending & Loan Services</a>
+                          </li>
+                          <li class="dropdown-item">
+                            <a href="../crosschain.html" class="menu-link">Cross-chain Transfer Protocol</a>
+                          </li>
+                          <li class="dropdown-item">
+                            <a href="../remittance.html" class="menu-link">Remittance</a>
+                          </li>
+                          <li class="dropdown-item">
+                            <a href="../tokenized.html" class="menu-link">Tokenized Stock & Assets</a>
+                          </li>
+                          <li class="dropdown-item">
+                            <a href="../social.html" class="menu-link">Social Login & Socail Trading</a>
+                          </li>
+                          
+                        </ul>
+                      </li>
+                      <li class="menu-item">
+                        <div class="menu-item-wrapper">
+                          <span>
+                            <a
+                              href="#!"
+                              class="menu-link menu-active "
+                              >MMC Token
+                            </a>
+                          </span>
+                          <span class="menu-icon-header"
+                            ><img
+                              src="../images/PC_index/icon-menu.svg"
+                              class="visible-lg"
+                              alt=""
+                          /></span>
+                          <img
+                            src="../images/PC_index/icon-dropdown-mb.svg"
+                            class="visible-s"
+                            alt=""
+                          />
+                        </div>
+                        <ul class="menu-dropdown  bg-dropdown2">
+                          <li class="dropdown-item">
+                            <a href="../introduction.html" class="menu-link">Introduction</a>
+                          </li>
+                          <li class="dropdown-item">
+                            <a href="../membership.html" class="menu-link">Membership</a>
+                          </li>
+                          <li class="dropdown-item">
+                            <a href="../dao.html" class="menu-link">DAO</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="menu-item">
+                        <div class="menu-item-wrapper">
+                          <span>
+                            <a
+                              href="#!"
+                              class="menu-link menu-active "
+                              >Developers
+                            </a>
+                          </span>
+                          <span class="menu-icon-header"
+                            ><img
+                              src="../images/PC_index/icon-menu.svg"
+                              class="visible-lg"
+                              alt=""
+                          /></span>
+                          <img
+                            src="../images/PC_index/icon-dropdown-mb.svg"
+                            class="visible-s"
+                            alt=""
+                          />
+                        </div>
+                        <ul class="menu-dropdown  bg-dropdown3">
+                          <li class="dropdown-item">
+                            <a href="#!" class="menu-link">Docs</a>
+                          </li>
+                          <li class="dropdown-item">
+                            <a href="../developer.html" class="menu-link">MMC SDK & Replayer</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="menu-item">
+                        <a
+                          target="_blank" href="#!"
+                          class="menu-link menu-active "
+                          >DONG
+                        </a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="#!" class="menu-button">Download App</a>
+                      </li>
+                    </ul>
+                    <ul class="header-cta">
+                      <li class="header-cta-item">
+                        <form action="">
+                          <input type="text" placeholder="" class="visible-s" />
+                          <button><i class="fas fa-search"></i></button>
+                        </form>
+                      </li>
+                      <li class="header-cta-item">
+                        <button onclick="changeLanguage()">
+                          <span id="language">EN</span>
+                        </button>
+                      </li>
+                      <li class="header-cta-item">
+                        <button>Register</button>
+                      </li>
+                      <li class="header-cta-item">
+                        <button class="active">Login</button>
+                      </li>
+                    </ul>
+                    <!-- <ul class="header-social footer-social visible-s">
+                      <li>
+                        <a href="#!">
+                          <img src="./images/PC_index/header-icon-fb.svg" alt="" />
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#!">
+                          <img src="./images/PC_index/header-icon-tt.svg" alt="" />
+                        </a>
+                      </li>
+                    </ul> -->
+                  </div>
+                  <!-- <button class="header-btn visible-lg">Learn more</button> -->
+                </div>
+              </header>
+      <main>
+        <section class="swap" >
+                <div class="row container swap-main">
+                        <div class="swap-left col-md-6">
+                                <div class="swap-left-title">Your Fiat On/Off Ramp Solution
+                                        Best Rates Guaranteed</div>
+                                <div class="swap-left-content">Try it now!     <i class="fas fa-arrow-right"></i></div>
+                                <ul class="swap-left-list">
+                                        <li>
+                                                <img src="../images/swap/swap-try1.svg" alt="">
+                                                <p>Fast</p>
+                                        </li>
+                                        <li>
+                                                <img src="../images/swap/swap-try2.svg" alt="">
+                                                <p>Secure </p>
+                                        </li>
+                                        <li>
+                                                <img src="../images/swap/swap-try3.svg" alt="">
+                                                <p>Convenient</p>
+                                        </li>
+                                </ul>
+                        </div>
+                        <div class="swap-right col-md-6">
+                                <div class="swap-right-box">
+                                        <div id="step1">
+                                                <div class="box-top">
+                                                        <div class="box-top-width">
+                                                                <div class="box-top-title">Buy VND for USDT</div>
+                                                                <ul>
+                                                                        <li class="dot-gradient"></li>
+                                                                        <li></li>
+                                                                        <li></li>
+                                                                        <li></li>
+                                                                </ul>
+                                                        </div>
+                                                        <a>
+                                                                <img src="../images/swap/refreshBtn.svg" alt="">
+                                                        </a>
+                                                        <a  onclick="viewItemTabs('step1','stepMenu')">
+                                                                <img src="../images/swap/menuBtn.svg" alt="">
+                                                        </a>
+                                                </div>
+                                                <div class="box-getsend getsend-top">
+                                                        <div class="getsend-left">
+                                                                <div  class="getsend-text" style="color: #0765FF;">
+                                                                        You Send
+                                                                </div>
+                                                                <div class="getsend-number">
+                                                                        3,200,000
+                                                                </div>
+                                                        </div>
+                                                        <div class="getsend-right">
+                                                                <img src="../images/swap/getsend-VND.svg" alt="">
+                                                        </div>
+                                                        <div class="box-doubleArrow">
+                                                          <a><img src="../images/swap/icon-double-arrow.svg" alt=""></a>
+                                                        </div>
+                                                </div>
+                                               
+                                                <div class="box-getsend getsend-bottom">
+                                                        <div class="getsend-left">
+                                                                <div  class="getsend-text" style="color: #656870;">
+                                                                        You Get
+                                                                </div>
+                                                                <div class="getsend-number">
+                                                                        135.46
+                                                                </div>
+                                                        </div>
+                                                        <div class="getsend-right">
+                                                                <img src="../images/swap/getsend-USDT.svg" alt="">
+                                                        </div>
+                                                </div>
+                                                <div class="box-payment">
+                                                        <img src="../images/swap/step1-visa.svg" alt="">
+                                                        <img src="../images/swap/step1-bank.svg" alt="">
+                                                        <img src="../images/swap/step1-pay.svg" alt="">
+                                                </div>
+                                                <div>
+                                                        <button class="box-btn"  onclick="viewItemTabs('step1','step2')">Next</button>
+                                                </div>
+                                        </div>
+                                        <div id="step2"  style="display: none;">
+                                                <div class="box-top">
+                                                        <a  onclick="viewItemTabs('step2','step1')">
+                                                                <img src="../images/swap/iconBack.svg" alt="">
+                                                        </a>
+                                                        <div class="box-top-width">
+                                                                <div class="box-top-title">Enter your details</div>
+                                                                <ul>
+                                                                        <li class="dot-gradient"></li>
+                                                                        <li class="dot-gradient"></li>
+                                                                        <li></li>
+                                                                        <li></li>
+                                                                </ul>
+                                                        </div>
+                                                        <a  onclick="viewItemTabs('step2','stepMenu')">
+                                                                <img src="../images/swap/menuBtn.svg" alt="">
+                                                        </a>
+                                                </div>
+                                                <div class="box-getsend getsend-top" style="justify-content: unset; gap: 10px">
+                                                        <div class="getsend-right">
+                                                                <img src="../images/swap/flag-VN.svg" alt="">
+                                                        </div>
+                                                        <div class="getsend-left">
+                                                                <div class="getsend-number">
+                                                                        3,200,000
+                                                                </div>
+                                                                <div  class="getsend-text" style="color:#656870;">
+                                                                        VND
+                                                                </div>
+                                                        </div>
+                                                        <div class="box-doubleArrow">
+                                                          <a><img src="../images/swap/icon-double-arrow.svg" alt=""></a>
+                                                        </div>
+                                                </div>
+                                                
+                                                <div class="box-getsend getsend-bottom" style="justify-content: unset; gap: 10px">
+                                                        <div class="getsend-right">
+                                                                <img src="../images/swap/flag-USDT.svg" alt="">
+                                                        </div>
+                                                        <div class="getsend-left">
+                                                                <div class="getsend-number">
+                                                                        135.46
+                                                                </div>
+                                                                <div  class="getsend-text" style="color: #662BCF; ">
+                                                                       <span style="color:#656870;">USDT</span> 
+                                                                       <span style="color: #662BCF; ">  ERC20</span> 
+                                                                </div>
+                                                                
+                                                        </div>
+                                                        
+                                                </div>
+                                                <div class="box-bg-inputAdd">
+                                                  <div id="validateTopUSDT" class="box-validateUSDT" style="padding: 10px 0px 0px 10px; display: none">USDT-Ethereum receiving address</div>
+                                                  <div class="box-inputAdd">
+                                                    <input type="text" class="box-inputAdd-input" id="txtAddressUSDT" onchange onpropertychange  onkeyuponpaste oninput="onChangeUSDTAddress()" value="" placeholder="USDT-Ethereum receiving address">
+                                                    <button id="btnPasteUSDT" class="box-inputAdd-btn" onclick="pasteTxt()">Paste</button>
+                                                    <a id="btnResetUSDT" class="box-inputAdd-btn" onclick="resetInputUSDT()" style="display: none; background: unset; cursor: pointer;">
+                                                      <img src="../images/swap/icon-close-input.svg" alt="">
+                                                    </a>
+                                                  </div>
+                                                </div>
+                                                
+                                                <div class="box-validateUSDT" id="validateUSDT" style="display: none;">
+                                                  Invalid receiving address for the crypto you’ve chosen
+                                                </div>
+                                                <div>
+                                                        <button class="box-btn btnDisable" id="btnNextStep2" onclick="viewItemTabs('step2','step3')"  disabled>Next</button>
+                                                </div>
+                                        </div>
+                                        <div id="step3"   style="display: none;">
+                                                <div class="box-top">
+                                                        <a  onclick="viewItemTabs('step3','step2')">
+                                                                <img src="../images/swap/iconBack.svg" alt="">
+                                                        </a>
+                                                        <div class="box-top-width">
+                                                                <div class="box-top-title">Enter your details</div>
+                                                                <ul>
+                                                                        <li class="dot-gradient"></li>
+                                                                        <li class="dot-gradient"></li>
+                                                                        <li class="dot-gradient"></li>
+                                                                        <li></li>
+                                                                </ul>
+                                                        </div>
+                                                        <a  onclick="viewItemTabs('step3','stepMenu')">
+                                                                <img src="../images/swap/menuBtn.svg" alt="">
+                                                        </a>
+                                                </div>
+                                                
+                                                <div class="box-getsend getsend-top" style="justify-content: unset; gap: 10px">
+                                                        <div class="getsend-right">
+                                                                <img src="../images/swap/flag-VN.svg" alt="">
+                                                        </div>
+                                                        <div class="getsend-left">
+                                                                <div class="getsend-number">
+                                                                        3,200,000
+                                                                </div>
+                                                                <div  class="getsend-text" style="color:#656870;">
+                                                                        VND
+                                                                </div>
+                                                        </div>
+                                                        <div class="box-doubleArrow">
+                                                          <a><img src="../images/swap/icon-double-arrow.svg" alt=""></a>
+                                                        </div>
+                                                </div>
+                                                
+                                                <div class="box-getsend" style="justify-content: unset; gap: 10px">
+                                                        <div class="getsend-right">
+                                                                <img src="../images/swap/flag-USDT.svg" alt="">
+                                                        </div>
+                                                        <div class="getsend-left">
+                                                                <div class="getsend-number">
+                                                                        135.46
+                                                                </div>
+                                                                <div  class="getsend-text" style="color: #0765FF; ">
+                                                                       <span style="color:#656870;">USDT</span> 
+                                                                       <span style="color: #0765FF; ">  ERC20</span> 
+                                                                </div>
+                                                                
+                                                        </div>
+                                                        
+                                                </div>
+                                                <div class="box-haveAddress">
+                                                        <div class="box-haveAddress-top"><img src="../images/swap/flag-USDT.svg" alt=""> <div class="box-haveAddress-title">Your USDT-ERC20 receiving address</div> </div>
+                                                        <div class="box-haveAddress-text" id="pastedUSDTAdd"></div>
+                                                </div>
+                                                <a  class="box-addMail"  onclick="viewItemTabs('step3','stepAddMail')">
+                                                        <div  class="box-addMail-left">
+                                                                <img src="../images/swap/icon-Mail.svg" alt="">
+                                                                <div>Add your email for notification</div>
+                                                        </div>
+                                                        <img src="../images/swap/icon-addMail.svg" alt="">
+                                                </a>
+                                                <div class="box-agree">
+                                                        <label class="checkbox-container">
+                                                                <input type="checkbox" checked="checked">
+                                                                <span class="checkbox-custom"></span>
+                                                        </label>
+                                                        <div class="box-agree-txt">I agree with <span class="box-agree-purple"> Terms of Use, KYC/AML Policy</span>, and <span class="box-agree-purple">the third party provider’s terms.</span></div>
+                                                </div>
+                                                <div>
+                                                        <button class="box-btn" onclick="viewItemTabs('step3','step4')">Confirm</button>
+                                                </div>
+                                        </div>
+                                        <div id="stepMenu" style="display: none;">
+                                                <div class="box-top">
+                                                        <div class="box-top-width">
+                                                                <div class="box-top-title">Menu</div>
+                                                        </div>
+                                                        <a id="stepMenuSelect" onclick="viewItemTabs('stepMenu','step3')">
+                                                                <img src="../images/swap/step-icon-close.svg" alt="">
+                                                        </a>
+                                                </div>
+                                                
+                                                <a  class="box-menu-item menuitem1">
+                                                        <div  class="box-menu-item-left">
+                                                                <img src="../images/swap/step-icon-menu1.svg" alt="">
+                                                                <div>Check exchange status</div>
+                                                        </div>
+                                                        <img src="../images/swap/step-icon-arrow-right.svg" alt="">
+                                                </a>
+                                                <a  class="box-menu-item">
+                                                        <div  class="box-menu-item-left">
+                                                                <img src="../images/swap/step-icon-menu2.svg" alt="">
+                                                                <div>Recommended wallets</div>
+                                                        </div>
+                                                        <img src="../images/swap/step-icon-arrow-right.svg" alt="">
+                                                </a>
+                                                <a  class="box-menu-item">
+                                                        <div  class="box-menu-item-left">
+                                                                <img src="../images/swap/step-icon-menu3.svg" alt="">
+                                                                <div>Support</div>
+                                                        </div>
+                                                        <img src="../images/swap/step-icon-arrow-right.svg" alt="">
+                                                </a>                                                
+                                        </div>
+                                        <div id="stepAddMail"  style="display: none;">
+                                          <div class="box-top">
+                                                  <div class="box-top-width">
+                                                          <div class="box-top-title"></div>
+                                                  </div>
+                                                  <a  onclick="viewItemTabs('stepAddMail','step3')">
+                                                          <img src="../images/swap/step-icon-close.svg" alt="">
+                                                  </a>
+                                          </div>
+                                          <div class="box-stepAddMail">
+                                            <img src="/images/swap/img-stepAddMail.svg" alt="">
+                                            <div  class="box-stepAddMail-title">Get a notification</div>
+                                            <div class="box-stepAddMail-desc">
+                                              <p>Insert your email below, and we will send you a</p>
+                                              <p>notification email when the transaction completes</p>
+                                            </div>
+                                          </div>      
+                                          <div class="box-input-AddMail">
+                                            <div class="box-input-AddMail-top">Your email</div>
+                                            <div class="box-input-AddMail-bottom">
+                                              <input type="text" id="email-stepMail"  onchange onpropertychange  onkeyuponpaste oninput="onChangeEmail()" value="ExampleMail@gmail.com">
+                                              <a  onclick="resetInputMail()">
+                                                <img src="../images/swap/icon-close-input.svg" alt="">
+                                              </a>
+                                            </div>
+                                          </div>
+                                          <div>
+                                            <button class="box-btn" id="btnNextStepMail"  onclick="viewItemTabs('stepAddMail','step4')">Submit</button>
+                                          </div>                        
+                                        </div>
+                                        <div id="step4"   style="display: none;">
+                                          <div class="box-top">
+                                                  <a  onclick="viewItemTabs('step4','step3')">
+                                                          <img src="../images/swap/iconBack.svg" alt="">
+                                                  </a>
+                                                  <div class="box-top-width">
+                                                          <div class="box-top-title">Enter your details</div>
+                                                          <ul>
+                                                                  <li class="dot-gradient"></li>
+                                                                  <li class="dot-gradient"></li>
+                                                                  <li class="dot-gradient"></li>
+                                                                  <li></li>
+                                                          </ul>
+                                                  </div>
+                                                  <a  onclick="viewItemTabs('step4','stepMenu')">
+                                                          <img src="../images/swap/menuBtn.svg" alt="">
+                                                  </a>
+                                          </div>
+                                          <div class="box-notify" id="notify-email">
+                                            <img src="/images/swap/step-check-green.svg" alt="">
+                                            <img src="/images/swap/step-check-white.svg" alt="">
+                                            <div  class="box-notify-text">
+                                              An email will be sent to <span style="color: #86B2FF;">contact.example@gmail.com</span> once the transaction completed
+                                            </div>
+                                            <a  onclick="closeNotify('notify-email')" style="cursor: pointer;"><img src="/images/swap/icon-close-input.svg" alt=""></a>
+                                          </div>
+                                          
+                                          <div class="box-getsend getsend-top" style="justify-content: unset; gap: 10px">
+                                                  <div class="getsend-right">
+                                                          <img src="../images/swap/flag-VN.svg" alt="">
+                                                  </div>
+                                                  <div class="getsend-left">
+                                                          <div class="getsend-number">
+                                                                  3,200,000
+                                                          </div>
+                                                          <div  class="getsend-text" style="color:#656870;">
+                                                                  VND
+                                                          </div>
+                                                  </div>
+                                                  <div class="box-doubleArrow">
+                                                    <a><img src="../images/swap/icon-double-arrow.svg" alt=""></a>
+                                                  </div>
+                                          </div>
+                                          <div class="box-getsend" style="justify-content: unset; gap: 10px">
+                                                  <div class="getsend-right">
+                                                          <img src="../images/swap/flag-USDT.svg" alt="">
+                                                  </div>
+                                                  <div class="getsend-left">
+                                                          <div class="getsend-number">
+                                                                  135.46
+                                                          </div>
+                                                          <div  class="getsend-text" style="color: #0765FF; ">
+                                                                 <span style="color:#656870;">USDT</span> 
+                                                                 <span style="color: #0765FF; ">  ERC20</span> 
+                                                          </div>
+                                                          
+                                                  </div>
+                                                  
+                                          </div>
+                                          <div class="box-haveAddress">
+                                                  <div class="box-haveAddress-top"><img src="../images/swap/flag-USDT.svg" alt=""> <div class="box-haveAddress-title">Your USDT-ERC20 receiving address</div> </div>
+                                                  <div class="box-haveAddress-text" id="pastedUSDTAddStep4"></div>
+                                          </div>
+                                          <a  class="box-addMail"  onclick="viewItemTabs('step4','stepAddMail')">
+                                                  <div  class="box-addMail-left">
+                                                          <img src="../images/swap/icon-Mail.svg" alt="">
+                                                          <div>
+                                                            <div class="txt-Email-step4">Email</div>
+                                                            <div class="txt-Email-step4" style="color: #1E232B;" id="emailAddStep4"></div>
+                                                          </div>
+                                                  </div>
+                                                  <img src="../images/swap/icon-next-circle.svg" alt="">
+                                          </a>
+                                          <div class="box-agree">
+                                                  <label class="checkbox-container">
+                                                          <input type="checkbox" checked="checked">
+                                                          <span class="checkbox-custom"></span>
+                                                  </label>
+                                                  <div class="box-agree-txt">I agree with <span class="box-agree-purple"> Terms of Use, KYC/AML Policy</span>, and <span class="box-agree-purple">the third party provider’s terms.</span></div>
+                                          </div>
+                                          <div>
+                                                  <button class="box-btn"  onclick="viewItemTabs('step4','step5')">Confirm</button>
+                                          </div>
+                                  
+                                        </div>
+                                        <div id="step5"  style="display: none;">
+                                          <div class="stage" id="dotLoading" style="display: none;">
+                                            <div class="dot-elastic"></div>
+                                          </div>
+                                          <div class="box-redirect">
+                                            <div class="box-redirect-title"> <span id="redirectTitle">Redirecting to payment</span> </div>
+                                            <div class="box-redirect-desc"><span id="redirectDesc">Please do not refresh the page or close the tab of your browers</span></div>
+                                          </div>
+                                          
+                                          <div class="box-getsend getsend-top" style="justify-content: unset; gap: 10px">
+                                                  <div class="getsend-right">
+                                                          <img src="../images/swap/flag-VN.svg" alt="">
+                                                  </div>
+                                                  <div class="getsend-left">
+                                                          <div class="getsend-number">
+                                                                  3,200,000
+                                                          </div>
+                                                          <div  class="getsend-text" style="color:#656870;">
+                                                                  VND
+                                                          </div>
+                                                  </div>
+                                                  <div class="box-doubleArrow">
+                                                    <a><img src="../images/swap/icon-double-arrow.svg" alt=""></a>
+                                                  </div>
+                                          </div>
+                                          <div class="box-getsend" style="justify-content: unset; gap: 10px">
+                                                  <div class="getsend-right">
+                                                          <img src="../images/swap/flag-USDT.svg" alt="">
+                                                  </div>
+                                                  <div class="getsend-left">
+                                                          <div class="getsend-number">
+                                                                  135.46
+                                                          </div>
+                                                          <div  class="getsend-text" style="color: #0765FF; ">
+                                                                 <span style="color:#656870;">USDT</span> 
+                                                                 <span style="color: #0765FF; ">  ERC20</span> 
+                                                          </div>
+                                                          
+                                                  </div>
+                                          </div>
+                                          <div class="box-haveAddress">
+                                                  <div class="box-haveAddress-top"><img src="../images/swap/flag-USDT.svg" alt=""> <div class="box-haveAddress-title">Your USDT-ERC20 receiving address</div> </div>
+                                                  <div class="box-haveAddress-text" id="pastedUSDTAddStep5"></div>
+                                          </div>
+                                          <a  class="box-addMail"  onclick="viewItemTabs('step4','stepAddMail')">
+                                                  <div  class="box-addMail-left">
+                                                          <img src="../images/swap/icon-Mail.svg" alt="">
+                                                          <div>
+                                                            <div class="txt-Email-step4">Email</div>
+                                                            <div class="txt-Email-step4" style="color: #1E232B;" id="emailAddStep5"></div>
+                                                          </div>
+                                                  </div>
+                                                  <img src="../images/swap/icon-next-circle.svg" alt="">
+                                          </a>
+                                          <div style="padding-top: 10px;">
+                                                  <button class="box-btn"  onclick="redirectTime(this)">Confirm</button>
+                                          </div>
+                                          <div style="padding-top: 10px;">
+                                                  <button class="box-btnGrey" >Support</button>
+                                          </div>
+                                          <div style="padding-top: 10px;">
+                                                  <button class="box-btnGrey" >New Exchange</button>
+                                          </div>
+                                  
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </section>
+      </main>
+      <footer>
+        <div class="footer-top">
+          <div class="container">
+            <div class="footer-img">
+              <img src="../images/PC_index/Footer .gif"  alt="">
+            </div>
+            <div class="footer-left">
+              <div class="footer-left-title">Download and invest now!</div>
+              <div class="footer-left-desc">Try the crypto wallet of the future today. Try the crypto wallet of the future today.</div>
+              <div class="footer-left-download">
+                <a href="#!"><img src="../images/PC_index/footer-AppStore.svg" alt=""></a>
+                <a href="#!"><img src="../images/PC_index/footer-APK.svg" alt=""></a>
+              </div>
+            </div>
+            <div class="footer-right">
+              <div>
+                <div  class="footer-right-header">
+                  Solutions
+                </div>
+                <ul>
+                  <li class="footer-right-actived">MMC Wallet</li>
+                  <li>ETH-Free Transactions</li>
+                  <li>Fusion Trading</li>
+                  <li>Lending & Loan Services </li>
+                  <li>Cross-chain Transfer Protocol</li>
+                  <li>Remittance</li>
+                  <li>Tokenized Stock & Assets</li>
+                  <li>Social Login & Socail Trading</li>
+                </ul>
+              </div>
+              <div>
+                <div class="footer-right-header">
+                  MMC Token
+                </div>
+                <ul>
+                  <li>Introduction</li>
+                  <li>Membership</li>
+                  <li>DAO</li>
+                </ul>
+              </div>
+              <div>
+                <div class="footer-right-header">
+                  Developers
+                </div>
+                <ul>
+                  <li>Docs</li>
+                  <li>MMC SDK & Replayer</li>
+                </ul>
+              </div>
+            </div>
+            
+          </div>
+         
+        </div>
+        <div class="footer-bottom">
+          <div class="container">
+            <div>
+              <img src="../images/PC_index/logo.svg" alt="">
+            </div>
+            <p class="footer-copyright">© 2023 Moon Ex Ltd. All rights reserved.</p>
+            <ul class="footer-social ">
+              <li>
+                <a href="https://twitter.com/mymoney_credit" target="_blank">
+                  <img src="../images/PC_index/foot-twitter.svg" alt="" />
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/mymoney.cre/"  target="_blank">
+                  <img src="../images/PC_index/foot-fb.svg" alt="" />
+                </a>
+              </li>
+              <li>
+                <a href="https://t.me/mmc_announcement"  target="_blank">
+                  <img src="../images/PC_index/foot-tele.svg" alt="" />
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <a href="#" class="back-to-top">
+          <img src="../images/PC_index/keyboard_double_arrow_up.svg" alt="" />
+        </a>
+      </footer>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="../js/app.js"></script>
+  </body>
+</html>

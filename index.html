@@ -841,6 +841,24 @@
             }
           });
         }
+
+        //Time in milliseconds [1 second = 1000 milliseconds ]    
+        setInterval(function() { 
+          var test = document.querySelectorAll('.customers-list img')
+
+          for( let i = 1; i<= test.length; i++) {
+            test[i-1].classList.add("image"+i);
+          }
+        }, 3000);
+            
+        setInterval(function() { 
+          var test = document.querySelectorAll('.customers-list img')
+
+          for( let i = 1; i<= test.length; i++) {
+            test[i-1].classList.remove("image"+i);
+          }
+        }, 7000);
+            
       });
     </script>
     <script
